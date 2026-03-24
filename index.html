@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Optionable Stock Splits</title>
+  <style>
+    :root {
+      --bg:#0d1117; --surface:#161b22; --border:#30363d;
+      --text:#e6edf3; --muted:#8b949e;
+      --blue:#388bfd; --green:#3fb950; --red:#f85149; --orange:#d29922;
+      --today-bg:#1a2535; --future-bg:#161b22; --header-bg:#21262d;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);
+         font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         min-height:100vh}
+
+    header{background:var(--surface);border-bottom:1px solid var(--border);
+           padding:16px 28px;display:flex;align-items:center;
+           justify-content:space-between;flex-wrap:wrap;gap:12px}
+    header h1{font-size:1.15rem;font-weight:700;display:flex;
+              align-items:center;gap:9px}
+    .dot{width:9px;height:9px;border-radius:50%;background:var(--green);
+         display:inline-block;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+    .controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+    .search-wrap{position:relative}
+    .search-wrap input{
+      background:var(--bg);border:1px solid var(--border);color:var(--text);
+      padding:7px 12px 7px 30px;border-radius:6px;font-size:.84rem;
+      width:190px;outline:none;transition:border-color .2s}
+    .search-wrap input:focus{border-color:var(--blue)}
+    .si{position:absolute;left:9px;top:50%;transform:translateY(-50%);
+        font-size:.74rem;pointer-events:none}
+
+    .btn{border:none;padding:7px 14px;border-radius:6px;cursor:pointer;
+         font-size:.82rem;font-weight:600;transition:opacity .18s}
+    .btn:disabled{opacity:.4;cursor:not-allowed}
+    .btn-blue{background:var(--blue);color:#fff}
+    .btn-blue:hover:not(:disabled){opacity:.85}
+    .btn-outline{background:transparent;border:1px solid var(--border);color:var(--muted)}
+    .btn-outline:hover:not(:disabled){border-color:var(--blue);color:var(--blue)}
+
+    main{padding:24px 28px;max-width:1080px;margin:0 auto}
+
+    .stats{display:flex;gap:13px;margin-bottom:22px;flex-wrap:wrap}
+    .stat{background:var(--surface);border:1px solid var(--border);
+          border-radius:8px;padding:12px 18px;flex:1;min-width:125px}
+    .stat .lbl{font-size:.68rem;color:var(--muted);text-transform:uppercase;
+               letter-spacing:.06em}
+    .stat .val{font-size:1.5rem;font-weight:700;margin-top:3px}
+    .s-today .val{color:var(--blue)}
+    .s-future .val{color:var(--green)}
+    .s-updated .val{font-size:.8rem;margin-top:6px;line-height:1.5}
+
+    #err{background:#2d1117;border:1px solid var(--red);color:var(--red);
+         border-radius:8px;padding:12px 16px;margin-bottom:16px;
+         display:none;font-size:.84rem}
+    #loading{text-align:center;padding:60px;color:var(--muted);display:none}
+    .spin{width:34px;height:34px;border:3px solid var(--border);
+          border-top-color:var(--blue);border-radius:50%;
+          animation:spin .75s linear infinite;margin:0 auto 12px}
+    @keyframes spin{to{transform:rotate(360deg)}}
+
+    .sep{display:flex;align-items:center;gap:10px;margin:24px 0 10px;
+         font-size:.72rem;font-weight:700;text-transform:uppercase;
+         letter-spacing:.08em}
+    .sep .ln{flex:1;height:1px;background:var(--border)}
+    .badge{padding:2px 10px;border-radius:4px}
+    .badge-today{background:#1c2d4a;color:var(--blue);border:1px solid var(--blue)}
+    .badge-future{background:#1a2d1a;color:var(--green);border:1px solid var(--green)}
+
+    .tbl-wrap{background:var(--surface);border:1px solid var(--border);
+              border-radius:10px;overflow:hidden;margin-bottom:6px}
+    table{width:100%;border-collapse:collapse;font-size:.875rem}
+    thead th{background:var(--header-bg);padding:10px 16px;text-align:left;
+             font-size:.68rem;font-weight:700;text-transform:uppercase;
+             letter-spacing:.06em;color:var(--muted);
+             border-bottom:1px solid var(--border)}
+    tbody tr{border-bottom:1px solid var(--border);transition:filter .15s}
+    tbody tr:last-child{border-bottom:none}
+    .r-today{background:var(--today-bg)}
+    .r-future{background:var(--future-bg)}
+    tbody tr:hover{filter:brightness(1.18)}
+    td{padding:11px 16px;vertical-align:middle}
+    .dt{font-weight:600;white-space:nowrap}
+    .dt-today{color:var(--blue)}
+    .today-pill{display:inline-block;background:var(--blue);color:#fff;
+                font-size:.58rem;font-weight:800;padding:1px 6px;
+                border-radius:3px;margin-left:7px;vertical-align:middle;
+                text-transform:uppercase}
+    .tkr{font-family:"SF Mono","Fira Code",monospace;font-weight:700;
+         font-size:.95rem}
+    .tkr a{color:var(--text);text-decoration:none;transition:color .15s}
+    .tkr a:hover{color:var(--blue)}
+    .co{color:var(--muted);max-width:250px;white-space:nowrap;
+        overflow:hidden;text-overflow:ellipsis}
+    .rp{display:inline-block;padding:2px 9px;border-radius:4px;
+        font-family:"SF Mono","Fira Code",monospace;font-size:.78rem;font-weight:700}
+    .rp-fwd{background:#1a2d1a;color:var(--green)}
+    .rp-rev{background:#2d1a1a;color:var(--red)}
+    .empty{text-align:center;padding:30px;color:var(--muted);font-size:.84rem}
+
+    footer{text-align:center;padding:18px;color:var(--muted);font-size:.71rem;
+           border-top:1px solid var(--border);margin-top:28px}
+    footer a{color:var(--blue);text-decoration:none}
+
+    @media(max-width:600px){
+      header,main{padding:14px}
+      .co,thead th:nth-child(3){display:none}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><span class="dot"></span>Optionable Stock Splits</h1>
+  <div class="controls">
+    <div class="search-wrap">
+      <span class="si">🔍</span>
+      <input type="text" id="search" placeholder="Ticker or company…"/>
+    </div>
+    <button class="btn btn-outline" id="source-btn"
+            onclick="window.open('https://www.benzinga.com/calendars/stock-splits','_blank')">
+      Benzinga ↗
+    </button>
+    <button class="btn btn-blue" id="reload-btn">↻ Reload Data</button>
+  </div>
+</header>
+
+<main>
+  <div class="stats">
+    <div class="stat s-today">
+      <div class="lbl">Ex Today</div>
+      <div class="val" id="s-today">—</div>
+    </div>
+    <div class="stat s-future">
+      <div class="lbl">Upcoming</div>
+      <div class="val" id="s-future">—</div>
+    </div>
+    <div class="stat" style="flex:1">
+      <div class="lbl">Total Optionable</div>
+      <div class="val" id="s-total" style="color:var(--text)">—</div>
+    </div>
+    <div class="stat s-updated" style="flex:2">
+      <div class="lbl">Last Scraped</div>
+      <div class="val" id="s-updated">—</div>
+    </div>
+  </div>
+
+  <div id="err"></div>
+  <div id="loading"><div class="spin"></div>Loading splits data…</div>
+  <div id="content"></div>
+</main>
+
+<footer>
+  Scraped from
+  <a href="https://www.benzinga.com/calendars/stock-splits" target="_blank">
+    Benzinga Stock Splits Calendar
+  </a>
+  · Optionable verified via Yahoo Finance
+  · Run <strong>refresh.bat</strong> on your machine to update
+</footer>
+
+<script>
+  const DATA_URL = './data/splits.json';
+  let all = [], todayStr = '';
+
+  const fmt = d => {
+    if (!d) return '—';
+    const [y, m, dd] = d.split('-');
+    return `${m}/${dd}/${y}`;
+  };
+
+  const isForward = ratio => {
+    const [a, b] = (ratio || '').split(':').map(Number);
+    return isNaN(a) || isNaN(b) ? true : a > b;
+  };
+
+  // Staleness color: green <12h, orange <24h, red >=24h
+  function stalenessStyle(updatedAt) {
+    if (!updatedAt) return 'color:var(--muted)';
+    const dt = new Date(updatedAt.replace(' UTC', 'Z').replace(' ', 'T'));
+    if (isNaN(dt)) return 'color:var(--muted)';
+    const hrs = (Date.now() - dt) / 3600000;
+    if (hrs < 12)  return 'color:var(--green)';
+    if (hrs < 24)  return 'color:var(--orange)';
+    return 'color:var(--red)';
+  }
+
+  function tableHTML(rows, isToday) {
+    if (!rows.length)
+      return `<div class="tbl-wrap">
+                <div class="empty">No splits in this section.</div>
+              </div>`;
+    return `<div class="tbl-wrap"><table>
+      <thead><tr>
+        <th>Ex-Date</th><th>Ticker</th><th>Company</th><th>Split Ratio</th>
+      </tr></thead>
+      <tbody>
+        ${rows.map(s => {
+          const fwd  = isForward(s.ratio);
+          const isTd = s.date_ex === todayStr;
+          return `<tr class="${isToday ? 'r-today' : 'r-future'}">
+            <td class="dt ${isTd ? 'dt-today' : ''}">
+              ${fmt(s.date_ex)}
+              ${isTd ? '<span class="today-pill">Today</span>' : ''}
+            </td>
+            <td class="tkr">
+              <a href="https://finance.yahoo.com/quote/${s.ticker}/options"
+                 target="_blank">${s.ticker}</a>
+            </td>
+            <td class="co" title="${s.name}">${s.name || '—'}</td>
+            <td>
+              <span class="rp ${fwd ? 'rp-fwd' : 'rp-rev'}">${s.ratio || '—'}</span>
+            </td>
+          </tr>`;
+        }).join('')}
+      </tbody>
+    </table></div>`;
+  }
+
+  function render(splits) {
+    const todayRows  = splits.filter(s => s.date_ex === todayStr);
+    const futureRows = splits.filter(s => s.date_ex >  todayStr);
+
+    document.getElementById('s-today').textContent  = todayRows.length;
+    document.getElementById('s-future').textContent = futureRows.length;
+    document.getElementById('s-total').textContent  = splits.length;
+
+    let html = '';
+
+    if (todayRows.length) {
+      html += `<div class="sep">
+        <div class="ln"></div>
+        <span class="badge badge-today">⚡ Ex-Date Today — ${fmt(todayStr)}</span>
+        <div class="ln"></div>
+      </div>` + tableHTML(todayRows, true);
+    }
+
+    if (futureRows.length) {
+      html += `<div class="sep" style="margin-top:28px">
+        <div class="ln"></div>
+        <span class="badge badge-future">📅 Upcoming Ex-Dates</span>
+        <div class="ln"></div>
+      </div>` + tableHTML(futureRows, false);
+    }
+
+    if (!splits.length) {
+      html = `<div class="tbl-wrap">
+                <div class="empty">
+                  No optionable splits found.<br><br>
+                  Run <strong>refresh.bat</strong> on your machine to scrape fresh data.
+                </div>
+              </div>`;
+    }
+
+    document.getElementById('content').innerHTML = html;
+  }
+
+  function applySearch(q) {
+    const s = q.trim().toLowerCase();
+    render(s
+      ? all.filter(x =>
+          x.ticker.toLowerCase().includes(s) ||
+          x.name.toLowerCase().includes(s))
+      : all
+    );
+  }
+
+  async function loadData() {
+    const btn = document.getElementById('reload-btn');
+    btn.disabled = true;
+    document.getElementById('loading').style.display = 'block';
+    document.getElementById('content').innerHTML     = '';
+    document.getElementById('err').style.display     = 'none';
+
+    try {
+      const r    = await fetch(DATA_URL + '?t=' + Date.now());
+      if (!r.ok) throw new Error(
+        `HTTP ${r.status} — run refresh.bat first to generate data`
+      );
+      const json = await r.json();
+
+      all      = json.splits || [];
+      todayStr = json.today  || new Date().toISOString().split('T')[0];
+
+      const upd = document.getElementById('s-updated');
+      upd.textContent = json.updated_at || '—';
+      upd.style       = stalenessStyle(json.updated_at);
+
+      document.getElementById('search').value = '';
+      render(all);
+    } catch (e) {
+      document.getElementById('err').textContent  = '⚠️ ' + e.message;
+      document.getElementById('err').style.display = 'block';
+    } finally {
+      document.getElementById('loading').style.display = 'none';
+      btn.disabled = false;
+    }
+  }
+
+  document.getElementById('reload-btn')
+          .addEventListener('click', loadData);
+  document.getElementById('search')
+          .addEventListener('input', e => applySearch(e.target.value));
+
+  loadData();
+</script>
+</body>
+</html>
