@@ -1,6 +1,85 @@
 {
-  "splits": [],
+  "splits": [
+    {
+      "date_ex": "2026-03-24",
+      "name": "FuboTV",
+      "ticker": "FUBO",
+      "ratio": "1:12"
+    },
+    {
+      "date_ex": "2026-03-24",
+      "name": "Piper Sandler",
+      "ticker": "PIPR",
+      "ratio": "4:1"
+    },
+    {
+      "date_ex": "2026-03-27",
+      "name": "Advantage Solutions",
+      "ticker": "ADV",
+      "ratio": "1:25"
+    },
+    {
+      "date_ex": "2026-03-31",
+      "name": "Agilon Health",
+      "ticker": "AGL",
+      "ratio": "1:25"
+    },
+    {
+      "date_ex": "2026-04-06",
+      "name": "Powell Industries",
+      "ticker": "POWL",
+      "ratio": "3:1"
+    },
+    {
+      "date_ex": "2026-04-16",
+      "name": "Booking Holdings",
+      "ticker": "BKNG",
+      "ratio": "1:25"
+    },
+    {
+      "date_ex": "2026-04-21",
+      "name": "Vanguard Growth ETF",
+      "ticker": "VUG",
+      "ratio": "6:1"
+    },
+    {
+      "date_ex": "2026-04-21",
+      "name": "Vanguard Mid-Cap ETF",
+      "ticker": "VO",
+      "ratio": "4:1"
+    },
+    {
+      "date_ex": "2026-04-21",
+      "name": "Vanguard Information Tech ETF",
+      "ticker": "VGT",
+      "ratio": "8:1"
+    },
+    {
+      "date_ex": "2026-04-21",
+      "name": "Vanguard S&P 500 Growth ETF",
+      "ticker": "VOOG",
+      "ratio": "6:1"
+    },
+    {
+      "date_ex": "2026-04-21",
+      "name": "Vanguard Mega Cap Growth ETF",
+      "ticker": "MGK",
+      "ratio": "5:1"
+    },
+    {
+      "date_ex": "2026-04-22",
+      "name": "Tuniu",
+      "ticker": "TOUR",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-05-07",
+      "name": "Carvana",
+      "ticker": "CVNA",
+      "ratio": "5:1"
+    }
+  ],
   "today": "2026-03-24",
-  "updated_at": "2026-03-24 20:32 UTC",
-  "total": 0
+  "updated_at": "2026-03-24 20:36 UTC",
+  "total": 13
 }
