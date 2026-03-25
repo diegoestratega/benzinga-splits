@@ -1,18 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-03-24",
-      "name": "FuboTV",
-      "ticker": "FUBO",
-      "ratio": "1:12"
-    },
-    {
-      "date_ex": "2026-03-24",
-      "name": "Piper Sandler",
-      "ticker": "PIPR",
-      "ratio": "4:1"
-    },
-    {
       "date_ex": "2026-03-27",
       "name": "Advantage Solutions",
       "ticker": "ADV",
@@ -79,7 +67,7 @@
       "ratio": "5:1"
     }
   ],
-  "today": "2026-03-24",
-  "updated_at": "2026-03-24 21:06 UTC",
-  "total": 13
+  "today": "2026-03-25",
+  "updated_at": "2026-03-25 12:19 UTC",
+  "total": 11
 }
