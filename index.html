@@ -36,12 +36,15 @@
         font-size:.74rem;pointer-events:none}
 
     .btn{border:none;padding:7px 14px;border-radius:6px;cursor:pointer;
-         font-size:.82rem;font-weight:600;transition:opacity .18s}
+         font-size:.82rem;font-weight:600;transition:opacity .18s;
+         text-decoration:none;display:inline-flex;align-items:center;gap:5px}
     .btn:disabled{opacity:.4;cursor:not-allowed}
     .btn-blue{background:var(--blue);color:#fff}
     .btn-blue:hover:not(:disabled){opacity:.85}
+    .btn-green{background:var(--green);color:#000}
+    .btn-green:hover{opacity:.85}
     .btn-outline{background:transparent;border:1px solid var(--border);color:var(--muted)}
-    .btn-outline:hover:not(:disabled){border-color:var(--blue);color:var(--blue)}
+    .btn-outline:hover{border-color:var(--blue);color:var(--blue)}
 
     main{padding:24px 28px;max-width:1080px;margin:0 auto}
 
@@ -122,11 +125,15 @@
       <span class="si">🔍</span>
       <input type="text" id="search" placeholder="Ticker or company…"/>
     </div>
-    <button class="btn btn-outline" id="source-btn"
+    <button class="btn btn-outline"
             onclick="window.open('https://www.benzinga.com/calendars/stock-splits','_blank')">
       Benzinga ↗
     </button>
     <button class="btn btn-blue" id="reload-btn">↻ Reload Data</button>
+    <a class="btn btn-green" href="benzinga://run"
+       title="Runs refresh.bat on your machine — reload data in ~60s after clicking">
+      ⚡ Run Scraper
+    </a>
   </div>
 </header>
 
@@ -161,7 +168,7 @@
     Benzinga Stock Splits Calendar
   </a>
   · Optionable verified via Yahoo Finance
-  · Run <strong>refresh.bat</strong> on your machine to update
+  · Click <strong>⚡ Run Scraper</strong> to refresh data from your machine
 </footer>
 
 <script>
@@ -179,7 +186,6 @@
     return isNaN(a) || isNaN(b) ? true : a > b;
   };
 
-  // Staleness color: green <12h, orange <24h, red >=24h
   function stalenessStyle(updatedAt) {
     if (!updatedAt) return 'color:var(--muted)';
     const dt = new Date(updatedAt.replace(' UTC', 'Z').replace(' ', 'T'));
@@ -252,7 +258,8 @@
       html = `<div class="tbl-wrap">
                 <div class="empty">
                   No optionable splits found.<br><br>
-                  Run <strong>refresh.bat</strong> on your machine to scrape fresh data.
+                  Click <strong>⚡ Run Scraper</strong> to scrape fresh data,
+                  then <strong>↻ Reload Data</strong> after ~60 seconds.
                 </div>
               </div>`;
     }
@@ -280,7 +287,7 @@
     try {
       const r    = await fetch(DATA_URL + '?t=' + Date.now());
       if (!r.ok) throw new Error(
-        `HTTP ${r.status} — run refresh.bat first to generate data`
+        `HTTP ${r.status} — click ⚡ Run Scraper first to generate data`
       );
       const json = await r.json();
 
@@ -294,7 +301,7 @@
       document.getElementById('search').value = '';
       render(all);
     } catch (e) {
-      document.getElementById('err').textContent  = '⚠️ ' + e.message;
+      document.getElementById('err').textContent   = '⚠️ ' + e.message;
       document.getElementById('err').style.display = 'block';
     } finally {
       document.getElementById('loading').style.display = 'none';

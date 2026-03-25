@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\benzinga]
+@="Benzinga Splits Refresher"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\benzinga\shell]
+
+[HKEY_CLASSES_ROOT\benzinga\shell\open]
+
+[HKEY_CLASSES_ROOT\benzinga\shell\open\command]
+@="\"C:\\!diego\\!bolsa diario\\benzinga-splits\\refresh.bat\" \"%1\""
