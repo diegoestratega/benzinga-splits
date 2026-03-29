@@ -1,18 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-03-27",
-      "name": "Companhia De Saneamento",
-      "ticker": "SBS",
-      "ratio": "1.002:1"
-    },
-    {
-      "date_ex": "2026-03-27",
-      "name": "Advantage Solutions",
-      "ticker": "ADV",
-      "ratio": "1:25"
-    },
-    {
       "date_ex": "2026-03-31",
       "name": "Agilon Health",
       "ticker": "AGL",
@@ -79,7 +67,7 @@
       "ratio": "5:1"
     }
   ],
-  "today": "2026-03-27",
-  "updated_at": "2026-03-27 12:59 UTC",
-  "total": 13
+  "today": "2026-03-29",
+  "updated_at": "2026-03-29 23:26 UTC",
+  "total": 11
 }
