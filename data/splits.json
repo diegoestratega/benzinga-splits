@@ -1,12 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-04-01",
-      "name": "BARK",
-      "ticker": "BARK",
-      "ratio": "1:20"
-    },
-    {
       "date_ex": "2026-04-06",
       "name": "Booking Holdings",
       "ticker": "BKNG",
@@ -67,7 +61,7 @@
       "ratio": "5:1"
     }
   ],
-  "today": "2026-04-01",
-  "updated_at": "2026-04-01 12:55 UTC",
-  "total": 11
+  "today": "2026-04-02",
+  "updated_at": "2026-04-02 12:43 UTC",
+  "total": 10
 }
