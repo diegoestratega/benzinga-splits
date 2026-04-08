@@ -1,6 +1,12 @@
 {
   "splits": [
     {
+      "date_ex": "2026-04-08",
+      "name": "T-REX 2X Long SMR Daily Target ETF",
+      "ticker": "SMUP",
+      "ratio": "1:25"
+    },
+    {
       "date_ex": "2026-04-21",
       "name": "Vanguard Growth ETF",
       "ticker": "VUG",
@@ -43,7 +49,7 @@
       "ratio": "5:1"
     }
   ],
-  "today": "2026-04-07",
-  "updated_at": "2026-04-07 11:42 UTC",
-  "total": 7
+  "today": "2026-04-08",
+  "updated_at": "2026-04-08 12:22 UTC",
+  "total": 8
 }
