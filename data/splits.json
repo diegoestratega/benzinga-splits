@@ -2,6 +2,12 @@
   "splits": [
     {
       "date_ex": "2026-04-13",
+      "name": "Quince Therapeutics",
+      "ticker": "QNCX",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-04-13",
       "name": "Cenntro",
       "ticker": "CENN",
       "ratio": "1:60"
@@ -49,7 +55,7 @@
       "ratio": "5:1"
     }
   ],
-  "today": "2026-04-09",
-  "updated_at": "2026-04-09 12:17 UTC",
-  "total": 8
+  "today": "2026-04-10",
+  "updated_at": "2026-04-10 11:50 UTC",
+  "total": 9
 }
