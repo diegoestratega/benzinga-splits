@@ -7,6 +7,12 @@
       "ratio": "1:25"
     },
     {
+      "date_ex": "2026-04-16",
+      "name": "NeuroOne Medical Tech",
+      "ticker": "NMTC",
+      "ratio": "1:6"
+    },
+    {
       "date_ex": "2026-04-21",
       "name": "Vanguard Growth ETF",
       "ticker": "VUG",
@@ -43,13 +49,25 @@
       "ratio": "1:10"
     },
     {
+      "date_ex": "2026-04-27",
+      "name": "Immunic",
+      "ticker": "IMUX",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-04-27",
+      "name": "Wheels Up Experience",
+      "ticker": "UP",
+      "ratio": "1:20"
+    },
+    {
       "date_ex": "2026-05-07",
       "name": "Carvana",
       "ticker": "CVNA",
       "ratio": "5:1"
     }
   ],
-  "today": "2026-04-14",
-  "updated_at": "2026-04-14 11:40 UTC",
-  "total": 8
+  "today": "2026-04-15",
+  "updated_at": "2026-04-15 12:20 UTC",
+  "total": 11
 }
