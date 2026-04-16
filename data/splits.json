@@ -1,12 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-04-15",
-      "name": "T-REX 2X Long EOSE Daily Target ETF",
-      "ticker": "EOSU",
-      "ratio": "1:25"
-    },
-    {
       "date_ex": "2026-04-16",
       "name": "NeuroOne Medical Tech",
       "ticker": "NMTC",
@@ -67,7 +61,7 @@
       "ratio": "5:1"
     }
   ],
-  "today": "2026-04-15",
-  "updated_at": "2026-04-15 12:20 UTC",
-  "total": 11
+  "today": "2026-04-16",
+  "updated_at": "2026-04-16 11:36 UTC",
+  "total": 10
 }
