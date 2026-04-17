@@ -1,12 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-04-16",
-      "name": "NeuroOne Medical Tech",
-      "ticker": "NMTC",
-      "ratio": "1:6"
-    },
-    {
       "date_ex": "2026-04-21",
       "name": "Vanguard Growth ETF",
       "ticker": "VUG",
@@ -61,7 +55,7 @@
       "ratio": "5:1"
     }
   ],
-  "today": "2026-04-16",
-  "updated_at": "2026-04-16 11:36 UTC",
-  "total": 10
+  "today": "2026-04-17",
+  "updated_at": "2026-04-17 11:46 UTC",
+  "total": 9
 }
