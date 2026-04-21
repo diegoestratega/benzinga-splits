@@ -49,13 +49,37 @@
       "ratio": "1:20"
     },
     {
+      "date_ex": "2026-04-28",
+      "name": "VolitionRX",
+      "ticker": "VNRX",
+      "ratio": "1:20"
+    },
+    {
+      "date_ex": "2026-04-29",
+      "name": "iShares Russell 1000 Growth Fund",
+      "ticker": "IWF",
+      "ratio": "4:1"
+    },
+    {
+      "date_ex": "2026-04-29",
+      "name": "iShares Core High Dividend ETF",
+      "ticker": "HDV",
+      "ratio": "5:1"
+    },
+    {
+      "date_ex": "2026-05-05",
+      "name": "iShares 25 Year Treasury STRIPS Bond ETF",
+      "ticker": "GOVZ",
+      "ratio": "1:4"
+    },
+    {
       "date_ex": "2026-05-07",
       "name": "Carvana",
       "ticker": "CVNA",
       "ratio": "5:1"
     }
   ],
-  "today": "2026-04-20",
-  "updated_at": "2026-04-20 11:46 UTC",
-  "total": 9
+  "today": "2026-04-21",
+  "updated_at": "2026-04-21 12:29 UTC",
+  "total": 13
 }
