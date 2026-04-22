@@ -1,36 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-04-21",
-      "name": "Vanguard Growth ETF",
-      "ticker": "VUG",
-      "ratio": "6:1"
-    },
-    {
-      "date_ex": "2026-04-21",
-      "name": "Vanguard Mid-Cap ETF",
-      "ticker": "VO",
-      "ratio": "4:1"
-    },
-    {
-      "date_ex": "2026-04-21",
-      "name": "Vanguard Information Tech ETF",
-      "ticker": "VGT",
-      "ratio": "8:1"
-    },
-    {
-      "date_ex": "2026-04-21",
-      "name": "Vanguard S&P 500 Growth ETF",
-      "ticker": "VOOG",
-      "ratio": "6:1"
-    },
-    {
-      "date_ex": "2026-04-21",
-      "name": "Vanguard Mega Cap Growth ETF",
-      "ticker": "MGK",
-      "ratio": "5:1"
-    },
-    {
       "date_ex": "2026-04-22",
       "name": "Tuniu",
       "ticker": "TOUR",
@@ -79,7 +49,7 @@
       "ratio": "5:1"
     }
   ],
-  "today": "2026-04-21",
-  "updated_at": "2026-04-21 12:29 UTC",
-  "total": 13
+  "today": "2026-04-22",
+  "updated_at": "2026-04-22 12:50 UTC",
+  "total": 8
 }
