@@ -1,24 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-04-24",
-      "name": "Leverage Shares 2X Long GEMI Daily ETF",
-      "ticker": "GEMG",
-      "ratio": "1:20"
-    },
-    {
-      "date_ex": "2026-04-24",
-      "name": "Leverage Shares 2X Long BULL Daily ETF",
-      "ticker": "BULG",
-      "ratio": "1:20"
-    },
-    {
-      "date_ex": "2026-04-24",
-      "name": "Cue Biopharma",
-      "ticker": "CUE",
-      "ratio": "1:30"
-    },
-    {
       "date_ex": "2026-04-27",
       "name": "Immunic",
       "ticker": "IMUX",
@@ -79,7 +61,7 @@
       "ratio": "10:1"
     }
   ],
-  "today": "2026-04-24",
-  "updated_at": "2026-04-24 12:33 UTC",
-  "total": 13
+  "today": "2026-04-27",
+  "updated_at": "2026-04-27 12:43 UTC",
+  "total": 10
 }
