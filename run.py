@@ -8,252 +8,208 @@ import time
 from datetime import date, datetime, timezone
 
 import yfinance as yf
-from playwright.sync_api import sync_playwright
+from curl_cffi import requests as curl_requests
 
 REPO_DIR  = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR  = os.path.join(REPO_DIR, "data")
 DATA_FILE = os.path.join(DATA_DIR, "splits.json")
-DEBUG_SS  = os.path.join(REPO_DIR, "debug_screenshot.png")
+DEBUG_DIR = os.path.join(REPO_DIR, "debug")
+BZ_URL    = "https://www.benzinga.com/calendars/stock-splits"
+
+HEADERS = {
+    "Accept":          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Upgrade-Insecure-Requests": "1",
+    "Sec-Fetch-Dest":  "document",
+    "Sec-Fetch-Mode":  "navigate",
+    "Sec-Fetch-Site":  "none",
+    "Sec-Fetch-User":  "?1",
+}
 
 
-# ── Scrape Benzinga ───────────────────────────────────────────────────────────
+# ── Fetch page ────────────────────────────────────────────────────────────────
 
-def scrape_benzinga():
-    captured_xhr = []
-
-    with sync_playwright() as p:
-        browser = p.chromium.launch(
-            headless=True,
-            args=[
-                "--no-sandbox",
-                "--disable-setuid-sandbox",
-                "--disable-blink-features=AutomationControlled",
-                "--disable-dev-shm-usage",
-            ],
+def fetch_page():
+    print(f"→ Fetching Benzinga splits page (curl_cffi Chrome124)...")
+    try:
+        r = curl_requests.get(
+            BZ_URL,
+            headers=HEADERS,
+            impersonate="chrome124",
+            timeout=25,
         )
+        print(f"  HTTP {r.status_code}  ({len(r.text):,} bytes)")
 
-        ctx = browser.new_context(
-            user_agent=(
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
-            ),
-            viewport={"width": 1280, "height": 900},
-            locale="en-US",
-            timezone_id="America/New_York",
-            extra_http_headers={
-                "Accept-Language":           "en-US,en;q=0.9",
-                "Sec-Fetch-Site":            "none",
-                "Sec-Fetch-Mode":            "navigate",
-                "Upgrade-Insecure-Requests": "1",
-            },
-        )
+        if r.status_code != 200:
+            print(f"  ✗ HTTP {r.status_code}")
+            save_debug("error_page.html", r.text)
+            return None
 
-        page = ctx.new_page()
+        if "Something went wrong" in r.text or "UH-OH" in r.text:
+            print("  ✗ Got error page content")
+            save_debug("error_200.html", r.text)
+            return None
 
-        page.add_init_script("""
-            Object.defineProperty(navigator, 'webdriver',  { get: () => undefined });
-            Object.defineProperty(navigator, 'plugins',    { get: () => [1, 2, 3] });
-            Object.defineProperty(navigator, 'languages',  { get: () => ['en-US', 'en'] });
-            window.chrome = { runtime: {} };
-        """)
+        print("  ✓ Page loaded successfully")
+        save_debug("last_page.html", r.text)
+        return r.text
 
-        def on_response(response):
-            ct = response.headers.get("content-type", "")
-            if "json" not in ct:
-                return
-            try:
-                body = response.json()
-
-                if isinstance(body, dict) and "splits" in body:
-                    items = body.get("splits") or []
-                    if len(items) > 0:
-                        print(f"  ✓ XHR [splits] {len(items)} rows — {response.url[:70]}")
-                        captured_xhr.extend(items)
-                        return
-
-                if isinstance(body, list) and len(body) > 2:
-                    first = body[0]
-                    if isinstance(first, dict):
-                        keys = set(k.lower() for k in first.keys())
-                        if keys & {"ticker", "symbol"} and keys & {"date", "date_ex", "ratio"}:
-                            print(f"  ✓ XHR [list] {len(body)} rows — {response.url[:70]}")
-                            captured_xhr.extend(body)
-                            return
-
-                if isinstance(body, dict):
-                    for nk in ("data", "results", "calendar", "events", "items"):
-                        sub = body.get(nk)
-                        if isinstance(sub, list) and len(sub) > 2:
-                            first = sub[0]
-                            if isinstance(first, dict):
-                                keys = set(k.lower() for k in first.keys())
-                                if (keys & {"ticker", "symbol"}
-                                        and keys & {"date", "date_ex", "ratio"}):
-                                    print(f"  ✓ XHR [{nk}] {len(sub)} rows — {response.url[:70]}")
-                                    captured_xhr.extend(sub)
-                                    return
-            except Exception:
-                pass
-
-        page.on("response", on_response)
-
-        page.route(
-            "**/*.{png,jpg,jpeg,gif,svg,ico,woff,woff2,ttf,mp4,webp,avif}",
-            lambda r: r.abort(),
-        )
-
-        print("→ Opening Benzinga splits calendar...")
-        try:
-            page.goto(
-                "https://www.benzinga.com/calendars/stock-splits",
-                wait_until="domcontentloaded",
-                timeout=45000,
-            )
-        except Exception as e:
-            print(f"  ⚠ Note: {e}")
-
-        print("  Waiting for network to settle...")
-        try:
-            page.wait_for_load_state("networkidle", timeout=20000)
-            print("  ✓ Network idle")
-        except Exception:
-            print("  ⚠ Network still active — waiting 5s more...")
-            page.wait_for_timeout(5000)
-
-        if captured_xhr:
-            browser.close()
-            seen   = set()
-            unique = []
-            for r in captured_xhr:
-                key = (str(r.get("ticker", ""))
-                       + str(r.get("date_ex", ""))
-                       + str(r.get("date", "")))
-                if key not in seen:
-                    seen.add(key)
-                    unique.append(r)
-            return unique, "xhr"
-
-        print("  XHR not captured — DOM extraction with incremental scroll...")
-
-        ROW_SEL = "[role='row']"
-
-        try:
-            page.wait_for_selector(ROW_SEL, timeout=15000)
-        except Exception:
-            print("  ✗ No rows found — saving debug screenshot")
-            page.screenshot(path=DEBUG_SS, full_page=True)
-            browser.close()
-            return [], "none"
-
-        def extract_visible_rows():
-            return page.evaluate(
-                """(sel) => {
-                    const DATE_RE = /^\\d{1,2}\\/\\d{1,2}\\/\\d{4}$/;
-                    const TICK_RE = /^[A-Z]{1,6}$/;
-                    const allRows = Array.from(document.querySelectorAll(sel));
-                    const results = [];
-                    for (const row of allRows) {
-                        const cells = Array.from(
-                            row.querySelectorAll('[role="gridcell"], [role="cell"], td')
-                        ).map(c => c.innerText.trim());
-                        if (cells.length < 3) continue;
-                        if (!DATE_RE.test(cells[0])) continue;
-                        if (!TICK_RE.test(cells[2])) continue;
-                        results.push({
-                            date_ex : cells[0] || '',
-                            name    : cells[1] || '',
-                            ticker  : cells[2] || '',
-                            ratio   : cells[4] || '',
-                        });
-                    }
-                    return results;
-                }""",
-                ROW_SEL,
-            )
-
-        accumulated = {}
-
-        def collect():
-            rows = extract_visible_rows()
-            new  = 0
-            for r in rows:
-                key = r["ticker"] + r["date_ex"]
-                if key and key not in accumulated:
-                    accumulated[key] = r
-                    new += 1
-            return new
-
-        collect()
-        print(f"  Initial collection: {len(accumulated)} rows")
-
-        try:
-            first_box = page.locator(ROW_SEL).first.bounding_box()
-            if first_box:
-                page.mouse.move(
-                    first_box["x"] + first_box["width"]  / 2,
-                    first_box["y"] + first_box["height"] / 2,
-                )
-        except Exception:
-            pass
-
-        prev_total   = 0
-        stable_iters = 0
-
-        print("  Scrolling and collecting rows...")
-        for attempt in range(80):
-            page.evaluate("""() => {
-                const tagged = document.querySelector('[data-scroll-target="true"]');
-                if (tagged) { tagged.scrollTop += 500; return; }
-                const rows = document.querySelectorAll("[role='row']");
-                if (!rows.length) return;
-                let el = rows[rows.length - 1].parentElement;
-                for (let d = 0; d < 12 && el && el !== document.body; d++) {
-                    const oy = window.getComputedStyle(el).overflowY;
-                    if ((oy === 'scroll' || oy === 'auto')
-                            && el.scrollHeight > el.clientHeight) {
-                        el.scrollTop += 500;
-                        return;
-                    }
-                    el = el.parentElement;
-                }
-                rows[rows.length - 1].scrollIntoView(
-                    { behavior: 'instant', block: 'end' }
-                );
-            }""")
-
-            page.mouse.wheel(0, 500)
-            page.wait_for_timeout(500)
-
-            new_found = collect()
-            total     = len(accumulated)
-            print(f"    Scroll {attempt+1:>2}: +{new_found:>2} new  |  total: {total}")
-
-            if total == prev_total:
-                stable_iters += 1
-                if stable_iters >= 4:
-                    print("  ✓ No new rows for 4 iterations — scroll complete")
-                    break
-            else:
-                stable_iters = 0
-            prev_total = total
-
-        rows_final = list(accumulated.values())
-        print(f"  ✓ Total unique rows collected: {len(rows_final)}")
-        browser.close()
-        return rows_final, "dom"
+    except Exception as e:
+        print(f"  ✗ Request failed: {e}")
+        return None
 
 
-# ── Date normalizer → YYYY-MM-DD ──────────────────────────────────────────────
+# ── Parse __NEXT_DATA__ (Next.js embedded JSON) ───────────────────────────────
+
+def parse_next_data(html):
+    print("  Trying __NEXT_DATA__ JSON extraction...")
+    m = re.search(
+        r'<script[^>]+id=["\']__NEXT_DATA__["\'][^>]*>(.*?)</script>',
+        html, re.DOTALL
+    )
+    if not m:
+        print("  ✗ __NEXT_DATA__ not found")
+        return None
+
+    try:
+        data = json.loads(m.group(1))
+    except Exception as e:
+        print(f"  ✗ JSON parse error: {e}")
+        return None
+
+    def find_splits(obj, depth=0):
+        if depth > 15:
+            return None
+        if isinstance(obj, list) and len(obj) > 0:
+            first = obj[0]
+            if isinstance(first, dict):
+                keys = set(k.lower() for k in first.keys())
+                if keys & {"ticker", "symbol"} and keys & {"date_ex", "date", "ratio"}:
+                    return obj
+        if isinstance(obj, dict):
+            for v in obj.values():
+                result = find_splits(v, depth + 1)
+                if result is not None:
+                    return result
+        return None
+
+    splits = find_splits(data)
+    if splits:
+        print(f"  ✓ Found {len(splits)} splits in __NEXT_DATA__")
+        return splits
+
+    print("  ✗ No splits array in __NEXT_DATA__ — saving JSON for inspection")
+    save_debug("next_data.json", json.dumps(data, indent=2))
+    print(f"  Saved → {DEBUG_DIR}/next_data.json")
+    return None
+
+
+# ── Parse HTML table (fallback) ───────────────────────────────────────────────
+
+def parse_html_table(html):
+    print("  Trying HTML table extraction...")
+
+    DATE_RE = re.compile(r"\d{2}/\d{2}/\d{4}")
+    TICK_RE = re.compile(r"^[A-Z]{1,6}$")
+
+    tables = re.findall(r"<table[\s\S]*?</table>", html, re.IGNORECASE)
+    print(f"  Found {len(tables)} <table> elements")
+
+    for t_html in tables:
+        rows_raw = re.findall(r"<tr[\s\S]*?</tr>", t_html, re.IGNORECASE)
+        rows = []
+        for row in rows_raw:
+            cells = re.findall(r"<t[dh][^>]*>([\s\S]*?)</t[dh]>",
+                               row, re.IGNORECASE)
+            cells = [re.sub(r"<[^>]+>", "", c).strip() for c in cells]
+            cells = [c for c in cells if c]
+            if cells:
+                rows.append(cells)
+
+        if len(rows) < 3:
+            continue
+
+        header  = rows[0]
+        h_lower = [h.lower() for h in header]
+
+        def col(keywords):
+            for i, h in enumerate(h_lower):
+                if any(k in h for k in keywords):
+                    return i
+            return -1
+
+        i_date  = col(["ex-date", "ex date", "exdate"])
+        i_sym   = col(["ticker", "symbol"])
+        i_name  = col(["company", "name"])
+        i_ratio = col(["ratio", "split"])
+        i_opt   = col(["option"])
+
+        if i_date == -1 or i_sym == -1:
+            continue
+
+        print(f"  ✓ Valid table found — headers: {header}")
+        parsed = []
+        for cells in rows[1:]:
+            if len(cells) <= max(i_date, i_sym):
+                continue
+            d = cells[i_date]
+            s = cells[i_sym].upper()
+            if not DATE_RE.match(d) or not TICK_RE.match(s):
+                continue
+            parsed.append({
+                "date_ex":    d,
+                "ticker":     s,
+                "name":       cells[i_name]  if 0 <= i_name  < len(cells) else "",
+                "ratio":      cells[i_ratio] if 0 <= i_ratio < len(cells) else "",
+                "optionable": cells[i_opt]   if 0 <= i_opt   < len(cells) else None,
+            })
+
+        if parsed:
+            print(f"  ✓ {len(parsed)} rows extracted from HTML table")
+            return parsed
+
+    print("  ✗ No usable table found")
+    return None
+
+
+# ── Master scrape ─────────────────────────────────────────────────────────────
+
+def scrape():
+    html = fetch_page()
+    if html is None:
+        return [], "none"
+
+    rows = parse_next_data(html)
+    if rows is not None:
+        return rows, "next_data"
+
+    rows = parse_html_table(html)
+    if rows is not None:
+        return rows, "html_table"
+
+    print(f"\n  ✗ Could not extract data — inspect {DEBUG_DIR}/last_page.html")
+    return [], "none"
+
+
+# ── Helpers ───────────────────────────────────────────────────────────────────
+
+def save_debug(filename, content):
+    try:
+        os.makedirs(DEBUG_DIR, exist_ok=True)
+        with open(os.path.join(DEBUG_DIR, filename), "w",
+                  encoding="utf-8", errors="replace") as f:
+            f.write(content)
+    except Exception:
+        pass
+
 
 def normalize_date(raw):
     if not raw:
         return ""
     raw = str(raw).strip()
-    for fmt in (
-        "%Y-%m-%d", "%m/%d/%Y", "%m/%d/%y",
-        "%b %d, %Y", "%B %d, %Y", "%b. %d, %Y",
-        "%m-%d-%Y", "%Y/%m/%d",
-    ):
+    for fmt in ("%Y-%m-%d", "%m/%d/%Y", "%m/%d/%y",
+                "%b %d, %Y", "%B %d, %Y", "%m-%d-%Y", "%Y/%m/%d"):
         try:
             return datetime.strptime(raw, fmt).date().isoformat()
         except ValueError:
@@ -261,74 +217,45 @@ def normalize_date(raw):
     return ""
 
 
-# ── Row normalizer ────────────────────────────────────────────────────────────
-
-def normalize_row(row, source):
+def normalize_row(row):
     raw_opt = row.get("optionable")
     if isinstance(raw_opt, bool):
         opt = raw_opt
     elif isinstance(raw_opt, str):
-        opt = raw_opt.strip().lower() in ("true", "yes", "1", "y", "✓")
+        opt = raw_opt.strip().lower() in ("true", "yes", "1", "y")
     else:
         opt = None
 
-    if source == "xhr":
-        date_raw = (
-            row.get("date_ex")
-            or row.get("date")
-            or row.get("date_distribution")
-            or ""
-        )
-        ticker = str(row.get("ticker") or row.get("symbol") or "").strip().upper()
-        name   = str(row.get("name",  "")).strip()
-        ratio  = str(row.get("ratio", "")).strip()
-    else:
-        date_raw = str(row.get("date_ex") or "").strip()
-        ticker   = str(row.get("ticker")  or "").strip().upper()
-        name     = str(row.get("name",    "")).strip()
-        ratio    = str(row.get("ratio",   "")).strip()
-
     return {
-        "date_ex":    normalize_date(date_raw),
-        "name":       name,
-        "ticker":     ticker,
-        "ratio":      ratio,
+        "date_ex":    normalize_date(str(row.get("date_ex") or row.get("date") or "")),
+        "name":       str(row.get("name",   "") or "").strip(),
+        "ticker":     re.sub(r"[^A-Z]", "", str(row.get("ticker", "") or "").upper()),
+        "ratio":      str(row.get("ratio",  "") or "").strip(),
         "optionable": opt,
     }
 
 
-# ── yfinance optionable check ─────────────────────────────────────────────────
-
 def is_optionable(ticker):
     try:
-        t           = yf.Ticker(ticker)
-        expirations = t.options
-        return len(expirations) > 0
+        return len(yf.Ticker(ticker).options) > 0
     except Exception:
         return False
 
 
-# ── Git commit + push ─────────────────────────────────────────────────────────
-
 def git_push():
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-
-    subprocess.run(
-        ["git", "branch", "-M", "main"],
-        cwd=REPO_DIR, capture_output=True, text=True
-    )
-
-    cmds = [
+    subprocess.run(["git", "branch", "-M", "main"],
+                   cwd=REPO_DIR, capture_output=True, text=True)
+    for cmd in [
         ["git", "add",    "."],
         ["git", "commit", "-m", f"update: splits [{ts}]"],
         ["git", "push",   "-u", "origin", "HEAD:main"],
-    ]
-    for cmd in cmds:
+    ]:
         out      = subprocess.run(cmd, cwd=REPO_DIR, capture_output=True, text=True)
         combined = (out.stdout + out.stderr).strip()
         if out.returncode != 0:
             if "nothing to commit" in combined or "nothing added" in combined:
-                print("  ℹ No changes — data unchanged since last run")
+                print("  ℹ No changes — data unchanged")
                 return True
             print(f"  ✗ git error: {combined}")
             return False
@@ -347,29 +274,24 @@ def main():
     print(f"  Filtering from: {today} forward")
     print(f"{'═' * 56}\n")
 
-    # 1 — Scrape
-    raw, source = scrape_benzinga()
+    raw, source = scrape()
     print(f"\n  Source: [{source}]  Raw rows: {len(raw)}\n")
 
     if source == "none":
         print("✗ All extraction methods failed.")
-        print("  Check debug_screenshot.png to see page state.")
+        print(f"  Check {DEBUG_DIR}/ for debug files.")
         sys.exit(1)
 
-    # 2 — Normalize + filter to today and forward
-    seen   = set()
-    future = []
+    seen, future = set(), []
     for row in raw:
-        n      = normalize_row(row, source)
-        ticker = re.sub(r"[^A-Z]", "", n["ticker"])
-        if not ticker or len(ticker) > 6:
+        n = normalize_row(row)
+        if not n["ticker"] or len(n["ticker"]) > 6:
             continue
         if not n["date_ex"] or n["date_ex"] < today:
             continue
-        if ticker in seen:
+        if n["ticker"] in seen:
             continue
-        seen.add(ticker)
-        n["ticker"] = ticker
+        seen.add(n["ticker"])
         future.append(n)
 
     future.sort(key=lambda x: x["date_ex"])
@@ -384,7 +306,6 @@ def main():
         git_push()
         return
 
-    # 3 — Optionable filter via yfinance
     known_yes = [s for s in future if s["optionable"] is True]
     known_no  = [s for s in future if s["optionable"] is False]
     unknown   = [s for s in future if s["optionable"] is None]
@@ -406,25 +327,17 @@ def main():
                 optionable.append(s)
             time.sleep(0.25)
 
-    # 4 — Sort + strip internal flag before saving
     final = sorted(optionable, key=lambda x: x["date_ex"])
     final = [{k: v for k, v in s.items() if k != "optionable"} for s in final]
 
     print(f"\n✓ {len(final)} optionable splits found")
 
-    # 5 — Save JSON
     os.makedirs(DATA_DIR, exist_ok=True)
-    payload = {
-        "splits":     final,
-        "today":      today,
-        "updated_at": now_utc,
-        "total":      len(final),
-    }
     with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(payload, f, indent=2)
+        json.dump({"splits": final, "today": today,
+                   "updated_at": now_utc, "total": len(final)}, f, indent=2)
     print(f"✓ Saved → {DATA_FILE}\n")
 
-    # 6 — Git push
     print("→ Pushing to GitHub...\n")
     ok = git_push()
     if ok:
