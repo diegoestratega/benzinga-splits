@@ -1,18 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-04-28",
-      "name": "Diginex",
-      "ticker": "DGNX",
-      "ratio": "1:8"
-    },
-    {
-      "date_ex": "2026-04-28",
-      "name": "VolitionRX",
-      "ticker": "VNRX",
-      "ratio": "1:20"
-    },
-    {
       "date_ex": "2026-04-29",
       "name": "iShares Russell 1000 Growth Fund",
       "ticker": "IWF",
@@ -29,6 +17,12 @@
       "name": "iShares 25 Year Treasury STRIPS Bond ETF",
       "ticker": "GOVZ",
       "ratio": "1:4"
+    },
+    {
+      "date_ex": "2026-05-07",
+      "name": "Companhia De Saneamento",
+      "ticker": "SBS",
+      "ratio": "5:1"
     },
     {
       "date_ex": "2026-05-07",
@@ -49,7 +43,7 @@
       "ratio": "10:1"
     }
   ],
-  "today": "2026-04-28",
-  "updated_at": "2026-04-28 22:41 UTC",
-  "total": 8
+  "today": "2026-04-29",
+  "updated_at": "2026-04-29 12:48 UTC",
+  "total": 7
 }
