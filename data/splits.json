@@ -1,16 +1,16 @@
 {
   "splits": [
     {
-      "date_ex": "2026-04-29",
-      "name": "iShares Russell 1000 Growth Fund",
-      "ticker": "IWF",
-      "ratio": "4:1"
+      "date_ex": "2026-05-01",
+      "name": "GraniteShares 2x Long SMCI Daily ETF",
+      "ticker": "SMCL",
+      "ratio": "1:20"
     },
     {
-      "date_ex": "2026-04-29",
-      "name": "iShares Core High Dividend ETF",
-      "ticker": "HDV",
-      "ratio": "5:1"
+      "date_ex": "2026-05-01",
+      "name": "GraniteShares 2x Long MARA Daily ETF",
+      "ticker": "MRAL",
+      "ratio": "1:10"
     },
     {
       "date_ex": "2026-05-05",
@@ -43,7 +43,7 @@
       "ratio": "10:1"
     }
   ],
-  "today": "2026-04-29",
-  "updated_at": "2026-04-29 12:48 UTC",
+  "today": "2026-04-30",
+  "updated_at": "2026-04-30 13:49 UTC",
   "total": 7
 }
