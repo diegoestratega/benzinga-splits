@@ -1,15 +1,45 @@
 {
   "splits": [
     {
-      "date_ex": "2026-05-01",
-      "name": "GraniteShares 2x Long SMCI Daily ETF",
-      "ticker": "SMCL",
+      "date_ex": "2026-05-04",
+      "name": "Thomson Reuters",
+      "ticker": "TRI",
+      "ratio": "0.98456:1"
+    },
+    {
+      "date_ex": "2026-05-05",
+      "name": "Leverage Shares 2x Long FIG Daily ETF",
+      "ticker": "FIGG",
       "ratio": "1:20"
     },
     {
-      "date_ex": "2026-05-01",
-      "name": "GraniteShares 2x Long MARA Daily ETF",
-      "ticker": "MRAL",
+      "date_ex": "2026-05-05",
+      "name": "Leverage Shares 2X Long DUOL Daily ETF",
+      "ticker": "DUOG",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-05-05",
+      "name": "Leverage Shares 2X Long CRWV Daily ETF",
+      "ticker": "CRWG",
+      "ratio": "1:100"
+    },
+    {
+      "date_ex": "2026-05-05",
+      "name": "Leverage Shares 2X Long CRCL Daily ETF",
+      "ticker": "CRCG",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-05-05",
+      "name": "Leverage Shares 2X Long BMNR Daily ETF",
+      "ticker": "BMNG",
+      "ratio": "1:20"
+    },
+    {
+      "date_ex": "2026-05-05",
+      "name": "Leverage Shares 2X Long BBAI Daily ETF",
+      "ticker": "BAIG",
       "ratio": "1:10"
     },
     {
@@ -43,7 +73,7 @@
       "ratio": "10:1"
     }
   ],
-  "today": "2026-05-01",
-  "updated_at": "2026-05-01 19:25 UTC",
-  "total": 7
+  "today": "2026-05-04",
+  "updated_at": "2026-05-04 12:12 UTC",
+  "total": 12
 }
