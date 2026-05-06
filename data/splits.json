@@ -1,48 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-05-05",
-      "name": "Leverage Shares 2x Long FIG Daily ETF",
-      "ticker": "FIGG",
-      "ratio": "1:20"
-    },
-    {
-      "date_ex": "2026-05-05",
-      "name": "Leverage Shares 2X Long DUOL Daily ETF",
-      "ticker": "DUOG",
-      "ratio": "1:10"
-    },
-    {
-      "date_ex": "2026-05-05",
-      "name": "Leverage Shares 2X Long CRWV Daily ETF",
-      "ticker": "CRWG",
-      "ratio": "1:100"
-    },
-    {
-      "date_ex": "2026-05-05",
-      "name": "Leverage Shares 2X Long CRCL Daily ETF",
-      "ticker": "CRCG",
-      "ratio": "1:10"
-    },
-    {
-      "date_ex": "2026-05-05",
-      "name": "Leverage Shares 2X Long BMNR Daily ETF",
-      "ticker": "BMNG",
-      "ratio": "1:20"
-    },
-    {
-      "date_ex": "2026-05-05",
-      "name": "Leverage Shares 2X Long BBAI Daily ETF",
-      "ticker": "BAIG",
-      "ratio": "1:10"
-    },
-    {
-      "date_ex": "2026-05-05",
-      "name": "iShares 25 Year Treasury STRIPS Bond ETF",
-      "ticker": "GOVZ",
-      "ratio": "1:4"
-    },
-    {
       "date_ex": "2026-05-07",
       "name": "Companhia De Saneamento",
       "ticker": "SBS",
@@ -67,7 +25,7 @@
       "ratio": "10:1"
     }
   ],
-  "today": "2026-05-05",
-  "updated_at": "2026-05-05 11:56 UTC",
-  "total": 11
+  "today": "2026-05-06",
+  "updated_at": "2026-05-06 12:28 UTC",
+  "total": 4
 }
