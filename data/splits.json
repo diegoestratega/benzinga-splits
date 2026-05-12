@@ -1,12 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-05-11",
-      "name": "SMX (Security Matters)",
-      "ticker": "SMX",
-      "ratio": "1:20"
-    },
-    {
       "date_ex": "2026-05-18",
       "name": "abrdn Physical Palladium Shares ETF",
       "ticker": "PALL",
@@ -19,13 +13,19 @@
       "ratio": "10:1"
     },
     {
+      "date_ex": "2026-05-28",
+      "name": "ProShares S&amp;P 500 Dividend Aristocrats ETF",
+      "ticker": "NOBL",
+      "ratio": "2:1"
+    },
+    {
       "date_ex": "2026-06-12",
       "name": "KLA",
       "ticker": "KLAC",
       "ratio": "10:1"
     }
   ],
-  "today": "2026-05-11",
-  "updated_at": "2026-05-11 11:38 UTC",
+  "today": "2026-05-12",
+  "updated_at": "2026-05-12 11:58 UTC",
   "total": 4
 }
