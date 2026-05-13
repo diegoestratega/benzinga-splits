@@ -1,6 +1,12 @@
 {
   "splits": [
     {
+      "date_ex": "2026-05-13",
+      "name": "Southern Copper",
+      "ticker": "SCCO",
+      "ratio": "1.01:1"
+    },
+    {
       "date_ex": "2026-05-18",
       "name": "abrdn Physical Palladium Shares ETF",
       "ticker": "PALL",
@@ -11,6 +17,96 @@
       "name": "abrdn Physical Platinum Shares ETF",
       "ticker": "PPLT",
       "ratio": "10:1"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares UltraShort Consumer Staples",
+      "ticker": "SZK",
+      "ratio": "1:2"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares UltraShort Materials",
+      "ticker": "SMN",
+      "ratio": "1:2"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares UltraShort Industrials",
+      "ticker": "SIJ",
+      "ratio": "1:2"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares UltraShort Utilities",
+      "ticker": "SDP",
+      "ratio": "1:2"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares Short SmallCap600",
+      "ticker": "SBB",
+      "ratio": "1:2"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares UltraShort Health Care",
+      "ticker": "RXD",
+      "ratio": "1:2"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares UltraShort Technology",
+      "ticker": "REW",
+      "ratio": "1:2"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares Decline of the Retail Store ETF",
+      "ticker": "EMTY",
+      "ratio": "1:2"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares Short MSCI EAFE",
+      "ticker": "EFZ",
+      "ratio": "1:2"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares UltraShort MSCI Brazil Capped",
+      "ticker": "BZQ",
+      "ratio": "1:2"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares Ultra Bloomberg Natural Gas",
+      "ticker": "BOIL",
+      "ratio": "1:2"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares UltraShort Nasdaq Biotechnology",
+      "ticker": "BIS",
+      "ratio": "1:2"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares UltraShort Bloomberg Crude Oil",
+      "ticker": "SCO",
+      "ratio": "1:4"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares Ultra XRP ETF",
+      "ticker": "UXRP",
+      "ratio": "1:5"
+    },
+    {
+      "date_ex": "2026-05-28",
+      "name": "ProShares Ultra Solana ETF",
+      "ticker": "SLON",
+      "ratio": "1:5"
     },
     {
       "date_ex": "2026-05-28",
@@ -25,7 +121,7 @@
       "ratio": "10:1"
     }
   ],
-  "today": "2026-05-12",
-  "updated_at": "2026-05-12 11:58 UTC",
-  "total": 4
+  "today": "2026-05-13",
+  "updated_at": "2026-05-13 12:48 UTC",
+  "total": 20
 }
