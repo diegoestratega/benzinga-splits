@@ -1,12 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-05-13",
-      "name": "Southern Copper",
-      "ticker": "SCCO",
-      "ratio": "1.01:1"
-    },
-    {
       "date_ex": "2026-05-18",
       "name": "abrdn Physical Palladium Shares ETF",
       "ticker": "PALL",
@@ -121,7 +115,7 @@
       "ratio": "10:1"
     }
   ],
-  "today": "2026-05-13",
-  "updated_at": "2026-05-13 12:48 UTC",
-  "total": 20
+  "today": "2026-05-14",
+  "updated_at": "2026-05-14 12:32 UTC",
+  "total": 19
 }
