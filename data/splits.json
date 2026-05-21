@@ -1,6 +1,18 @@
 {
   "splits": [
     {
+      "date_ex": "2026-05-22",
+      "name": "Lunai Bioworks",
+      "ticker": "LNAI",
+      "ratio": "1:8"
+    },
+    {
+      "date_ex": "2026-05-22",
+      "name": "Nakamoto",
+      "ticker": "NAKA",
+      "ratio": "1:40"
+    },
+    {
       "date_ex": "2026-05-28",
       "name": "ProShares UltraShort Consumer Staples",
       "ticker": "SZK",
@@ -101,9 +113,15 @@
       "name": "KLA",
       "ticker": "KLAC",
       "ratio": "10:1"
+    },
+    {
+      "date_ex": "2026-07-20",
+      "name": "BNY Mellon US Large Cap Core Equity ETF",
+      "ticker": "BKLC",
+      "ratio": "3:1"
     }
   ],
-  "today": "2026-05-20",
-  "updated_at": "2026-05-20 12:36 UTC",
-  "total": 17
+  "today": "2026-05-21",
+  "updated_at": "2026-05-21 12:28 UTC",
+  "total": 20
 }
