@@ -13,6 +13,12 @@
       "ratio": "1:40"
     },
     {
+      "date_ex": "2026-05-25",
+      "name": "CarParts.com",
+      "ticker": "PRTS",
+      "ratio": "1:10"
+    },
+    {
       "date_ex": "2026-05-28",
       "name": "ProShares UltraShort Consumer Staples",
       "ticker": "SZK",
@@ -121,7 +127,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-05-21",
-  "updated_at": "2026-05-21 12:28 UTC",
-  "total": 20
+  "today": "2026-05-22",
+  "updated_at": "2026-05-22 12:46 UTC",
+  "total": 21
 }
