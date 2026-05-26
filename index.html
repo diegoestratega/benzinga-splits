@@ -285,7 +285,7 @@
     document.getElementById('err').style.display     = 'none';
 
     try {
-      const r    = await fetch(DATA_URL + '?t=' + Date.now());
+      const r    = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
       if (!r.ok) throw new Error(
         `HTTP ${r.status} — click ⚡ Run Scraper first to generate data`
       );
