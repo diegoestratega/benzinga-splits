@@ -1,6 +1,12 @@
 {
   "splits": [
     {
+      "date_ex": "2026-05-26",
+      "name": "CarParts.com",
+      "ticker": "PRTS",
+      "ratio": "1:10"
+    },
+    {
       "date_ex": "2026-05-28",
       "name": "ProShares UltraShort Consumer Staples",
       "ticker": "SZK",
@@ -116,6 +122,6 @@
     }
   ],
   "today": "2026-05-26",
-  "updated_at": "2026-05-26 12:10 UTC",
-  "total": 19
+  "updated_at": "2026-05-26 12:22 UTC",
+  "total": 20
 }
