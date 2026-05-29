@@ -1,106 +1,64 @@
 {
   "splits": [
     {
-      "date_ex": "2026-05-28",
-      "name": "ProShares UltraShort Consumer Staples",
-      "ticker": "SZK",
-      "ratio": "1:2"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares UltraShort Materials",
-      "ticker": "SMN",
-      "ratio": "1:2"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares UltraShort Industrials",
-      "ticker": "SIJ",
-      "ratio": "1:2"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares UltraShort Utilities",
-      "ticker": "SDP",
-      "ratio": "1:2"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares Short SmallCap600",
-      "ticker": "SBB",
-      "ratio": "1:2"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares UltraShort Health Care",
-      "ticker": "RXD",
-      "ratio": "1:2"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares UltraShort Technology",
-      "ticker": "REW",
-      "ratio": "1:2"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares Decline of the Retail Store ETF",
-      "ticker": "EMTY",
-      "ratio": "1:2"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares Short MSCI EAFE",
-      "ticker": "EFZ",
-      "ratio": "1:2"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares UltraShort MSCI Brazil Capped",
-      "ticker": "BZQ",
-      "ratio": "1:2"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares Ultra Bloomberg Natural Gas",
-      "ticker": "BOIL",
-      "ratio": "1:2"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares UltraShort Nasdaq Biotechnology",
-      "ticker": "BIS",
-      "ratio": "1:2"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares UltraShort Bloomberg Crude Oil",
-      "ticker": "SCO",
-      "ratio": "1:4"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares Ultra XRP ETF",
-      "ticker": "UXRP",
-      "ratio": "1:5"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares Ultra Solana ETF",
-      "ticker": "SLON",
-      "ratio": "1:5"
-    },
-    {
-      "date_ex": "2026-05-28",
-      "name": "ProShares S&amp;P 500 Dividend Aristocrats ETF",
-      "ticker": "NOBL",
-      "ratio": "2:1"
+      "date_ex": "2026-06-01",
+      "name": "SMX (Security Matters)",
+      "ticker": "SMX",
+      "ratio": "1:2.285"
     },
     {
       "date_ex": "2026-06-01",
       "name": "SCYNEXIS",
       "ticker": "SCYX",
       "ratio": "1:8"
+    },
+    {
+      "date_ex": "2026-06-03",
+      "name": "Tradr 2X Long NBIS Daily ETF",
+      "ticker": "NEBX",
+      "ratio": "3:1"
+    },
+    {
+      "date_ex": "2026-06-03",
+      "name": "Tradr 2X Long GEV Daily ETF",
+      "ticker": "GEVX",
+      "ratio": "3:1"
+    },
+    {
+      "date_ex": "2026-06-03",
+      "name": "Tradr 2X Short NBIS Daily ETF",
+      "ticker": "NBIZ",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-06-03",
+      "name": "Tradr 2X Short BE Daily ETF",
+      "ticker": "BEZ",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-06-03",
+      "name": "Tradr 2X Short APLD Daily ETF",
+      "ticker": "APLZ",
+      "ratio": "1:5"
+    },
+    {
+      "date_ex": "2026-06-03",
+      "name": "Tradr 2X Long WDC Daily ETF",
+      "ticker": "WDCX",
+      "ratio": "3:1"
+    },
+    {
+      "date_ex": "2026-06-03",
+      "name": "Tradr 2X Long SNDK Daily ETF",
+      "ticker": "SNXX",
+      "ratio": "8:1"
+    },
+    {
+      "date_ex": "2026-06-08",
+      "name": "T-REX 2X Long SNDK Daily Target ETF",
+      "ticker": "SNDU",
+      "ratio": "3:1"
     },
     {
       "date_ex": "2026-06-12",
@@ -127,7 +85,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-05-28",
-  "updated_at": "2026-05-28 11:33 UTC",
-  "total": 21
+  "today": "2026-05-29",
+  "updated_at": "2026-05-29 11:46 UTC",
+  "total": 14
 }
