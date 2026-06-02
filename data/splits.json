@@ -1,18 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-06-01",
-      "name": "SMX (Security Matters)",
-      "ticker": "SMX",
-      "ratio": "1:2.285"
-    },
-    {
-      "date_ex": "2026-06-01",
-      "name": "SCYNEXIS",
-      "ticker": "SCYX",
-      "ratio": "1:8"
-    },
-    {
       "date_ex": "2026-06-03",
       "name": "Tradr 2X Long NBIS Daily ETF",
       "ticker": "NEBX",
@@ -85,7 +73,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-06-01",
-  "updated_at": "2026-06-01 11:36 UTC",
-  "total": 14
+  "today": "2026-06-02",
+  "updated_at": "2026-06-02 12:14 UTC",
+  "total": 12
 }
