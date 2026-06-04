@@ -1,46 +1,16 @@
 {
   "splits": [
     {
-      "date_ex": "2026-06-03",
-      "name": "Tradr 2X Long NBIS Daily ETF",
-      "ticker": "NEBX",
-      "ratio": "3:1"
-    },
-    {
-      "date_ex": "2026-06-03",
-      "name": "Tradr 2X Long GEV Daily ETF",
-      "ticker": "GEVX",
-      "ratio": "3:1"
-    },
-    {
-      "date_ex": "2026-06-03",
-      "name": "Tradr 2X Short NBIS Daily ETF",
-      "ticker": "NBIZ",
-      "ratio": "1:10"
-    },
-    {
-      "date_ex": "2026-06-03",
-      "name": "Tradr 2X Short BE Daily ETF",
-      "ticker": "BEZ",
-      "ratio": "1:10"
-    },
-    {
-      "date_ex": "2026-06-03",
-      "name": "Tradr 2X Short APLD Daily ETF",
-      "ticker": "APLZ",
+      "date_ex": "2026-06-05",
+      "name": "Smith Micro Software",
+      "ticker": "SMSI",
       "ratio": "1:5"
     },
     {
-      "date_ex": "2026-06-03",
-      "name": "Tradr 2X Long WDC Daily ETF",
-      "ticker": "WDCX",
-      "ratio": "3:1"
-    },
-    {
-      "date_ex": "2026-06-03",
-      "name": "Tradr 2X Long SNDK Daily ETF",
-      "ticker": "SNXX",
-      "ratio": "8:1"
+      "date_ex": "2026-06-08",
+      "name": "Classover Holdings",
+      "ticker": "KIDZ",
+      "ratio": "1:10"
     },
     {
       "date_ex": "2026-06-08",
@@ -61,6 +31,12 @@
       "ratio": "1:3"
     },
     {
+      "date_ex": "2026-07-02",
+      "name": "CrowdStrike Holdings",
+      "ticker": "CRWD",
+      "ratio": "4:1"
+    },
+    {
       "date_ex": "2026-07-20",
       "name": "StoneX Group",
       "ticker": "SNEX",
@@ -73,7 +49,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-06-03",
-  "updated_at": "2026-06-03 13:00 UTC",
-  "total": 12
+  "today": "2026-06-04",
+  "updated_at": "2026-06-04 12:35 UTC",
+  "total": 8
 }
