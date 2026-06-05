@@ -8,6 +8,12 @@
     },
     {
       "date_ex": "2026-06-08",
+      "name": "Cardlytics",
+      "ticker": "CDLX",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-06-08",
       "name": "Classover Holdings",
       "ticker": "KIDZ",
       "ratio": "1:10"
@@ -19,10 +25,22 @@
       "ratio": "3:1"
     },
     {
+      "date_ex": "2026-06-09",
+      "name": "Offerpad Solutions",
+      "ticker": "OPAD",
+      "ratio": "1:10"
+    },
+    {
       "date_ex": "2026-06-12",
       "name": "KLA",
       "ticker": "KLAC",
       "ratio": "10:1"
+    },
+    {
+      "date_ex": "2026-06-17",
+      "name": "Upland Software",
+      "ticker": "UPLD",
+      "ratio": "1:10"
     },
     {
       "date_ex": "2026-06-24",
@@ -49,7 +67,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-06-04",
-  "updated_at": "2026-06-04 12:35 UTC",
-  "total": 8
+  "today": "2026-06-05",
+  "updated_at": "2026-06-05 12:57 UTC",
+  "total": 11
 }
