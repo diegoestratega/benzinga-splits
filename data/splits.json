@@ -1,12 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-06-05",
-      "name": "Smith Micro Software",
-      "ticker": "SMSI",
-      "ratio": "1:5"
-    },
-    {
       "date_ex": "2026-06-08",
       "name": "Cardlytics",
       "ticker": "CDLX",
@@ -67,7 +61,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-06-05",
-  "updated_at": "2026-06-05 12:57 UTC",
-  "total": 11
+  "today": "2026-06-08",
+  "updated_at": "2026-06-08 12:43 UTC",
+  "total": 10
 }
