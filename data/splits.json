@@ -1,24 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-06-08",
-      "name": "Cardlytics",
-      "ticker": "CDLX",
-      "ratio": "1:10"
-    },
-    {
-      "date_ex": "2026-06-08",
-      "name": "Classover Holdings",
-      "ticker": "KIDZ",
-      "ratio": "1:10"
-    },
-    {
-      "date_ex": "2026-06-08",
-      "name": "T-REX 2X Long SNDK Daily Target ETF",
-      "ticker": "SNDU",
-      "ratio": "3:1"
-    },
-    {
       "date_ex": "2026-06-09",
       "name": "Offerpad Solutions",
       "ticker": "OPAD",
@@ -61,7 +43,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-06-08",
-  "updated_at": "2026-06-08 12:43 UTC",
-  "total": 10
+  "today": "2026-06-09",
+  "updated_at": "2026-06-09 14:00 UTC",
+  "total": 7
 }
