@@ -1,12 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-06-09",
-      "name": "Offerpad Solutions",
-      "ticker": "OPAD",
-      "ratio": "1:10"
-    },
-    {
       "date_ex": "2026-06-12",
       "name": "KLA",
       "ticker": "KLAC",
@@ -43,7 +37,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-06-09",
-  "updated_at": "2026-06-09 14:02 UTC",
-  "total": 7
+  "today": "2026-06-10",
+  "updated_at": "2026-06-10 12:39 UTC",
+  "total": 6
 }
