@@ -1,6 +1,18 @@
 {
   "splits": [
     {
+      "date_ex": "2026-06-11",
+      "name": "Direxion Daily GOOGL Bear 1X ETF",
+      "ticker": "GGLS",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-06-11",
+      "name": "Direxion Daily AMD Bear 1X ETF",
+      "ticker": "AMDD",
+      "ratio": "1:10"
+    },
+    {
       "date_ex": "2026-06-12",
       "name": "KLA",
       "ticker": "KLAC",
@@ -25,6 +37,42 @@
       "ratio": "4:1"
     },
     {
+      "date_ex": "2026-07-15",
+      "name": "Direxion Daily S&amp;P Oil &amp; Gas Exp. &amp; Prod. Bear 2X ETF",
+      "ticker": "DRIP",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-07-15",
+      "name": "Direxion Daily Semiconductor Bear 3X ETF",
+      "ticker": "SOXS",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-07-15",
+      "name": "Direxion Technology Bear 3X ETF",
+      "ticker": "TECS",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-07-15",
+      "name": "Direxion Small Cap Bear 3X ETF",
+      "ticker": "TZA",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-07-15",
+      "name": "Direxion Daily MU Bull 2X ETF",
+      "ticker": "MUU",
+      "ratio": "20:1"
+    },
+    {
+      "date_ex": "2026-07-15",
+      "name": "Direxion Daily South Korea Bull 3X ETF",
+      "ticker": "KORU",
+      "ratio": "20:1"
+    },
+    {
       "date_ex": "2026-07-20",
       "name": "StoneX Group",
       "ticker": "SNEX",
@@ -37,7 +85,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-06-10",
-  "updated_at": "2026-06-10 12:39 UTC",
-  "total": 6
+  "today": "2026-06-11",
+  "updated_at": "2026-06-11 12:52 UTC",
+  "total": 14
 }
