@@ -1,22 +1,16 @@
 {
   "splits": [
     {
-      "date_ex": "2026-06-11",
-      "name": "Direxion Daily GOOGL Bear 1X ETF",
-      "ticker": "GGLS",
-      "ratio": "1:10"
-    },
-    {
-      "date_ex": "2026-06-11",
-      "name": "Direxion Daily AMD Bear 1X ETF",
-      "ticker": "AMDD",
-      "ratio": "1:10"
-    },
-    {
       "date_ex": "2026-06-12",
       "name": "KLA",
       "ticker": "KLAC",
       "ratio": "10:1"
+    },
+    {
+      "date_ex": "2026-06-16",
+      "name": "AIFU",
+      "ticker": "AIFU",
+      "ratio": "1:20"
     },
     {
       "date_ex": "2026-06-17",
@@ -85,7 +79,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-06-11",
-  "updated_at": "2026-06-11 12:52 UTC",
-  "total": 14
+  "today": "2026-06-12",
+  "updated_at": "2026-06-12 12:32 UTC",
+  "total": 13
 }
