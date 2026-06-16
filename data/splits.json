@@ -1,12 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-06-15",
-      "name": "Astronics",
-      "ticker": "ATRO",
-      "ratio": "1.2:1"
-    },
-    {
       "date_ex": "2026-06-16",
       "name": "AIFU",
       "ticker": "AIFU",
@@ -79,7 +73,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-06-15",
-  "updated_at": "2026-06-15 13:03 UTC",
-  "total": 13
+  "today": "2026-06-16",
+  "updated_at": "2026-06-16 12:35 UTC",
+  "total": 12
 }
