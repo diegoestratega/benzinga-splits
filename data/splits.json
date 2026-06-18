@@ -1,22 +1,28 @@
 {
   "splits": [
     {
-      "date_ex": "2026-06-17",
-      "name": "Upland Software",
-      "ticker": "UPLD",
-      "ratio": "1:10"
-    },
-    {
       "date_ex": "2026-06-24",
       "name": "DuPont de Nemours",
       "ticker": "DD",
       "ratio": "1:3"
     },
     {
+      "date_ex": "2026-07-01",
+      "name": "Alight",
+      "ticker": "ALIT",
+      "ratio": "1:20"
+    },
+    {
       "date_ex": "2026-07-02",
       "name": "CrowdStrike Holdings",
       "ticker": "CRWD",
       "ratio": "4:1"
+    },
+    {
+      "date_ex": "2026-07-06",
+      "name": "SOLAI",
+      "ticker": "SLAI",
+      "ratio": "1:7"
     },
     {
       "date_ex": "2026-07-15",
@@ -67,7 +73,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-06-17",
-  "updated_at": "2026-06-17 12:37 UTC",
-  "total": 11
+  "today": "2026-06-18",
+  "updated_at": "2026-06-18 12:55 UTC",
+  "total": 12
 }
