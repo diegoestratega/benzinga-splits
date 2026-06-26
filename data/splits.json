@@ -1,6 +1,48 @@
 {
   "splits": [
     {
+      "date_ex": "2026-06-26",
+      "name": "GraniteShares 2x Long VRT Daily ETF",
+      "ticker": "VRTL",
+      "ratio": "3:1"
+    },
+    {
+      "date_ex": "2026-06-26",
+      "name": "GraniteShares 2x Long SMCI Daily ETF",
+      "ticker": "SMCL",
+      "ratio": "3:1"
+    },
+    {
+      "date_ex": "2026-06-26",
+      "name": "GraniteShares 2x Long NVDA Daily ETF",
+      "ticker": "NVDL",
+      "ratio": "3:1"
+    },
+    {
+      "date_ex": "2026-06-26",
+      "name": "GraniteShares 2x Long MRVL Daily ETF",
+      "ticker": "MVLL",
+      "ratio": "3:1"
+    },
+    {
+      "date_ex": "2026-06-26",
+      "name": "GraniteShares 2x Long MU Daily ETF",
+      "ticker": "MULL",
+      "ratio": "25:1"
+    },
+    {
+      "date_ex": "2026-06-26",
+      "name": "GraniteShares 2x Long INTC Daily ETF",
+      "ticker": "INTW",
+      "ratio": "8:1"
+    },
+    {
+      "date_ex": "2026-06-26",
+      "name": "GraniteShares 2x Long DELL Daily ETF",
+      "ticker": "DLLL",
+      "ratio": "8:1"
+    },
+    {
       "date_ex": "2026-07-01",
       "name": "Mueller Industries",
       "ticker": "MLI",
@@ -17,6 +59,12 @@
       "name": "CrowdStrike Holdings",
       "ticker": "CRWD",
       "ratio": "4:1"
+    },
+    {
+      "date_ex": "2026-07-06",
+      "name": "Service Properties Trust",
+      "ticker": "SVC",
+      "ratio": "1:5"
     },
     {
       "date_ex": "2026-07-06",
@@ -73,7 +121,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-06-25",
-  "updated_at": "2026-06-25 12:08 UTC",
-  "total": 12
+  "today": "2026-06-26",
+  "updated_at": "2026-06-26 15:26 UTC",
+  "total": 20
 }
