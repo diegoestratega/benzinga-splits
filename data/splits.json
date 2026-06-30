@@ -1,22 +1,22 @@
 {
   "splits": [
     {
-      "date_ex": "2026-06-29",
-      "name": "Teucrium 2x Long Daily XRP ETF",
-      "ticker": "XXRP",
-      "ratio": "1:10"
-    },
-    {
-      "date_ex": "2026-06-29",
-      "name": "Honeywell Intl",
-      "ticker": "HON",
-      "ratio": "1:2"
-    },
-    {
-      "date_ex": "2026-06-29",
+      "date_ex": "2026-06-30",
       "name": "Quince Therapeutics",
       "ticker": "QNCX",
       "ratio": "1:20"
+    },
+    {
+      "date_ex": "2026-07-01",
+      "name": "2x Long VIX Futures ETF",
+      "ticker": "UVIX",
+      "ratio": "1:20"
+    },
+    {
+      "date_ex": "2026-07-01",
+      "name": "Marqeta",
+      "ticker": "MQ",
+      "ratio": "1:4"
     },
     {
       "date_ex": "2026-07-01",
@@ -103,7 +103,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-06-29",
-  "updated_at": "2026-06-29 12:50 UTC",
+  "today": "2026-06-30",
+  "updated_at": "2026-06-30 12:41 UTC",
   "total": 17
 }
