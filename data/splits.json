@@ -1,10 +1,10 @@
 {
   "splits": [
     {
-      "date_ex": "2026-06-30",
-      "name": "Quince Therapeutics",
-      "ticker": "QNCX",
-      "ratio": "1:20"
+      "date_ex": "2026-07-01",
+      "name": "Barron&#x27;s 400 ETF",
+      "ticker": "BFOR",
+      "ratio": "4:1"
     },
     {
       "date_ex": "2026-07-01",
@@ -55,6 +55,12 @@
       "ratio": "1:7"
     },
     {
+      "date_ex": "2026-07-10",
+      "name": "Hesai Gr",
+      "ticker": "HSAI",
+      "ratio": "8:1"
+    },
+    {
       "date_ex": "2026-07-15",
       "name": "Direxion Daily S&amp;P Oil &amp; Gas Exp. &amp; Prod. Bear 2X ETF",
       "ticker": "DRIP",
@@ -103,7 +109,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-06-30",
-  "updated_at": "2026-06-30 12:41 UTC",
-  "total": 17
+  "today": "2026-07-01",
+  "updated_at": "2026-07-01 12:42 UTC",
+  "total": 18
 }
