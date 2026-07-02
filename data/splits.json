@@ -1,46 +1,16 @@
 {
   "splits": [
     {
-      "date_ex": "2026-07-01",
-      "name": "Barron&#x27;s 400 ETF",
-      "ticker": "BFOR",
-      "ratio": "4:1"
-    },
-    {
-      "date_ex": "2026-07-01",
-      "name": "2x Long VIX Futures ETF",
-      "ticker": "UVIX",
-      "ratio": "1:20"
-    },
-    {
-      "date_ex": "2026-07-01",
-      "name": "Marqeta",
-      "ticker": "MQ",
-      "ratio": "1:4"
-    },
-    {
-      "date_ex": "2026-07-01",
-      "name": "Rockwell Medical",
-      "ticker": "RMTI",
-      "ratio": "1:10"
-    },
-    {
-      "date_ex": "2026-07-01",
-      "name": "Mueller Industries",
-      "ticker": "MLI",
-      "ratio": "2:1"
-    },
-    {
-      "date_ex": "2026-07-01",
-      "name": "Alight",
-      "ticker": "ALIT",
-      "ratio": "1:20"
-    },
-    {
       "date_ex": "2026-07-02",
       "name": "CrowdStrike Holdings",
       "ticker": "CRWD",
       "ratio": "4:1"
+    },
+    {
+      "date_ex": "2026-07-06",
+      "name": "American Bitcoin",
+      "ticker": "ABTC",
+      "ratio": "1:15"
     },
     {
       "date_ex": "2026-07-06",
@@ -109,7 +79,7 @@
       "ratio": "3:1"
     }
   ],
-  "today": "2026-07-01",
-  "updated_at": "2026-07-01 12:42 UTC",
-  "total": 18
+  "today": "2026-07-02",
+  "updated_at": "2026-07-02 12:33 UTC",
+  "total": 13
 }
