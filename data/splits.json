@@ -2,9 +2,51 @@
   "splits": [
     {
       "date_ex": "2026-07-13",
+      "name": "T-REX 2X Long DJT Daily Target ETF",
+      "ticker": "DJTU",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-07-13",
+      "name": "T-REX 2X Long BMNR Daily Target ETF",
+      "ticker": "BMNU",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-07-13",
       "name": "PSQ Holdings",
       "ticker": "PSQH",
       "ratio": "1:15"
+    },
+    {
+      "date_ex": "2026-07-14",
+      "name": "STMicroelectronics NV ADRhedged",
+      "ticker": "STHH",
+      "ratio": "10:1"
+    },
+    {
+      "date_ex": "2026-07-14",
+      "name": "ASML Holding NV ADRhedged",
+      "ticker": "ASMH",
+      "ratio": "10:1"
+    },
+    {
+      "date_ex": "2026-07-14",
+      "name": "Arm Holdings PLC ADRhedged",
+      "ticker": "ARMH",
+      "ratio": "10:1"
+    },
+    {
+      "date_ex": "2026-07-15",
+      "name": "Direxion Daily AMD Bear 1X ETF",
+      "ticker": "AMDD",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-07-15",
+      "name": "Direxion Daily GOOGL Bear 1X ETF",
+      "ticker": "GGLS",
+      "ratio": "1:10"
     },
     {
       "date_ex": "2026-07-15",
@@ -61,7 +103,7 @@
       "ratio": "2:1"
     }
   ],
-  "today": "2026-07-12",
-  "updated_at": "2026-07-12 22:01 UTC",
-  "total": 10
+  "today": "2026-07-13",
+  "updated_at": "2026-07-13 12:14 UTC",
+  "total": 17
 }
