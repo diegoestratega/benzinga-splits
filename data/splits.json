@@ -1,24 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-07-14",
-      "name": "STMicroelectronics NV ADRhedged",
-      "ticker": "STHH",
-      "ratio": "10:1"
-    },
-    {
-      "date_ex": "2026-07-14",
-      "name": "ASML Holding NV ADRhedged",
-      "ticker": "ASMH",
-      "ratio": "10:1"
-    },
-    {
-      "date_ex": "2026-07-14",
-      "name": "Arm Holdings PLC ADRhedged",
-      "ticker": "ARMH",
-      "ratio": "10:1"
-    },
-    {
       "date_ex": "2026-07-15",
       "name": "Direxion Daily AMD Bear 1X ETF",
       "ticker": "AMDD",
@@ -85,7 +67,7 @@
       "ratio": "2:1"
     }
   ],
-  "today": "2026-07-14",
-  "updated_at": "2026-07-14 12:30 UTC",
-  "total": 14
+  "today": "2026-07-15",
+  "updated_at": "2026-07-15 12:35 UTC",
+  "total": 11
 }
