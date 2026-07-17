@@ -2,6 +2,12 @@
   "splits": [
     {
       "date_ex": "2026-07-20",
+      "name": "Purple Innovation",
+      "ticker": "PRPL",
+      "ratio": "1:25"
+    },
+    {
+      "date_ex": "2026-07-20",
       "name": "StoneX Group",
       "ticker": "SNEX",
       "ratio": "3:2"
@@ -19,7 +25,7 @@
       "ratio": "2:1"
     }
   ],
-  "today": "2026-07-16",
-  "updated_at": "2026-07-16 13:34 UTC",
-  "total": 3
+  "today": "2026-07-17",
+  "updated_at": "2026-07-17 12:50 UTC",
+  "total": 4
 }
