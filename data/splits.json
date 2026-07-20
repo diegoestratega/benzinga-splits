@@ -19,13 +19,79 @@
       "ratio": "3:1"
     },
     {
+      "date_ex": "2026-07-21",
+      "name": "Tradr 2X Short SNDK Daily ETF",
+      "ticker": "SNDQ",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-07-21",
+      "name": "Tradr 2X Short NBIS Daily ETF",
+      "ticker": "NBIZ",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-07-21",
+      "name": "Tradr 2X Short IREN Daily ETF",
+      "ticker": "IREZ",
+      "ratio": "1:3"
+    },
+    {
+      "date_ex": "2026-07-21",
+      "name": "Tradr 2X Long PONY Daily ETF",
+      "ticker": "PONX",
+      "ratio": "1:5"
+    },
+    {
+      "date_ex": "2026-07-21",
+      "name": "Tradr 2X Long CRDO Daily ETF",
+      "ticker": "CRDU",
+      "ratio": "4:1"
+    },
+    {
+      "date_ex": "2026-07-21",
+      "name": "Tradr 2X Long ALAB Daily ETF",
+      "ticker": "LABX",
+      "ratio": "6:1"
+    },
+    {
       "date_ex": "2026-08-11",
       "name": "Monster Beverage",
       "ticker": "MNST",
       "ratio": "2:1"
+    },
+    {
+      "date_ex": "2026-08-18",
+      "name": "Defiance Daily Target 2x Short IONQ ETF",
+      "ticker": "IONZ",
+      "ratio": "1:10"
+    },
+    {
+      "date_ex": "2026-08-19",
+      "name": "Defiance Daily Target 2x Short RGTI ETF",
+      "ticker": "RGTZ",
+      "ratio": "1:5"
+    },
+    {
+      "date_ex": "2026-08-19",
+      "name": "Defiance Daily Target 2x Long OKLO ETF",
+      "ticker": "OKLL",
+      "ratio": "1:5"
+    },
+    {
+      "date_ex": "2026-08-19",
+      "name": "Defiance Daily Target 2x Short QBTS ETF",
+      "ticker": "QBTZ",
+      "ratio": "1:5"
+    },
+    {
+      "date_ex": "2026-08-19",
+      "name": "Defiance Daily Target 2X Short ASTS ETF",
+      "ticker": "ASTN",
+      "ratio": "1:4"
     }
   ],
-  "today": "2026-07-17",
-  "updated_at": "2026-07-17 12:50 UTC",
-  "total": 4
+  "today": "2026-07-20",
+  "updated_at": "2026-07-20 12:46 UTC",
+  "total": 15
 }
