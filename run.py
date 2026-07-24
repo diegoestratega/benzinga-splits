@@ -242,11 +242,6 @@ def fetch_occ_html():
 
     try:
         with sync_playwright() as p:
-            # headless=False + stealth patching is required — Cloudflare's
-            # bot management detects Playwright's automation fingerprints
-            # (navigator.webdriver, missing plugins, CDP artifacts) even in
-            # a visible window. stealth_sync patches these before any
-            # navigation happens.
             browser = p.chromium.launch(
                 headless=False,
                 args=["--start-minimized", "--disable-blink-features=AutomationControlled"],
@@ -258,9 +253,6 @@ def fetch_occ_html():
 
             page.goto(OCC_URL, timeout=45000, wait_until="domcontentloaded")
 
-            # Loop-wait until the Cloudflare "Performing security
-            # verification" interstitial actually clears, instead of
-            # guessing a fixed delay. Up to 40 seconds.
             cleared = False
             for _ in range(40):
                 try:
@@ -328,6 +320,12 @@ def fetch_occ_html():
 
 
 def parse_occ_html(html_text):
+    """
+    Strip tags to flat text, then walk repeating
+    <memo#> <postdate> <effdate> <title...category> blocks.
+    Extract the effective date, first/current option symbol, and
+    company name (text before the first " - " separator in the title).
+    """
     text = re.sub(r"<[^>]+>", " ", html_text)
     text = html.unescape(text)
     text = re.sub(r"\s+", " ", text).strip()
@@ -337,6 +335,7 @@ def parse_occ_html(html_text):
         r"\s*(?:Contract Adjustment|Options|Futures)(?:\s*\|\s*(?:Contract Adjustment|Options|Futures))*\s*$"
     )
     symbol_re = re.compile(r"Option Symbols?:\s*([A-Z][A-Z0-9]{0,9})")
+    name_re   = re.compile(r"^(.*?)\s+-\s+")
 
     matches = list(header_re.finditer(text))
     if not matches:
@@ -353,12 +352,21 @@ def parse_occ_html(html_text):
 
         sym_m = symbol_re.search(title)
         if not sym_m:
-            continue
+            continue  # e.g. "Multiple Flex Position Consolidations" — no symbol
 
         ticker = sym_m.group(1)
+
+        name = ""
+        name_m = name_re.match(title)
+        if name_m:
+            candidate = name_m.group(1).strip()
+            if 0 < len(candidate) <= 80:
+                name = candidate
+
         results.append({
             "date_ex": eff_date,
             "ticker":  ticker,
+            "name":    name,
         })
 
     print(f"  ✓ OCC: {len(results)} memo rows with an option symbol parsed")
@@ -520,7 +528,7 @@ def main():
         occ_seen.add(t)
         occ_final.append({
             "date_ex": d,
-            "name":    "",
+            "name":    str(row.get("name", "") or "").strip(),
             "ticker":  t,
             "ratio":   "",
             "source":  "occ",

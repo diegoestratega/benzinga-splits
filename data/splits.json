@@ -16,21 +16,21 @@
     },
     {
       "date_ex": "2026-07-24",
-      "name": "",
+      "name": "Taylor Morrison Home Corporation",
       "ticker": "TMHC",
       "ratio": "",
       "source": "occ"
     },
     {
       "date_ex": "2026-07-27",
-      "name": "",
+      "name": "Dorian LPG Ltd.",
       "ticker": "LPG",
       "ratio": "",
       "source": "occ"
     },
     {
       "date_ex": "2026-07-28",
-      "name": "",
+      "name": "Nexa Resources S.A.",
       "ticker": "NEXA",
       "ratio": "",
       "source": "occ"
@@ -44,14 +44,14 @@
     },
     {
       "date_ex": "2026-08-03",
-      "name": "",
+      "name": "Cumberland Pharmaceuticals Inc.",
       "ticker": "CPIX",
       "ratio": "",
       "source": "occ"
     },
     {
       "date_ex": "2026-08-03",
-      "name": "",
+      "name": "SITE Centers Corporation",
       "ticker": "SITC",
       "ratio": "",
       "source": "occ"
@@ -65,14 +65,14 @@
     },
     {
       "date_ex": "2026-08-04",
-      "name": "",
+      "name": "ABVC BioPharma, Inc.",
       "ticker": "ABVC",
       "ratio": "",
       "source": "occ"
     },
     {
       "date_ex": "2026-08-04",
-      "name": "",
+      "name": "Resideo Technologies, Inc.",
       "ticker": "REZI",
       "ratio": "",
       "source": "occ"
@@ -128,6 +128,6 @@
     }
   ],
   "today": "2026-07-24",
-  "updated_at": "2026-07-24 15:27 UTC",
+  "updated_at": "2026-07-24 15:44 UTC",
   "total": 18
 }
