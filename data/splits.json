@@ -15,6 +15,27 @@
       "source": "benzinga"
     },
     {
+      "date_ex": "2026-07-24",
+      "name": "",
+      "ticker": "TMHC",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-07-27",
+      "name": "",
+      "ticker": "LPG",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-07-28",
+      "name": "",
+      "ticker": "NEXA",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-08-03",
       "name": "Microvision",
       "ticker": "MVIS",
@@ -22,11 +43,39 @@
       "source": "benzinga"
     },
     {
+      "date_ex": "2026-08-03",
+      "name": "",
+      "ticker": "CPIX",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-03",
+      "name": "",
+      "ticker": "SITC",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-08-04",
       "name": "YPF",
       "ticker": "YPF",
       "ratio": "10:1",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-08-04",
+      "name": "",
+      "ticker": "ABVC",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-04",
+      "name": "",
+      "ticker": "REZI",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-08-11",
@@ -79,6 +128,6 @@
     }
   ],
   "today": "2026-07-24",
-  "updated_at": "2026-07-24 15:15 UTC",
-  "total": 11
+  "updated_at": "2026-07-24 15:24 UTC",
+  "total": 18
 }

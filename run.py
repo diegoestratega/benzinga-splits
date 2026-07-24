@@ -18,8 +18,8 @@ DEBUG_DIR = os.path.join(REPO_DIR, "debug")
 BZ_URL    = "https://www.benzinga.com/calendars/stock-splits"
 
 OCC_URL   = "https://infomemo.theocc.com/infomemo/search-memo"
-OCC_DAYS_BACK    = 60   # posted date window: today - N days -> today
-OCC_DAYS_FORWARD = 60   # effective date window: today -> today + N days
+OCC_DAYS_BACK    = 60
+OCC_DAYS_FORWARD = 60
 OCC_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
           "(KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36")
 
@@ -34,8 +34,6 @@ HEADERS = {
     "Sec-Fetch-User":  "?1",
 }
 
-
-# ── Fetch page (Benzinga) ───────────────────────────────────────────────────────
 
 def fetch_page():
     print(f"→ Fetching Benzinga splits page (curl_cffi Chrome124)...")
@@ -66,8 +64,6 @@ def fetch_page():
         print(f"  ✗ Request failed: {e}")
         return None
 
-
-# ── Parse __NEXT_DATA__ (Next.js embedded JSON) ─────────────────────────────────
 
 def parse_next_data(html_text):
     print("  Trying __NEXT_DATA__ JSON extraction...")
@@ -111,8 +107,6 @@ def parse_next_data(html_text):
     print(f"  Saved → {DEBUG_DIR}/next_data.json")
     return None
 
-
-# ── Parse HTML table (fallback, Benzinga) ───────────────────────────────────────
 
 def parse_html_table(html_text):
     print("  Trying HTML table extraction...")
@@ -180,8 +174,6 @@ def parse_html_table(html_text):
     return None
 
 
-# ── Master scrape (Benzinga) ────────────────────────────────────────────────────
-
 def scrape():
     html_text = fetch_page()
     if html_text is None:
@@ -198,14 +190,6 @@ def scrape():
     print(f"\n  ✗ Could not extract data — inspect {DEBUG_DIR}/last_page.html")
     return [], "none"
 
-
-# ── OCC: fetch + parse Information Memos (Playwright — real browser) ───────────
-#
-# OCC's site sits behind Cloudflare bot protection which specifically
-# detects and blocks headless Chromium sessions. A visible (non-headless)
-# browser window is required to pass the challenge reliably. Any failure
-# here is fully non-fatal — Benzinga scraping and the git push always
-# continue regardless of OCC's outcome.
 
 def _occ_set_date(page, field_name, value):
     try:
@@ -250,17 +234,50 @@ def fetch_occ_html():
     end_eff    = (today + timedelta(days=OCC_DAYS_FORWARD)).strftime("%m/%d/%Y")
 
     try:
+        from playwright_stealth import stealth_sync
+        has_stealth = True
+    except ImportError:
+        has_stealth = False
+        print("  ⚠ playwright_stealth not installed — run: pip install playwright-stealth")
+
+    try:
         with sync_playwright() as p:
-            # headless=False is required — Cloudflare's bot management
-            # specifically detects and blocks headless Chromium sessions,
-            # even with correct TLS/HTTP fingerprints. Running visibly
-            # passes the challenge reliably.
-            browser = p.chromium.launch(headless=False, args=["--start-minimized"])
-            page = browser.new_page(user_agent=OCC_UA)
+            # headless=False + stealth patching is required — Cloudflare's
+            # bot management detects Playwright's automation fingerprints
+            # (navigator.webdriver, missing plugins, CDP artifacts) even in
+            # a visible window. stealth_sync patches these before any
+            # navigation happens.
+            browser = p.chromium.launch(
+                headless=False,
+                args=["--start-minimized", "--disable-blink-features=AutomationControlled"],
+            )
+            context = browser.new_context(user_agent=OCC_UA)
+            page = context.new_page()
+            if has_stealth:
+                stealth_sync(page)
+
             page.goto(OCC_URL, timeout=45000, wait_until="domcontentloaded")
 
-            # Allow Cloudflare's JS challenge to fully resolve.
-            page.wait_for_timeout(6000)
+            # Loop-wait until the Cloudflare "Performing security
+            # verification" interstitial actually clears, instead of
+            # guessing a fixed delay. Up to 40 seconds.
+            cleared = False
+            for _ in range(40):
+                try:
+                    body_text = page.inner_text("body")
+                except Exception:
+                    body_text = ""
+                if "security verification" not in body_text.lower() and \
+                   "checking your browser" not in body_text.lower():
+                    cleared = True
+                    break
+                page.wait_for_timeout(1000)
+
+            if not cleared:
+                print("  ✗ OCC: Cloudflare security check never cleared")
+                save_debug("occ_last_results.html", page.content())
+                browser.close()
+                return None
 
             _occ_set_date(page, "startpostdate", start_post)
             _occ_set_date(page, "endpostdate",   end_post)
@@ -271,10 +288,6 @@ def fetch_occ_html():
             _occ_set_category(page, "Options",             True)
             _occ_set_category(page, "Futures",             False)
 
-            # Snapshot current results text so we can detect when it changes
-            # after clicking Search — more reliable than waiting for total
-            # network silence (networkidle), which never fires on pages with
-            # background polling / analytics scripts.
             try:
                 before_text = page.inner_text("body")
             except Exception:
@@ -288,8 +301,6 @@ def fetch_occ_html():
                 browser.close()
                 return None
 
-            # Poll for up to 20s until the results text actually changes,
-            # instead of relying on a fixed wait or networkidle.
             changed = False
             for _ in range(20):
                 page.wait_for_timeout(1000)
@@ -317,11 +328,6 @@ def fetch_occ_html():
 
 
 def parse_occ_html(html_text):
-    """
-    Strip tags to flat text, then walk repeating
-    <memo#> <postdate> <effdate> <title...category> blocks.
-    Extract only the effective date + first/current option symbol.
-    """
     text = re.sub(r"<[^>]+>", " ", html_text)
     text = html.unescape(text)
     text = re.sub(r"\s+", " ", text).strip()
@@ -347,7 +353,7 @@ def parse_occ_html(html_text):
 
         sym_m = symbol_re.search(title)
         if not sym_m:
-            continue  # e.g. "Multiple Flex Position Consolidations" — no symbol
+            continue
 
         ticker = sym_m.group(1)
         results.append({
@@ -360,8 +366,7 @@ def parse_occ_html(html_text):
 
 
 def scrape_occ():
-    """Non-fatal: any failure here must never break the Benzinga pipeline."""
-    print("→ Fetching OCC Information Memos (headless browser)...")
+    print("→ Fetching OCC Information Memos (visible browser)...")
     try:
         html_text = fetch_occ_html()
         if not html_text:
@@ -371,8 +376,6 @@ def scrape_occ():
         print(f"  ✗ OCC scrape failed (non-fatal): {e}")
         return []
 
-
-# ── Helpers ──────────────────────────────────────────────────────────────────────
 
 def save_debug(filename, content):
     try:
@@ -443,8 +446,6 @@ def git_push():
     return True
 
 
-# ── Main ─────────────────────────────────────────────────────────────────────────
-
 def main():
     today   = date.today().isoformat()
     now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
@@ -505,7 +506,6 @@ def main():
 
     print(f"\n✓ {len(bz_final)} optionable splits found (Benzinga)")
 
-    # ── OCC: fill gaps only — never overrides or duplicates a Benzinga ticker ──
     bz_tickers = {s["ticker"] for s in bz_final}
     occ_raw    = scrape_occ()
 
