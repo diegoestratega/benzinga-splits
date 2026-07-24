@@ -201,13 +201,11 @@ def scrape():
 
 # ── OCC: fetch + parse Information Memos (Playwright — real browser) ───────────
 #
-# OCC's site sits behind Cloudflare bot protection which requires a genuine
-# JS-executing browser to pass its challenge and obtain a valid cf_clearance
-# cookie. A plain HTTP client (curl_cffi) cannot pass this, so we drive a
-# real headless Chromium browser instead: load the page, fill the same
-# filters used in the manual test, click Search, then parse the returned
-# HTML exactly like before. Any failure here is fully non-fatal — Benzinga
-# scraping and the git push always continue regardless of OCC's outcome.
+# OCC's site sits behind Cloudflare bot protection which specifically
+# detects and blocks headless Chromium sessions. A visible (non-headless)
+# browser window is required to pass the challenge reliably. Any failure
+# here is fully non-fatal — Benzinga scraping and the git push always
+# continue regardless of OCC's outcome.
 
 def _occ_set_date(page, field_name, value):
     try:
@@ -253,12 +251,16 @@ def fetch_occ_html():
 
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
+            # headless=False is required — Cloudflare's bot management
+            # specifically detects and blocks headless Chromium sessions,
+            # even with correct TLS/HTTP fingerprints. Running visibly
+            # passes the challenge reliably.
+            browser = p.chromium.launch(headless=False, args=["--start-minimized"])
             page = browser.new_page(user_agent=OCC_UA)
             page.goto(OCC_URL, timeout=45000, wait_until="domcontentloaded")
 
             # Allow Cloudflare's JS challenge to fully resolve.
-            page.wait_for_timeout(4000)
+            page.wait_for_timeout(6000)
 
             _occ_set_date(page, "startpostdate", start_post)
             _occ_set_date(page, "endpostdate",   end_post)
