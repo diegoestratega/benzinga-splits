@@ -20,6 +20,8 @@ BZ_URL    = "https://www.benzinga.com/calendars/stock-splits"
 OCC_URL   = "https://infomemo.theocc.com/infomemo/search-memo"
 OCC_DAYS_BACK    = 60   # posted date window: today - N days -> today
 OCC_DAYS_FORWARD = 60   # effective date window: today -> today + N days
+OCC_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+          "(KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36")
 
 HEADERS = {
     "Accept":          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -30,21 +32,6 @@ HEADERS = {
     "Sec-Fetch-Mode":  "navigate",
     "Sec-Fetch-Site":  "none",
     "Sec-Fetch-User":  "?1",
-}
-
-OCC_GET_HEADERS = {
-    "Accept":          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    "Accept-Language": "en-US,en;q=0.9",
-    "Upgrade-Insecure-Requests": "1",
-}
-
-OCC_POST_HEADERS = {
-    "Accept":           "text/html, */*; q=0.01",
-    "Accept-Language":  "en-US,en;q=0.9",
-    "Content-Type":     "application/x-www-form-urlencoded; charset=UTF-8",
-    "Origin":           "https://infomemo.theocc.com",
-    "Referer":          "https://infomemo.theocc.com/infomemo/search-memo",
-    "X-Requested-With": "XMLHttpRequest",
 }
 
 
@@ -212,70 +199,87 @@ def scrape():
     return [], "none"
 
 
-# ── OCC: fetch + parse Information Memos ────────────────────────────────────────
+# ── OCC: fetch + parse Information Memos (Playwright — real browser) ───────────
+#
+# OCC's site sits behind Cloudflare bot protection which requires a genuine
+# JS-executing browser to pass its challenge and obtain a valid cf_clearance
+# cookie. A plain HTTP client (curl_cffi) cannot pass this, so we drive a
+# real headless Chromium browser instead: load the page, fill the same
+# filters used in the manual test, click Search, then parse the returned
+# HTML exactly like before. Any failure here is fully non-fatal — Benzinga
+# scraping and the git push always continue regardless of OCC's outcome.
 
-def fetch_occ_csrf(session):
-    """GET the search page fresh and pull the hidden _csrf token."""
+def _occ_set_date(page, field_name, value):
     try:
-        r = session.get(
-            OCC_URL,
-            headers=OCC_GET_HEADERS,
-            impersonate="chrome124",
-            timeout=25,
+        page.evaluate(
+            """(args) => {
+                const el = document.querySelector('input[name="' + args.name + '"]');
+                if (el) {
+                    el.value = args.value;
+                    el.dispatchEvent(new Event('input',  { bubbles: true }));
+                    el.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+            }""",
+            {"name": field_name, "value": value}
         )
-        if r.status_code != 200:
-            print(f"  ✗ OCC GET failed — HTTP {r.status_code}")
-            return None
-        m = re.search(
-            r'name=["\']_csrf["\']\s+value=["\']([^"\']+)["\']',
-            r.text
-        )
-        if not m:
-            m = re.search(
-                r'value=["\']([^"\']+)["\']\s+name=["\']_csrf["\']',
-                r.text
-            )
-        if not m:
-            print("  ✗ OCC _csrf token not found on page")
-            save_debug("occ_get_page.html", r.text)
-            return None
-        return m.group(1)
-    except Exception as e:
-        print(f"  ✗ OCC GET request failed: {e}")
+    except Exception:
+        pass
+
+
+def _occ_set_category(page, label_text, checked):
+    try:
+        cb = page.get_by_label(label_text, exact=False)
+        if checked:
+            cb.check(timeout=5000)
+        else:
+            cb.uncheck(timeout=5000)
+    except Exception:
+        pass
+
+
+def fetch_occ_html():
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        print("  ✗ Playwright not installed — run: pip install playwright")
+        print("    then: playwright install chromium")
         return None
 
+    today      = date.today()
+    start_post = (today - timedelta(days=OCC_DAYS_BACK)).strftime("%m/%d/%Y")
+    end_post   = today.strftime("%m/%d/%Y")
+    start_eff  = today.strftime("%m/%d/%Y")
+    end_eff    = (today + timedelta(days=OCC_DAYS_FORWARD)).strftime("%m/%d/%Y")
 
-def fetch_occ_results(session, csrf_token):
-    """POST the filtered search and return the raw HTML fragment."""
-    today = date.today()
-    payload = [
-        ("startpostdate",   (today - timedelta(days=OCC_DAYS_BACK)).strftime("%m/%d/%Y")),
-        ("endpostdate",     today.strftime("%m/%d/%Y")),
-        ("keyword",         ""),
-        ("title",           ""),
-        ("infomemonumber",  ""),
-        ("starteffdate",    today.strftime("%m/%d/%Y")),
-        ("endeffdate",      (today + timedelta(days=OCC_DAYS_FORWARD)).strftime("%m/%d/%Y")),
-        ("category",        "Contract Adjustment"),
-        ("category",        "Options"),
-        ("_csrf",           csrf_token),
-    ]
     try:
-        r = session.post(
-            OCC_URL,
-            data=payload,
-            headers=OCC_POST_HEADERS,
-            impersonate="chrome124",
-            timeout=25,
-        )
-        if r.status_code != 200:
-            print(f"  ✗ OCC POST failed — HTTP {r.status_code}")
-            save_debug("occ_post_error.html", r.text)
-            return None
-        save_debug("occ_last_results.html", r.text)
-        return r.text
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page(user_agent=OCC_UA)
+            page.goto(OCC_URL, timeout=45000, wait_until="domcontentloaded")
+
+            # Allow Cloudflare's JS challenge to fully resolve.
+            page.wait_for_timeout(4000)
+
+            _occ_set_date(page, "startpostdate", start_post)
+            _occ_set_date(page, "endpostdate",   end_post)
+            _occ_set_date(page, "starteffdate",  start_eff)
+            _occ_set_date(page, "endeffdate",    end_eff)
+
+            _occ_set_category(page, "Contract Adjustment", True)
+            _occ_set_category(page, "Options",             True)
+            _occ_set_category(page, "Futures",             False)
+
+            page.get_by_role("button", name=re.compile("search", re.I)).first.click(timeout=10000)
+            page.wait_for_load_state("networkidle", timeout=30000)
+
+            html_text = page.content()
+            browser.close()
+
+        save_debug("occ_last_results.html", html_text)
+        return html_text
+
     except Exception as e:
-        print(f"  ✗ OCC POST request failed: {e}")
+        print(f"  ✗ OCC Playwright session failed: {e}")
         return None
 
 
@@ -324,17 +328,12 @@ def parse_occ_html(html_text):
 
 def scrape_occ():
     """Non-fatal: any failure here must never break the Benzinga pipeline."""
-    print("→ Fetching OCC Information Memos...")
+    print("→ Fetching OCC Information Memos (headless browser)...")
     try:
-        session = curl_requests.Session()
-        token = fetch_occ_csrf(session)
-        if not token:
-            return []
-        html_text = fetch_occ_results(session, token)
+        html_text = fetch_occ_html()
         if not html_text:
             return []
-        rows = parse_occ_html(html_text)
-        return rows
+        return parse_occ_html(html_text)
     except Exception as e:
         print(f"  ✗ OCC scrape failed (non-fatal): {e}")
         return []
