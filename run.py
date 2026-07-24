@@ -269,8 +269,39 @@ def fetch_occ_html():
             _occ_set_category(page, "Options",             True)
             _occ_set_category(page, "Futures",             False)
 
-            page.get_by_role("button", name=re.compile("search", re.I)).first.click(timeout=10000)
-            page.wait_for_load_state("networkidle", timeout=30000)
+            # Snapshot current results text so we can detect when it changes
+            # after clicking Search — more reliable than waiting for total
+            # network silence (networkidle), which never fires on pages with
+            # background polling / analytics scripts.
+            try:
+                before_text = page.inner_text("body")
+            except Exception:
+                before_text = ""
+
+            try:
+                page.get_by_role("button", name=re.compile("search", re.I)).first.click(timeout=10000)
+            except Exception as e:
+                print(f"  ✗ OCC: could not click Search button: {e}")
+                save_debug("occ_last_results.html", page.content())
+                browser.close()
+                return None
+
+            # Poll for up to 20s until the results text actually changes,
+            # instead of relying on a fixed wait or networkidle.
+            changed = False
+            for _ in range(20):
+                page.wait_for_timeout(1000)
+                try:
+                    now_text = page.inner_text("body")
+                except Exception:
+                    now_text = before_text
+                if now_text != before_text:
+                    changed = True
+                    break
+
+            if not changed:
+                print("  ⚠ OCC: results did not visibly change after search "
+                      "(continuing with current page content)")
 
             html_text = page.content()
             browser.close()
