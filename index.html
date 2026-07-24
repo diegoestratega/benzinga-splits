@@ -104,6 +104,9 @@
         font-family:"SF Mono","Fira Code",monospace;font-size:.78rem;font-weight:700}
     .rp-fwd{background:#1a2d1a;color:var(--green)}
     .rp-rev{background:#2d1a1a;color:var(--red)}
+    .src-occ{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:3px;
+             font-size:.62rem;font-weight:800;text-transform:uppercase;
+             background:#241a2d;color:var(--orange);border:1px solid var(--orange)}
     .empty{text-align:center;padding:30px;color:var(--muted);font-size:.84rem}
 
     footer{text-align:center;padding:18px;color:var(--muted);font-size:.71rem;
@@ -167,6 +170,10 @@
   <a href="https://www.benzinga.com/calendars/stock-splits" target="_blank">
     Benzinga Stock Splits Calendar
   </a>
+  and
+  <a href="https://infomemo.theocc.com/infomemo/search-memo" target="_blank">
+    OCC Information Memos
+  </a>
   · Optionable verified via Yahoo Finance
   · Click <strong>⚡ Run Scraper</strong> to refresh data from your machine
 </footer>
@@ -217,6 +224,7 @@
             <td class="tkr">
               <a href="https://finance.yahoo.com/quote/${s.ticker}/options"
                  target="_blank">${s.ticker}</a>
+              ${s.source === 'occ' ? '<span class="src-occ" title="Sourced from OCC Information Memos">OCC</span>' : ''}
             </td>
             <td class="co" title="${s.name}">${s.name || '—'}</td>
             <td>
@@ -285,7 +293,7 @@
     document.getElementById('err').style.display     = 'none';
 
     try {
-      const r    = await fetch(DATA_URL + '?t=' + Date.now(), { cache: 'no-store' });
+      const r    = await fetch(DATA_URL + '?t=' + Date.now());
       if (!r.ok) throw new Error(
         `HTTP ${r.status} — click ⚡ Run Scraper first to generate data`
       );

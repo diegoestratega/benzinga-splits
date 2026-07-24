@@ -1,73 +1,35 @@
 {
   "splits": [
     {
-      "date_ex": "2026-07-24",
-      "name": "Trinity Biotech",
-      "ticker": "TRIB",
-      "ratio": "1:30"
-    },
-    {
-      "date_ex": "2026-07-24",
-      "name": "Faraday Future",
-      "ticker": "FFAI",
-      "ratio": "1:150"
-    },
-    {
-      "date_ex": "2026-08-03",
-      "name": "Microvision",
-      "ticker": "MVIS",
-      "ratio": "1:15"
-    },
-    {
-      "date_ex": "2026-08-04",
-      "name": "YPF",
-      "ticker": "YPF",
-      "ratio": "10:1"
-    },
-    {
-      "date_ex": "2026-08-11",
-      "name": "Monster Beverage",
-      "ticker": "MNST",
-      "ratio": "2:1"
-    },
-    {
-      "date_ex": "2026-08-18",
-      "name": "Defiance Daily Target 2x Short IONQ ETF",
-      "ticker": "IONZ",
-      "ratio": "1:10"
-    },
-    {
       "date_ex": "2026-08-19",
       "name": "Defiance Daily Target 2x Short RGTI ETF",
       "ticker": "RGTZ",
-      "ratio": "1:5"
+      "ratio": "1:5",
+      "source": "benzinga"
     },
     {
       "date_ex": "2026-08-19",
       "name": "Defiance Daily Target 2x Long OKLO ETF",
       "ticker": "OKLL",
-      "ratio": "1:5"
-    },
-    {
-      "date_ex": "2026-08-19",
-      "name": "Defiance Daily Target 2x Short QBTS ETF",
-      "ticker": "QBTZ",
-      "ratio": "1:5"
+      "ratio": "1:5",
+      "source": "benzinga"
     },
     {
       "date_ex": "2026-08-19",
       "name": "Defiance Daily Target 2X Short ASTS ETF",
       "ticker": "ASTN",
-      "ratio": "1:4"
+      "ratio": "1:4",
+      "source": "benzinga"
     },
     {
       "date_ex": "2026-08-21",
       "name": "Servisfirst Bancshares",
       "ticker": "SFBS",
-      "ratio": "2:1"
+      "ratio": "2:1",
+      "source": "benzinga"
     }
   ],
   "today": "2026-07-24",
-  "updated_at": "2026-07-24 11:11 UTC",
-  "total": 11
+  "updated_at": "2026-07-24 14:04 UTC",
+  "total": 4
 }

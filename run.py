@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
+import html
 import json
 import os
 import re
 import subprocess
 import sys
 import time
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
 import yfinance as yf
 from curl_cffi import requests as curl_requests
@@ -15,6 +16,10 @@ DATA_DIR  = os.path.join(REPO_DIR, "data")
 DATA_FILE = os.path.join(DATA_DIR, "splits.json")
 DEBUG_DIR = os.path.join(REPO_DIR, "debug")
 BZ_URL    = "https://www.benzinga.com/calendars/stock-splits"
+
+OCC_URL   = "https://infomemo.theocc.com/infomemo/search-memo"
+OCC_DAYS_BACK    = 60   # posted date window: today - N days -> today
+OCC_DAYS_FORWARD = 60   # effective date window: today -> today + N days
 
 HEADERS = {
     "Accept":          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
@@ -27,8 +32,23 @@ HEADERS = {
     "Sec-Fetch-User":  "?1",
 }
 
+OCC_GET_HEADERS = {
+    "Accept":          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Upgrade-Insecure-Requests": "1",
+}
 
-# ── Fetch page ────────────────────────────────────────────────────────────────
+OCC_POST_HEADERS = {
+    "Accept":           "text/html, */*; q=0.01",
+    "Accept-Language":  "en-US,en;q=0.9",
+    "Content-Type":     "application/x-www-form-urlencoded; charset=UTF-8",
+    "Origin":           "https://infomemo.theocc.com",
+    "Referer":          "https://infomemo.theocc.com/infomemo/search-memo",
+    "X-Requested-With": "XMLHttpRequest",
+}
+
+
+# ── Fetch page (Benzinga) ───────────────────────────────────────────────────────
 
 def fetch_page():
     print(f"→ Fetching Benzinga splits page (curl_cffi Chrome124)...")
@@ -60,13 +80,13 @@ def fetch_page():
         return None
 
 
-# ── Parse __NEXT_DATA__ (Next.js embedded JSON) ───────────────────────────────
+# ── Parse __NEXT_DATA__ (Next.js embedded JSON) ─────────────────────────────────
 
-def parse_next_data(html):
+def parse_next_data(html_text):
     print("  Trying __NEXT_DATA__ JSON extraction...")
     m = re.search(
         r'<script[^>]+id=["\']__NEXT_DATA__["\'][^>]*>(.*?)</script>',
-        html, re.DOTALL
+        html_text, re.DOTALL
     )
     if not m:
         print("  ✗ __NEXT_DATA__ not found")
@@ -105,15 +125,15 @@ def parse_next_data(html):
     return None
 
 
-# ── Parse HTML table (fallback) ───────────────────────────────────────────────
+# ── Parse HTML table (fallback, Benzinga) ───────────────────────────────────────
 
-def parse_html_table(html):
+def parse_html_table(html_text):
     print("  Trying HTML table extraction...")
 
     DATE_RE = re.compile(r"\d{2}/\d{2}/\d{4}")
     TICK_RE = re.compile(r"^[A-Z]{1,6}$")
 
-    tables = re.findall(r"<table[\s\S]*?</table>", html, re.IGNORECASE)
+    tables = re.findall(r"<table[\s\S]*?</table>", html_text, re.IGNORECASE)
     print(f"  Found {len(tables)} <table> elements")
 
     for t_html in tables:
@@ -173,18 +193,18 @@ def parse_html_table(html):
     return None
 
 
-# ── Master scrape ─────────────────────────────────────────────────────────────
+# ── Master scrape (Benzinga) ────────────────────────────────────────────────────
 
 def scrape():
-    html = fetch_page()
-    if html is None:
+    html_text = fetch_page()
+    if html_text is None:
         return [], "none"
 
-    rows = parse_next_data(html)
+    rows = parse_next_data(html_text)
     if rows is not None:
         return rows, "next_data"
 
-    rows = parse_html_table(html)
+    rows = parse_html_table(html_text)
     if rows is not None:
         return rows, "html_table"
 
@@ -192,7 +212,135 @@ def scrape():
     return [], "none"
 
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
+# ── OCC: fetch + parse Information Memos ────────────────────────────────────────
+
+def fetch_occ_csrf(session):
+    """GET the search page fresh and pull the hidden _csrf token."""
+    try:
+        r = session.get(
+            OCC_URL,
+            headers=OCC_GET_HEADERS,
+            impersonate="chrome124",
+            timeout=25,
+        )
+        if r.status_code != 200:
+            print(f"  ✗ OCC GET failed — HTTP {r.status_code}")
+            return None
+        m = re.search(
+            r'name=["\']_csrf["\']\s+value=["\']([^"\']+)["\']',
+            r.text
+        )
+        if not m:
+            m = re.search(
+                r'value=["\']([^"\']+)["\']\s+name=["\']_csrf["\']',
+                r.text
+            )
+        if not m:
+            print("  ✗ OCC _csrf token not found on page")
+            save_debug("occ_get_page.html", r.text)
+            return None
+        return m.group(1)
+    except Exception as e:
+        print(f"  ✗ OCC GET request failed: {e}")
+        return None
+
+
+def fetch_occ_results(session, csrf_token):
+    """POST the filtered search and return the raw HTML fragment."""
+    today = date.today()
+    payload = [
+        ("startpostdate",   (today - timedelta(days=OCC_DAYS_BACK)).strftime("%m/%d/%Y")),
+        ("endpostdate",     today.strftime("%m/%d/%Y")),
+        ("keyword",         ""),
+        ("title",           ""),
+        ("infomemonumber",  ""),
+        ("starteffdate",    today.strftime("%m/%d/%Y")),
+        ("endeffdate",      (today + timedelta(days=OCC_DAYS_FORWARD)).strftime("%m/%d/%Y")),
+        ("category",        "Contract Adjustment"),
+        ("category",        "Options"),
+        ("_csrf",           csrf_token),
+    ]
+    try:
+        r = session.post(
+            OCC_URL,
+            data=payload,
+            headers=OCC_POST_HEADERS,
+            impersonate="chrome124",
+            timeout=25,
+        )
+        if r.status_code != 200:
+            print(f"  ✗ OCC POST failed — HTTP {r.status_code}")
+            save_debug("occ_post_error.html", r.text)
+            return None
+        save_debug("occ_last_results.html", r.text)
+        return r.text
+    except Exception as e:
+        print(f"  ✗ OCC POST request failed: {e}")
+        return None
+
+
+def parse_occ_html(html_text):
+    """
+    Strip tags to flat text, then walk repeating
+    <memo#> <postdate> <effdate> <title...category> blocks.
+    Extract only the effective date + first/current option symbol.
+    """
+    text = re.sub(r"<[^>]+>", " ", html_text)
+    text = html.unescape(text)
+    text = re.sub(r"\s+", " ", text).strip()
+
+    header_re  = re.compile(r"(\d{4,6})\s+(\d{2}/\d{2}/\d{4})\s+(\d{2}/\d{2}/\d{4})\s+")
+    category_re = re.compile(
+        r"\s*(?:Contract Adjustment|Options|Futures)(?:\s*\|\s*(?:Contract Adjustment|Options|Futures))*\s*$"
+    )
+    symbol_re = re.compile(r"Option Symbols?:\s*([A-Z][A-Z0-9]{0,9})")
+
+    matches = list(header_re.finditer(text))
+    if not matches:
+        print("  ✗ OCC: no memo rows detected in response")
+        return []
+
+    results = []
+    for i, m in enumerate(matches):
+        eff_date = m.group(3)
+        start = m.end()
+        end   = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+        block = text[start:end]
+        title = category_re.sub("", block).strip()
+
+        sym_m = symbol_re.search(title)
+        if not sym_m:
+            continue  # e.g. "Multiple Flex Position Consolidations" — no symbol
+
+        ticker = sym_m.group(1)
+        results.append({
+            "date_ex": eff_date,
+            "ticker":  ticker,
+        })
+
+    print(f"  ✓ OCC: {len(results)} memo rows with an option symbol parsed")
+    return results
+
+
+def scrape_occ():
+    """Non-fatal: any failure here must never break the Benzinga pipeline."""
+    print("→ Fetching OCC Information Memos...")
+    try:
+        session = curl_requests.Session()
+        token = fetch_occ_csrf(session)
+        if not token:
+            return []
+        html_text = fetch_occ_results(session, token)
+        if not html_text:
+            return []
+        rows = parse_occ_html(html_text)
+        return rows
+    except Exception as e:
+        print(f"  ✗ OCC scrape failed (non-fatal): {e}")
+        return []
+
+
+# ── Helpers ──────────────────────────────────────────────────────────────────────
 
 def save_debug(filename, content):
     try:
@@ -263,14 +411,14 @@ def git_push():
     return True
 
 
-# ── Main ──────────────────────────────────────────────────────────────────────
+# ── Main ─────────────────────────────────────────────────────────────────────────
 
 def main():
     today   = date.today().isoformat()
     now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
     print(f"\n{'═' * 56}")
-    print(f"  Benzinga Splits Scraper — {now_utc}")
+    print(f"  Splits Scraper (Benzinga + OCC) — {now_utc}")
     print(f"  Filtering from: {today} forward")
     print(f"{'═' * 56}\n")
 
@@ -297,15 +445,6 @@ def main():
     future.sort(key=lambda x: x["date_ex"])
     print(f"→ {len(future)} splits from {today} forward")
 
-    if not future:
-        print("  Nothing to process — saving empty result.")
-        os.makedirs(DATA_DIR, exist_ok=True)
-        with open(DATA_FILE, "w", encoding="utf-8") as f:
-            json.dump({"splits": [], "today": today,
-                       "updated_at": now_utc, "total": 0}, f, indent=2)
-        git_push()
-        return
-
     known_yes = [s for s in future if s["optionable"] is True]
     known_no  = [s for s in future if s["optionable"] is False]
     unknown   = [s for s in future if s["optionable"] is None]
@@ -327,16 +466,44 @@ def main():
                 optionable.append(s)
             time.sleep(0.25)
 
-    final = sorted(optionable, key=lambda x: x["date_ex"])
-    final = [{k: v for k, v in s.items() if k != "optionable"} for s in final]
+    bz_final = sorted(optionable, key=lambda x: x["date_ex"])
+    bz_final = [{k: v for k, v in s.items() if k != "optionable"} for s in bz_final]
+    for s in bz_final:
+        s["source"] = "benzinga"
 
-    print(f"\n✓ {len(final)} optionable splits found")
+    print(f"\n✓ {len(bz_final)} optionable splits found (Benzinga)")
+
+    # ── OCC: fill gaps only — never overrides or duplicates a Benzinga ticker ──
+    bz_tickers = {s["ticker"] for s in bz_final}
+    occ_raw    = scrape_occ()
+
+    occ_seen, occ_final = set(), []
+    for row in occ_raw:
+        d = normalize_date(row.get("date_ex", ""))
+        t = re.sub(r"[^A-Z0-9]", "", str(row.get("ticker", "")).upper())
+        if not t or not d or d < today:
+            continue
+        if t in bz_tickers or t in occ_seen:
+            continue
+        occ_seen.add(t)
+        occ_final.append({
+            "date_ex": d,
+            "name":    "",
+            "ticker":  t,
+            "ratio":   "",
+            "source":  "occ",
+        })
+
+    occ_final.sort(key=lambda x: x["date_ex"])
+    print(f"✓ {len(occ_final)} additional entries found (OCC, gap-fill only)")
+
+    combined = sorted(bz_final + occ_final, key=lambda x: x["date_ex"])
 
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump({"splits": final, "today": today,
-                   "updated_at": now_utc, "total": len(final)}, f, indent=2)
-    print(f"✓ Saved → {DATA_FILE}\n")
+        json.dump({"splits": combined, "today": today,
+                   "updated_at": now_utc, "total": len(combined)}, f, indent=2)
+    print(f"\n✓ Saved → {DATA_FILE}  ({len(combined)} total entries)\n")
 
     print("→ Pushing to GitHub...\n")
     ok = git_push()
