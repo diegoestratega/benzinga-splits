@@ -1,13 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-07-27",
-      "name": "Dorian LPG Ltd.",
-      "ticker": "LPG",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-07-28",
       "name": "Nexa Resources S.A.",
       "ticker": "NEXA",
@@ -64,6 +57,13 @@
       "source": "benzinga"
     },
     {
+      "date_ex": "2026-08-17",
+      "name": "John B. Sanfilippo & Son, Inc.",
+      "ticker": "JBSS",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-08-18",
       "name": "Defiance Daily Target 2x Short IONQ ETF",
       "ticker": "IONZ",
@@ -106,7 +106,7 @@
       "source": "benzinga"
     }
   ],
-  "today": "2026-07-27",
-  "updated_at": "2026-07-27 12:41 UTC",
+  "today": "2026-07-28",
+  "updated_at": "2026-07-28 12:43 UTC",
   "total": 15
 }
