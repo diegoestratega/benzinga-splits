@@ -1,13 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-07-28",
-      "name": "Nexa Resources S.A.",
-      "ticker": "NEXA",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-08-03",
       "name": "Microvision",
       "ticker": "MVIS",
@@ -104,9 +97,16 @@
       "ticker": "SFBS",
       "ratio": "2:1",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-09-03",
+      "name": "Rush Enterprises",
+      "ticker": "RUSHA",
+      "ratio": "3:2",
+      "source": "benzinga"
     }
   ],
-  "today": "2026-07-28",
-  "updated_at": "2026-07-28 12:43 UTC",
+  "today": "2026-07-29",
+  "updated_at": "2026-07-29 12:56 UTC",
   "total": 15
 }
