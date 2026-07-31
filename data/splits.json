@@ -1,6 +1,13 @@
 {
   "splits": [
     {
+      "date_ex": "2026-07-31",
+      "name": "Orla Mining Ltd.",
+      "ticker": "ORLA",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-08-03",
       "name": "Microvision",
       "ticker": "MVIS",
@@ -106,7 +113,7 @@
       "source": "benzinga"
     }
   ],
-  "today": "2026-07-30",
-  "updated_at": "2026-07-30 12:45 UTC",
-  "total": 15
+  "today": "2026-07-31",
+  "updated_at": "2026-07-31 12:00 UTC",
+  "total": 16
 }
