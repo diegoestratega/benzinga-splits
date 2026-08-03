@@ -1,13 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-07-31",
-      "name": "Orla Mining Ltd.",
-      "ticker": "ORLA",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-08-03",
       "name": "Microvision",
       "ticker": "MVIS",
@@ -57,6 +50,13 @@
       "source": "benzinga"
     },
     {
+      "date_ex": "2026-08-12",
+      "name": "Ethan Allen Interiors Inc.",
+      "ticker": "ETD",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-08-17",
       "name": "John B. Sanfilippo & Son, Inc.",
       "ticker": "JBSS",
@@ -100,6 +100,13 @@
     },
     {
       "date_ex": "2026-08-21",
+      "name": "IES Hldgs",
+      "ticker": "IESC",
+      "ratio": "2:1",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-08-21",
       "name": "Servisfirst Bancshares",
       "ticker": "SFBS",
       "ratio": "2:1",
@@ -113,7 +120,7 @@
       "source": "benzinga"
     }
   ],
-  "today": "2026-07-31",
-  "updated_at": "2026-07-31 12:00 UTC",
-  "total": 16
+  "today": "2026-08-03",
+  "updated_at": "2026-08-03 12:42 UTC",
+  "total": 17
 }
