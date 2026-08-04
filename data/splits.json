@@ -1,32 +1,18 @@
 {
   "splits": [
     {
-      "date_ex": "2026-08-03",
-      "name": "Microvision",
-      "ticker": "MVIS",
-      "ratio": "1:15",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-08-03",
-      "name": "Cumberland Pharmaceuticals Inc.",
-      "ticker": "CPIX",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-08-03",
-      "name": "SITE Centers Corporation",
-      "ticker": "SITC",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-08-04",
       "name": "YPF",
       "ticker": "YPF",
       "ratio": "10:1",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-08-04",
+      "name": "The Oncology Institute, Inc.",
+      "ticker": "TOI",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-08-04",
@@ -120,7 +106,7 @@
       "source": "benzinga"
     }
   ],
-  "today": "2026-08-03",
-  "updated_at": "2026-08-03 12:42 UTC",
-  "total": 17
+  "today": "2026-08-04",
+  "updated_at": "2026-08-04 13:03 UTC",
+  "total": 15
 }
