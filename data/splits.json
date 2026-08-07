@@ -1,6 +1,13 @@
 {
   "splits": [
     {
+      "date_ex": "2026-08-07",
+      "name": "QVC Group, Inc.",
+      "ticker": "QVCAQ",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-08-11",
       "name": "Monster Beverage",
       "ticker": "MNST",
@@ -93,6 +100,6 @@
     }
   ],
   "today": "2026-08-07",
-  "updated_at": "2026-08-07 12:16 UTC",
-  "total": 13
+  "updated_at": "2026-08-07 13:21 UTC",
+  "total": 14
 }
