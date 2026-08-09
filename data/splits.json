@@ -1,13 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-08-07",
-      "name": "QVC Group, Inc.",
-      "ticker": "QVCAQ",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-08-11",
       "name": "Monster Beverage",
       "ticker": "MNST",
@@ -85,6 +78,20 @@
       "source": "benzinga"
     },
     {
+      "date_ex": "2026-08-28",
+      "name": "Adjusted Vistance Networks, Inc.",
+      "ticker": "VISN1",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-28",
+      "name": "Vistance Networks, Inc.",
+      "ticker": "VISN",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-09-03",
       "name": "Rush Enterprises",
       "ticker": "RUSHA",
@@ -99,7 +106,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-08-07",
-  "updated_at": "2026-08-07 13:21 UTC",
-  "total": 14
+  "today": "2026-08-09",
+  "updated_at": "2026-08-09 22:47 UTC",
+  "total": 15
 }
