@@ -15,6 +15,13 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-08-14",
+      "name": "Beyond Meat",
+      "ticker": "BYND",
+      "ratio": "1:30",
+      "source": "benzinga"
+    },
+    {
       "date_ex": "2026-08-17",
       "name": "Amphenol",
       "ticker": "APH",
@@ -78,6 +85,13 @@
       "source": "benzinga"
     },
     {
+      "date_ex": "2026-08-24",
+      "name": "BRC",
+      "ticker": "BRCC",
+      "ratio": "1:10",
+      "source": "benzinga"
+    },
+    {
       "date_ex": "2026-08-28",
       "name": "Adjusted Vistance Networks, Inc.",
       "ticker": "VISN1",
@@ -106,7 +120,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-08-10",
-  "updated_at": "2026-08-10 11:39 UTC",
-  "total": 15
+  "today": "2026-08-11",
+  "updated_at": "2026-08-11 12:26 UTC",
+  "total": 17
 }
