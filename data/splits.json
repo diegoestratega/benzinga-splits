@@ -1,16 +1,23 @@
 {
   "splits": [
     {
-      "date_ex": "2026-08-11",
-      "name": "Monster Beverage",
-      "ticker": "MNST",
-      "ratio": "2:1",
-      "source": "benzinga"
-    },
-    {
       "date_ex": "2026-08-12",
       "name": "Ethan Allen Interiors Inc.",
       "ticker": "ETD",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-13",
+      "name": "KIDZ AI",
+      "ticker": "KIDZ",
+      "ratio": "1:15",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-08-13",
+      "name": "Adjusted KIDZ AI Inc.",
+      "ticker": "KIDZ1",
       "ratio": "",
       "source": "occ"
     },
@@ -120,7 +127,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-08-11",
-  "updated_at": "2026-08-11 12:26 UTC",
-  "total": 17
+  "today": "2026-08-12",
+  "updated_at": "2026-08-12 11:41 UTC",
+  "total": 18
 }
