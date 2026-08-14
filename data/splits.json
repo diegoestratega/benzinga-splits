@@ -1,20 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-08-13",
-      "name": "KIDZ AI",
-      "ticker": "KIDZ",
-      "ratio": "1:15",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-08-13",
-      "name": "Adjusted KIDZ AI Inc.",
-      "ticker": "KIDZ1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-08-14",
       "name": "Beyond Meat",
       "ticker": "BYND",
@@ -37,37 +23,9 @@
     },
     {
       "date_ex": "2026-08-18",
-      "name": "Defiance Daily Target 2x Short IONQ ETF",
-      "ticker": "IONZ",
-      "ratio": "1:10",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-08-19",
-      "name": "Defiance Daily Target 2x Short RGTI ETF",
-      "ticker": "RGTZ",
-      "ratio": "1:5",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-08-19",
-      "name": "Defiance Daily Target 2x Long OKLO ETF",
-      "ticker": "OKLL",
-      "ratio": "1:5",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-08-19",
-      "name": "Defiance Daily Target 2x Short QBTS ETF",
-      "ticker": "QBTZ",
-      "ratio": "1:5",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-08-19",
-      "name": "Defiance Daily Target 2X Short ASTS ETF",
-      "ticker": "ASTN",
-      "ratio": "1:4",
+      "name": "Recon Technology",
+      "ticker": "RCON",
+      "ratio": "1:200",
       "source": "benzinga"
     },
     {
@@ -113,14 +71,56 @@
       "source": "benzinga"
     },
     {
+      "date_ex": "2026-09-09",
+      "name": "Defiance Daily Target 2x Short IONQ ETF",
+      "ticker": "IONZ",
+      "ratio": "1:10",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-09-10",
+      "name": "Defiance Daily Target 2x Short RGTI ETF",
+      "ticker": "RGTZ",
+      "ratio": "1:5",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-09-10",
+      "name": "Defiance Daily Target 2x Long OKLO ETF",
+      "ticker": "OKLL",
+      "ratio": "1:5",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-09-10",
+      "name": "Defiance Daily Target 2x Short QBTS ETF",
+      "ticker": "QBTZ",
+      "ratio": "1:5",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-09-10",
+      "name": "Defiance Daily Target 2X Short ASTS ETF",
+      "ticker": "ASTN",
+      "ratio": "1:4",
+      "source": "benzinga"
+    },
+    {
       "date_ex": "2026-09-21",
       "name": "Main Street Capital Corporation",
       "ticker": "MAIN",
       "ratio": "",
       "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-05",
+      "name": "iShares Morningstar U.S. Equity ETF",
+      "ticker": "ILCB",
+      "ratio": "",
+      "source": "occ"
     }
   ],
-  "today": "2026-08-13",
-  "updated_at": "2026-08-13 11:35 UTC",
+  "today": "2026-08-14",
+  "updated_at": "2026-08-14 12:43 UTC",
   "total": 17
 }
