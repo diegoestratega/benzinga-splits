@@ -1,18 +1,18 @@
 {
   "splits": [
     {
-      "date_ex": "2026-08-14",
-      "name": "Beyond Meat",
-      "ticker": "BYND",
-      "ratio": "1:30",
-      "source": "benzinga"
-    },
-    {
       "date_ex": "2026-08-17",
       "name": "Amphenol",
       "ticker": "APH",
       "ratio": "2:1",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-08-17",
+      "name": "Bed Bath & Beyond, Inc.",
+      "ticker": "BBBY",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-08-17",
@@ -23,9 +23,23 @@
     },
     {
       "date_ex": "2026-08-18",
+      "name": "CXApp",
+      "ticker": "CXAI",
+      "ratio": "1:50",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-08-18",
       "name": "Recon Technology",
       "ticker": "RCON",
       "ratio": "1:200",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-08-19",
+      "name": "Nerdy",
+      "ticker": "NRDY",
+      "ratio": "1:15",
       "source": "benzinga"
     },
     {
@@ -48,6 +62,69 @@
       "ticker": "BRCC",
       "ratio": "1:10",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-08-24",
+      "name": "ABVC BioPharma, Inc.",
+      "ticker": "ABVC",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-24",
+      "name": "T-REX 2X Long TTD Daily Target ETF",
+      "ticker": "TTDU",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-24",
+      "name": "T-REX 2X Long TE Daily Target ETF",
+      "ticker": "TEUP",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-24",
+      "name": "T-REX 2X Long SBET Daily Target ETF",
+      "ticker": "SBTU",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-24",
+      "name": "T-Rex 2X Long MSTR Daily Target ETF",
+      "ticker": "MSTU",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-24",
+      "name": "Adjusted T-Rex 2X Long MSTR Daily Target ETF",
+      "ticker": "MSTU1",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-24",
+      "name": "T-REX 2X Long CRWV Daily Target ETF",
+      "ticker": "CRWU",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-24",
+      "name": "T-REX 2X Long CRCL Daily Target ETF",
+      "ticker": "CCUP",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-24",
+      "name": "T-REX 2X Long AXTI Daily Target ETF",
+      "ticker": "AXTU",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-08-28",
@@ -75,6 +152,20 @@
       "name": "Defiance Daily Target 2x Short IONQ ETF",
       "ticker": "IONZ",
       "ratio": "1:10",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-09-09",
+      "name": "Defiance Daily Target 2x Short RKLB ETF",
+      "ticker": "RKLZ",
+      "ratio": "1:5",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-09-09",
+      "name": "Defiance Daily Target 2x Long AVAV ETF",
+      "ticker": "AVXX",
+      "ratio": "1:5",
       "source": "benzinga"
     },
     {
@@ -120,7 +211,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-08-14",
-  "updated_at": "2026-08-14 12:43 UTC",
-  "total": 17
+  "today": "2026-08-17",
+  "updated_at": "2026-08-17 11:59 UTC",
+  "total": 30
 }
