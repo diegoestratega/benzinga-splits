@@ -1,27 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-08-17",
-      "name": "Amphenol",
-      "ticker": "APH",
-      "ratio": "2:1",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-08-17",
-      "name": "Bed Bath & Beyond, Inc.",
-      "ticker": "BBBY",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-08-17",
-      "name": "John B. Sanfilippo & Son, Inc.",
-      "ticker": "JBSS",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-08-18",
       "name": "CXApp",
       "ticker": "CXAI",
@@ -34,6 +13,20 @@
       "ticker": "RCON",
       "ratio": "1:200",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-08-18",
+      "name": "Innovative Solutions and Support, Inc.",
+      "ticker": "ISSC",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-18",
+      "name": "Equity Residential",
+      "ticker": "EQR",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-08-19",
@@ -148,6 +141,13 @@
       "source": "benzinga"
     },
     {
+      "date_ex": "2026-09-03",
+      "name": "Amphenol Corporation",
+      "ticker": "APH",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-09-09",
       "name": "Defiance Daily Target 2x Short IONQ ETF",
       "ticker": "IONZ",
@@ -211,7 +211,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-08-17",
-  "updated_at": "2026-08-17 11:59 UTC",
+  "today": "2026-08-18",
+  "updated_at": "2026-08-18 11:23 UTC",
   "total": 30
 }
