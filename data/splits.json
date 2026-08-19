@@ -1,34 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-08-18",
-      "name": "CXApp",
-      "ticker": "CXAI",
-      "ratio": "1:50",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-08-18",
-      "name": "Recon Technology",
-      "ticker": "RCON",
-      "ratio": "1:200",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-08-18",
-      "name": "Innovative Solutions and Support, Inc.",
-      "ticker": "ISSC",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-08-18",
-      "name": "Equity Residential",
-      "ticker": "EQR",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-08-19",
       "name": "Nerdy",
       "ticker": "NRDY",
@@ -211,7 +183,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-08-18",
-  "updated_at": "2026-08-18 11:23 UTC",
-  "total": 30
+  "today": "2026-08-19",
+  "updated_at": "2026-08-19 12:24 UTC",
+  "total": 26
 }
