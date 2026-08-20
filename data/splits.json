@@ -1,11 +1,18 @@
 {
   "splits": [
     {
-      "date_ex": "2026-08-19",
-      "name": "Nerdy",
-      "ticker": "NRDY",
-      "ratio": "1:15",
-      "source": "benzinga"
+      "date_ex": "2026-08-20",
+      "name": "Webster Financial Corporation",
+      "ticker": "WBS",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-20",
+      "name": "The Glimpse Group, Inc.",
+      "ticker": "GGRP",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-08-21",
@@ -19,6 +26,13 @@
       "name": "Servisfirst Bancshares",
       "ticker": "SFBS",
       "ratio": "2:1",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-08-24",
+      "name": "Intercure",
+      "ticker": "INCR",
+      "ratio": "1:5",
       "source": "benzinga"
     },
     {
@@ -183,7 +197,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-08-19",
-  "updated_at": "2026-08-19 12:24 UTC",
-  "total": 26
+  "today": "2026-08-20",
+  "updated_at": "2026-08-20 11:37 UTC",
+  "total": 28
 }
