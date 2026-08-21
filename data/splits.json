@@ -1,20 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-08-20",
-      "name": "Webster Financial Corporation",
-      "ticker": "WBS",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-08-20",
-      "name": "The Glimpse Group, Inc.",
-      "ticker": "GGRP",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-08-21",
       "name": "IES Hldgs",
       "ticker": "IESC",
@@ -41,6 +27,20 @@
       "ticker": "BRCC",
       "ratio": "1:10",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-08-24",
+      "name": "Universal Electronics Inc.",
+      "ticker": "UEIC",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-08-24",
+      "name": "Skye Bioscience, Inc.",
+      "ticker": "SKYE",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-08-24",
@@ -197,7 +197,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-08-20",
-  "updated_at": "2026-08-20 11:37 UTC",
+  "today": "2026-08-21",
+  "updated_at": "2026-08-21 12:19 UTC",
   "total": 28
 }
