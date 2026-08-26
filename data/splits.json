@@ -1,37 +1,9 @@
 {
   "splits": [
     {
-      "date_ex": "2026-08-25",
-      "name": "Real Brokerage",
-      "ticker": "REAX",
-      "ratio": "1:10",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-08-25",
-      "name": "Adjusted T-Rex 2X Long MSTR Daily Target ETF",
-      "ticker": "MSTU2",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-08-25",
-      "name": "Adjusted T-Rex 2X Long MSTR Daily Target ETF",
-      "ticker": "MSTU1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-08-25",
-      "name": "RE/MAX Holdings, Inc. (Election Merger)",
-      "ticker": "RMAX",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-08-25",
-      "name": "KLX Energy Services Holdings, Inc.",
-      "ticker": "KLXE",
+      "date_ex": "2026-08-27",
+      "name": "NOVONIX Limited",
+      "ticker": "NVX",
       "ratio": "",
       "source": "occ"
     },
@@ -50,7 +22,7 @@
       "source": "occ"
     },
     {
-      "date_ex": "2026-09-03",
+      "date_ex": "2026-09-01",
       "name": "Rush Enterprises",
       "ticker": "RUSHA",
       "ratio": "3:2",
@@ -58,15 +30,15 @@
     },
     {
       "date_ex": "2026-09-03",
-      "name": "Ethan Allen Interiors Inc.",
-      "ticker": "ETD",
-      "ratio": "",
-      "source": "occ"
+      "name": "Amphenol",
+      "ticker": "APH",
+      "ratio": "2:1",
+      "source": "benzinga"
     },
     {
       "date_ex": "2026-09-03",
-      "name": "Amphenol Corporation",
-      "ticker": "APH",
+      "name": "Ethan Allen Interiors Inc.",
+      "ticker": "ETD",
       "ratio": "",
       "source": "occ"
     },
@@ -134,7 +106,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-08-25",
-  "updated_at": "2026-08-25 11:40 UTC",
-  "total": 19
+  "today": "2026-08-26",
+  "updated_at": "2026-08-26 12:48 UTC",
+  "total": 15
 }
