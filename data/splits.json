@@ -1,20 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-08-27",
-      "name": "Leggett & Platt, Incorporated",
-      "ticker": "LEG",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-08-27",
-      "name": "NOVONIX Limited",
-      "ticker": "NVX",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-08-28",
       "name": "Adjusted Vistance Networks, Inc.",
       "ticker": "VISN1",
@@ -113,7 +99,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-08-27",
-  "updated_at": "2026-08-27 11:30 UTC",
-  "total": 16
+  "today": "2026-08-28",
+  "updated_at": "2026-08-28 12:31 UTC",
+  "total": 14
 }
