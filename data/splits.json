@@ -15,6 +15,13 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-08-31",
+      "name": "The Arena Group Holdings, Inc.",
+      "ticker": "AREN",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-09-01",
       "name": "Rush Enterprises",
       "ticker": "RUSHA",
@@ -100,6 +107,6 @@
     }
   ],
   "today": "2026-08-28",
-  "updated_at": "2026-08-28 12:31 UTC",
-  "total": 14
+  "updated_at": "2026-08-28 19:18 UTC",
+  "total": 15
 }
