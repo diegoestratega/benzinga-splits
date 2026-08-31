@@ -1,20 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-08-28",
-      "name": "Adjusted Vistance Networks, Inc.",
-      "ticker": "VISN1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-08-28",
-      "name": "Vistance Networks, Inc.",
-      "ticker": "VISN",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-08-31",
       "name": "The Arena Group Holdings, Inc.",
       "ticker": "AREN",
@@ -106,7 +92,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-08-28",
-  "updated_at": "2026-08-28 19:18 UTC",
-  "total": 15
+  "today": "2026-08-31",
+  "updated_at": "2026-08-31 11:45 UTC",
+  "total": 13
 }
