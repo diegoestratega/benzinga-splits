@@ -1,13 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-08-31",
-      "name": "The Arena Group Holdings, Inc.",
-      "ticker": "AREN",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-09-01",
       "name": "Rush Enterprises",
       "ticker": "RUSHA",
@@ -92,7 +85,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-08-31",
-  "updated_at": "2026-08-31 11:45 UTC",
-  "total": 13
+  "today": "2026-09-01",
+  "updated_at": "2026-09-01 11:27 UTC",
+  "total": 12
 }
