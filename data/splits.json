@@ -1,20 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-09-03",
-      "name": "Amphenol",
-      "ticker": "APH",
-      "ratio": "2:1",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-09-03",
-      "name": "Ethan Allen Interiors Inc.",
-      "ticker": "ETD",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-09-04",
       "name": "CollPlant Biotechnologies",
       "ticker": "CLGN",
@@ -22,11 +8,25 @@
       "source": "benzinga"
     },
     {
+      "date_ex": "2026-09-04",
+      "name": "JFB Construction Holdings",
+      "ticker": "JFB",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-09-08",
       "name": "CytoSorbents",
       "ticker": "CTSO",
       "ratio": "1:20",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-09-08",
+      "name": "21Shares 2x Long Dogecoin ETF",
+      "ticker": "TXXD",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-09-08",
@@ -99,7 +99,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-09-03",
-  "updated_at": "2026-09-03 12:13 UTC",
+  "today": "2026-09-04",
+  "updated_at": "2026-09-04 11:33 UTC",
   "total": 14
 }
