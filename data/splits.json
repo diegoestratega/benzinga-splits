@@ -1,27 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-09-08",
-      "name": "CytoSorbents",
-      "ticker": "CTSO",
-      "ratio": "1:20",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-09-08",
-      "name": "21Shares 2x Long Dogecoin ETF",
-      "ticker": "TXXD",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-09-08",
-      "name": "Grupo Cibest S.A.",
-      "ticker": "CIB",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-09-09",
       "name": "Defiance Daily Target 2x Short IONQ ETF",
       "ticker": "IONZ",
@@ -71,6 +50,13 @@
       "source": "benzinga"
     },
     {
+      "date_ex": "2026-09-10",
+      "name": "Adjusted Defiance Daily Target 2x Short QBTS ETF",
+      "ticker": "QBTZ1",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-09-16",
       "name": "Gold.com, Inc.",
       "ticker": "GOLD",
@@ -92,7 +78,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-09-08",
-  "updated_at": "2026-09-08 12:41 UTC",
-  "total": 13
+  "today": "2026-09-09",
+  "updated_at": "2026-09-09 11:37 UTC",
+  "total": 11
 }
