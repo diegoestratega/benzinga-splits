@@ -1,27 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-09-09",
-      "name": "Defiance Daily Target 2x Short IONQ ETF",
-      "ticker": "IONZ",
-      "ratio": "1:10",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-09-09",
-      "name": "Defiance Daily Target 2x Short RKLB ETF",
-      "ticker": "RKLZ",
-      "ratio": "1:5",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-09-09",
-      "name": "Defiance Daily Target 2x Long AVAV ETF",
-      "ticker": "AVXX",
-      "ratio": "1:5",
-      "source": "benzinga"
-    },
-    {
       "date_ex": "2026-09-10",
       "name": "Defiance Daily Target 2x Short RGTI ETF",
       "ticker": "RGTZ",
@@ -51,10 +30,31 @@
     },
     {
       "date_ex": "2026-09-10",
+      "name": "Gladstone Capital Corporation",
+      "ticker": "GLAD",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-09-10",
       "name": "Adjusted Defiance Daily Target 2x Short QBTS ETF",
       "ticker": "QBTZ1",
       "ratio": "",
       "source": "occ"
+    },
+    {
+      "date_ex": "2026-09-11",
+      "name": "New Fortress Energy",
+      "ticker": "NFE",
+      "ratio": "1:50",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-09-11",
+      "name": "Gossamer Bio",
+      "ticker": "GOSS",
+      "ratio": "1:80",
+      "source": "benzinga"
     },
     {
       "date_ex": "2026-09-16",
@@ -78,7 +78,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-09-09",
-  "updated_at": "2026-09-09 11:37 UTC",
+  "today": "2026-09-10",
+  "updated_at": "2026-09-10 11:31 UTC",
   "total": 11
 }
