@@ -1,59 +1,24 @@
 {
   "splits": [
     {
-      "date_ex": "2026-09-10",
-      "name": "Defiance Daily Target 2x Short RGTI ETF",
-      "ticker": "RGTZ",
-      "ratio": "1:5",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-09-10",
-      "name": "Defiance Daily Target 2x Long OKLO ETF",
-      "ticker": "OKLL",
-      "ratio": "1:5",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-09-10",
-      "name": "Defiance Daily Target 2x Short QBTS ETF",
-      "ticker": "QBTZ",
-      "ratio": "1:5",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-09-10",
-      "name": "Defiance Daily Target 2X Short ASTS ETF",
-      "ticker": "ASTN",
-      "ratio": "1:4",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-09-10",
-      "name": "Gladstone Capital Corporation",
-      "ticker": "GLAD",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-09-10",
-      "name": "Adjusted Defiance Daily Target 2x Short QBTS ETF",
-      "ticker": "QBTZ1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-09-11",
-      "name": "New Fortress Energy",
-      "ticker": "NFE",
-      "ratio": "1:50",
-      "source": "benzinga"
-    },
-    {
       "date_ex": "2026-09-11",
       "name": "Gossamer Bio",
       "ticker": "GOSS",
       "ratio": "1:80",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-09-14",
+      "name": "Ocean Power Techs",
+      "ticker": "OPTT",
+      "ratio": "1:30",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-09-14",
+      "name": "New Fortress Energy",
+      "ticker": "NFE",
+      "ratio": "1:50",
       "source": "benzinga"
     },
     {
@@ -71,6 +36,13 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-09-22",
+      "name": "Tradr 2X Long U Daily ETF",
+      "ticker": "UNX",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-10-05",
       "name": "iShares Morningstar U.S. Equity ETF",
       "ticker": "ILCB",
@@ -78,7 +50,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-09-10",
-  "updated_at": "2026-09-10 11:31 UTC",
-  "total": 11
+  "today": "2026-09-11",
+  "updated_at": "2026-09-11 11:49 UTC",
+  "total": 7
 }
