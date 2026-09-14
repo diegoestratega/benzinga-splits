@@ -1,13 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-09-11",
-      "name": "Gossamer Bio",
-      "ticker": "GOSS",
-      "ratio": "1:80",
-      "source": "benzinga"
-    },
-    {
       "date_ex": "2026-09-14",
       "name": "Ocean Power Techs",
       "ticker": "OPTT",
@@ -37,6 +30,13 @@
     },
     {
       "date_ex": "2026-09-22",
+      "name": "Grayscale Bitcoin Miners ETF",
+      "ticker": "MNRS",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-09-22",
       "name": "Tradr 2X Long U Daily ETF",
       "ticker": "UNX",
       "ratio": "",
@@ -50,7 +50,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-09-11",
-  "updated_at": "2026-09-11 11:49 UTC",
+  "today": "2026-09-14",
+  "updated_at": "2026-09-14 11:45 UTC",
   "total": 7
 }
