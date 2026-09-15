@@ -1,18 +1,11 @@
 {
   "splits": [
     {
-      "date_ex": "2026-09-14",
-      "name": "Ocean Power Techs",
-      "ticker": "OPTT",
-      "ratio": "1:30",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-09-14",
-      "name": "New Fortress Energy",
-      "ticker": "NFE",
-      "ratio": "1:50",
-      "source": "benzinga"
+      "date_ex": "2026-09-15",
+      "name": "iShares U.S. Home Construction ETF",
+      "ticker": "ITB",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-09-16",
@@ -22,9 +15,86 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-09-18",
+      "name": "Frontline plc",
+      "ticker": "FRO",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-09-21",
       "name": "Main Street Capital Corporation",
       "ticker": "MAIN",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-09-22",
+      "name": "Tradr 2X Long QUBT Daily ETF",
+      "ticker": "QUBX",
+      "ratio": "1:4",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-09-22",
+      "name": "Tradr 2X Long QBTS Daily ETF",
+      "ticker": "QBTX",
+      "ratio": "1:4",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-09-22",
+      "name": "Tradr 2X Long CRML Daily ETF",
+      "ticker": "CRMX",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-09-22",
+      "name": "Tradr 2X Short NBIS Daily ETF",
+      "ticker": "NBIZ",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-09-22",
+      "name": "Adjusted Tradr 2X Short NBIS Daily ETF",
+      "ticker": "NBIZ2",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-09-22",
+      "name": "Adjusted Tradr 2X Short NBIS Daily ETF",
+      "ticker": "NBIZ1",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-09-22",
+      "name": "Tradr 2X Short LITE Daily ETF",
+      "ticker": "LITZ",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-09-22",
+      "name": "Tradr 2X Long AXTI Daily ETF",
+      "ticker": "AXTX",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-09-22",
+      "name": "Tradr 2X Long ONDS Daily ETF",
+      "ticker": "ONDU",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-09-22",
+      "name": "Tradr 2X Long SMR Daily ETF",
+      "ticker": "SMU",
       "ratio": "",
       "source": "occ"
     },
@@ -50,7 +120,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-09-14",
-  "updated_at": "2026-09-14 11:45 UTC",
-  "total": 7
+  "today": "2026-09-15",
+  "updated_at": "2026-09-15 12:29 UTC",
+  "total": 17
 }
