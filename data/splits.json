@@ -1,13 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-09-15",
-      "name": "iShares U.S. Home Construction ETF",
-      "ticker": "ITB",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-09-16",
       "name": "Gold.com, Inc.",
       "ticker": "GOLD",
@@ -113,14 +106,28 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-10-01",
+      "name": "Corteva, Inc.",
+      "ticker": "CTVA",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-10-05",
       "name": "iShares Morningstar U.S. Equity ETF",
       "ticker": "ILCB",
       "ratio": "",
       "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-09",
+      "name": "WisdomTree",
+      "ticker": "WT",
+      "ratio": "3:1",
+      "source": "benzinga"
     }
   ],
-  "today": "2026-09-15",
-  "updated_at": "2026-09-15 12:29 UTC",
-  "total": 17
+  "today": "2026-09-16",
+  "updated_at": "2026-09-16 12:28 UTC",
+  "total": 18
 }
