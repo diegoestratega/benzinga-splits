@@ -1,9 +1,9 @@
 {
   "splits": [
     {
-      "date_ex": "2026-09-16",
-      "name": "Gold.com, Inc.",
-      "ticker": "GOLD",
+      "date_ex": "2026-09-17",
+      "name": "Sphere 3D Corporation",
+      "ticker": "ANY1",
       "ratio": "",
       "source": "occ"
     },
@@ -125,9 +125,16 @@
       "ticker": "WT",
       "ratio": "3:1",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-10-09",
+      "name": "WisdomTree Japan Hedged Equity Fund",
+      "ticker": "DXJ",
+      "ratio": "",
+      "source": "occ"
     }
   ],
-  "today": "2026-09-16",
-  "updated_at": "2026-09-16 12:28 UTC",
-  "total": 18
+  "today": "2026-09-17",
+  "updated_at": "2026-09-17 11:47 UTC",
+  "total": 19
 }
