@@ -34,6 +34,28 @@ HEADERS = {
     "Sec-Fetch-User":  "?1",
 }
 
+# Fund markers. Deliberately narrow so operating companies survive:
+# "Trust" (REITs) and "Portfolio" (Portfolio Recovery Associates) are
+# left out, as are issuer names that are themselves listed stocks
+# (WisdomTree → WT, Invesco → IVZ, BlackRock → BLK).
+ETF_NAME_RE = re.compile(
+    r"\b(?:"
+    r"ETFs?|ETNs?|ETPs?"
+    r"|Exchange[\s-]?Traded"
+    r"|Funds?"
+    r"|iShares|ProShares|SPDR|Direxion|GraniteShares|Leverage\s+Shares"
+    r"|YieldMax|Tradr|Roundhill|Xtrackers|VanEck|Global\s+X"
+    r"|\d+(?:\.\d+)?X\s+(?:Long|Short|Bull|Bear)"
+    r"|(?:Bull|Bear)\s+\d+(?:\.\d+)?X"
+    r")\b",
+    re.IGNORECASE,
+)
+
+# Yahoo instrumentType values that are not a single-company stock
+ETF_QUOTE_TYPES = {"ETF", "MUTUALFUND"}
+
+_quote_type_cache = {}
+
 
 def fetch_page():
     print(f"→ Fetching Benzinga splits page (curl_cffi Chrome124)...")
@@ -426,6 +448,47 @@ def normalize_row(row):
     }
 
 
+def quote_type(ticker):
+    """Yahoo instrument class — 'EQUITY', 'ETF', 'MUTUALFUND'… or '' if unknown."""
+    if ticker in _quote_type_cache:
+        return _quote_type_cache[ticker]
+    try:
+        qt = str(yf.Ticker(ticker).fast_info["quoteType"] or "").upper()
+    except Exception:
+        qt = ""
+    _quote_type_cache[ticker] = qt
+    time.sleep(0.25)
+    return qt
+
+
+def etf_reason(ticker, name):
+    """Why this row is a fund, or None if it looks like a real company."""
+    m = ETF_NAME_RE.search(name or "")
+    if m:
+        return f"name ~ '{m.group(0)}'"
+    qt = quote_type(ticker)
+    if qt in ETF_QUOTE_TYPES:
+        return f"Yahoo quoteType={qt}"
+    return None
+
+
+def drop_etfs(rows, label):
+    """Remove ETFs/funds. Tickers Yahoo cannot classify are kept, not dropped."""
+    if not rows:
+        return rows
+
+    print(f"\n→ ETF filter [{label}]: screening {len(rows)} rows...\n")
+    kept = []
+    for r in rows:
+        reason = etf_reason(r["ticker"], r.get("name", ""))
+        if reason:
+            print(f"  ✗ {r['ticker']:<8} fund — {reason}")
+        else:
+            kept.append(r)
+    print(f"\n  ✓ {len(kept)} kept · {len(rows) - len(kept)} ETFs removed")
+    return kept
+
+
 def is_optionable(ticker):
     try:
         return len(yf.Ticker(ticker).options) > 0
@@ -486,6 +549,11 @@ def main():
     future.sort(key=lambda x: x["date_ex"])
     print(f"→ {len(future)} splits from {today} forward")
 
+    n_before      = len(future)
+    future        = drop_etfs(future, "benzinga")
+    etfs_filtered = n_before - len(future)
+    print()
+
     known_yes = [s for s in future if s["optionable"] is True]
     known_no  = [s for s in future if s["optionable"] is False]
     unknown   = [s for s in future if s["optionable"] is None]
@@ -534,6 +602,10 @@ def main():
             "source":  "occ",
         })
 
+    n_before       = len(occ_final)
+    occ_final      = drop_etfs(occ_final, "occ")
+    etfs_filtered += n_before - len(occ_final)
+
     occ_final.sort(key=lambda x: x["date_ex"])
     print(f"✓ {len(occ_final)} additional entries found (OCC, gap-fill only)")
 
@@ -542,7 +614,8 @@ def main():
     os.makedirs(DATA_DIR, exist_ok=True)
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump({"splits": combined, "today": today,
-                   "updated_at": now_utc, "total": len(combined)}, f, indent=2)
+                   "updated_at": now_utc, "total": len(combined),
+                   "etfs_filtered": etfs_filtered}, f, indent=2)
     print(f"\n✓ Saved → {DATA_FILE}  ({len(combined)} total entries)\n")
 
     print("→ Pushing to GitHub...\n")

@@ -22,107 +22,9 @@
       "source": "benzinga"
     },
     {
-      "date_ex": "2026-09-22",
-      "name": "Tradr 2X Long QUBT Daily ETF",
-      "ticker": "QUBX",
-      "ratio": "1:4",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-09-22",
-      "name": "Tradr 2X Long QBTS Daily ETF",
-      "ticker": "QBTX",
-      "ratio": "1:4",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-09-22",
-      "name": "Tradr 2X Long CRML Daily ETF",
-      "ticker": "CRMX",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-09-22",
-      "name": "Tradr 2X Short NBIS Daily ETF",
-      "ticker": "NBIZ",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-09-22",
-      "name": "Adjusted Tradr 2X Short NBIS Daily ETF",
-      "ticker": "NBIZ2",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-09-22",
-      "name": "Adjusted Tradr 2X Short NBIS Daily ETF",
-      "ticker": "NBIZ1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-09-22",
-      "name": "Tradr 2X Short LITE Daily ETF",
-      "ticker": "LITZ",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-09-22",
-      "name": "Tradr 2X Long AXTI Daily ETF",
-      "ticker": "AXTX",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-09-22",
-      "name": "Tradr 2X Long ONDS Daily ETF",
-      "ticker": "ONDU",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-09-22",
-      "name": "Tradr 2X Long SMR Daily ETF",
-      "ticker": "SMU",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-09-22",
-      "name": "Grayscale Bitcoin Miners ETF",
-      "ticker": "MNRS",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-09-22",
-      "name": "Tradr 2X Long U Daily ETF",
-      "ticker": "UNX",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-09-30",
-      "name": "The Zcash ETF Shares",
-      "ticker": "ZCSH",
-      "ratio": "3:1",
-      "source": "benzinga"
-    },
-    {
       "date_ex": "2026-10-01",
       "name": "Corteva, Inc.",
       "ticker": "CTVA",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-10-05",
-      "name": "iShares Morningstar U.S. Equity ETF",
-      "ticker": "ILCB",
       "ratio": "",
       "source": "occ"
     },
@@ -132,16 +34,10 @@
       "ticker": "WT",
       "ratio": "3:1",
       "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-10-09",
-      "name": "WisdomTree Japan Hedged Equity Fund",
-      "ticker": "DXJ",
-      "ratio": "",
-      "source": "occ"
     }
   ],
   "today": "2026-09-18",
   "updated_at": "2026-09-18 12:24 UTC",
-  "total": 20
+  "total": 5,
+  "etfs_filtered": 15
 }
