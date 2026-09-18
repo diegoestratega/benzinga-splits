@@ -1,13 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-09-17",
-      "name": "Sphere 3D Corporation",
-      "ticker": "ANY1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-09-18",
       "name": "Frontline plc",
       "ticker": "FRO",
@@ -20,6 +13,13 @@
       "ticker": "MAIN",
       "ratio": "",
       "source": "occ"
+    },
+    {
+      "date_ex": "2026-09-22",
+      "name": "VisionWave Holdings",
+      "ticker": "VWAV",
+      "ratio": "1:20",
+      "source": "benzinga"
     },
     {
       "date_ex": "2026-09-22",
@@ -106,6 +106,13 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-09-30",
+      "name": "The Zcash ETF Shares",
+      "ticker": "ZCSH",
+      "ratio": "3:1",
+      "source": "benzinga"
+    },
+    {
       "date_ex": "2026-10-01",
       "name": "Corteva, Inc.",
       "ticker": "CTVA",
@@ -134,7 +141,7 @@
       "source": "occ"
     }
   ],
-  "today": "2026-09-17",
-  "updated_at": "2026-09-17 11:47 UTC",
-  "total": 19
+  "today": "2026-09-18",
+  "updated_at": "2026-09-18 12:24 UTC",
+  "total": 20
 }
