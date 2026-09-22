@@ -461,18 +461,20 @@ def quote_type(ticker):
     return qt
 
 
-def etf_reason(ticker, name):
+def etf_reason(ticker, name, use_yahoo=True):
     """Why this row is a fund, or None if it looks like a real company."""
     m = ETF_NAME_RE.search(name or "")
     if m:
         return f"name ~ '{m.group(0)}'"
+    if not use_yahoo:
+        return None
     qt = quote_type(ticker)
     if qt in ETF_QUOTE_TYPES:
         return f"Yahoo quoteType={qt}"
     return None
 
 
-def drop_etfs(rows, label):
+def drop_etfs(rows, label, use_yahoo=True):
     """Remove ETFs/funds. Tickers Yahoo cannot classify are kept, not dropped."""
     if not rows:
         return rows
@@ -480,7 +482,7 @@ def drop_etfs(rows, label):
     print(f"\n→ ETF filter [{label}]: screening {len(rows)} rows...\n")
     kept = []
     for r in rows:
-        reason = etf_reason(r["ticker"], r.get("name", ""))
+        reason = etf_reason(r["ticker"], r.get("name", ""), use_yahoo)
         if reason:
             print(f"  ✗ {r['ticker']:<8} fund — {reason}")
         else:
@@ -550,7 +552,7 @@ def main():
     print(f"→ {len(future)} splits from {today} forward")
 
     n_before      = len(future)
-    future        = drop_etfs(future, "benzinga")
+    future        = drop_etfs(future, "benzinga · name", use_yahoo=False)
     etfs_filtered = n_before - len(future)
     print()
 
@@ -579,6 +581,10 @@ def main():
     bz_final = [{k: v for k, v in s.items() if k != "optionable"} for s in bz_final]
     for s in bz_final:
         s["source"] = "benzinga"
+
+    n_before       = len(bz_final)
+    bz_final       = drop_etfs(bz_final, "benzinga · Yahoo")
+    etfs_filtered += n_before - len(bz_final)
 
     print(f"\n✓ {len(bz_final)} optionable splits found (Benzinga)")
 
