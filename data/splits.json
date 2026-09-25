@@ -1,16 +1,9 @@
 {
   "splits": [
     {
-      "date_ex": "2026-09-24",
-      "name": "Theravance Biopharma, Inc.",
-      "ticker": "TBPH",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-09-24",
-      "name": "Domo, Inc.",
-      "ticker": "DOMO",
+      "date_ex": "2026-09-25",
+      "name": "KLX Energy Services Holdings, Inc.",
+      "ticker": "KLXE1",
       "ratio": "",
       "source": "occ"
     },
@@ -37,6 +30,13 @@
     },
     {
       "date_ex": "2026-10-01",
+      "name": "PLAYSTUDIOS",
+      "ticker": "MYPS",
+      "ratio": "1:10",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-10-01",
       "name": "Corteva, Inc.",
       "ticker": "CTVA",
       "ratio": "",
@@ -57,8 +57,8 @@
       "source": "benzinga"
     }
   ],
-  "today": "2026-09-24",
-  "updated_at": "2026-09-24 11:39 UTC",
+  "today": "2026-09-25",
+  "updated_at": "2026-09-25 11:54 UTC",
   "total": 8,
   "etfs_filtered": 5
 }
