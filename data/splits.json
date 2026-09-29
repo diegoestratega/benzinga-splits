@@ -1,27 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-09-28",
-      "name": "Brightline Interactive",
-      "ticker": "BTLN",
-      "ratio": "1:8",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-09-28",
-      "name": "Immutep",
-      "ticker": "IMMP",
-      "ratio": "1:20",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-09-28",
-      "name": "FG Nexus Inc.",
-      "ticker": "FGNX",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-10-01",
       "name": "PLAYSTUDIOS",
       "ticker": "MYPS",
@@ -57,8 +36,8 @@
       "source": "benzinga"
     }
   ],
-  "today": "2026-09-28",
-  "updated_at": "2026-09-28 12:13 UTC",
-  "total": 8,
+  "today": "2026-09-29",
+  "updated_at": "2026-09-29 11:43 UTC",
+  "total": 5,
   "etfs_filtered": 10
 }
