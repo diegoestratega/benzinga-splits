@@ -34,10 +34,38 @@
       "ticker": "WT",
       "ratio": "3:1",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-10-09",
+      "name": "Toro Corporation",
+      "ticker": "TORO",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-09",
+      "name": "Adjusted Toro Corporation",
+      "ticker": "TORO1",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-23",
+      "name": "Lufax Holding",
+      "ticker": "LU",
+      "ratio": "1:10",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-10-23",
+      "name": "Elme Communities",
+      "ticker": "ELME",
+      "ratio": "",
+      "source": "occ"
     }
   ],
-  "today": "2026-09-30",
-  "updated_at": "2026-09-30 12:30 UTC",
-  "total": 5,
-  "etfs_filtered": 5
+  "today": "2026-10-01",
+  "updated_at": "2026-10-01 12:35 UTC",
+  "total": 9,
+  "etfs_filtered": 3
 }
