@@ -1,27 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-10-02",
-      "name": "Modine Manufacturing Company",
-      "ticker": "MOD",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-10-02",
-      "name": "Gentherm Inc",
-      "ticker": "THRM",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-10-02",
-      "name": "UWM Holdings Corporation",
-      "ticker": "UWMC",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-10-06",
       "name": "Granite Point Mortgage Tr",
       "ticker": "GPMT",
@@ -64,8 +43,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-10-02",
-  "updated_at": "2026-10-02 12:39 UTC",
-  "total": 9,
+  "today": "2026-10-05",
+  "updated_at": "2026-10-05 12:00 UTC",
+  "total": 6,
   "etfs_filtered": 3
 }
