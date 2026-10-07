@@ -1,27 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-10-06",
-      "name": "Granite Point Mortgage Tr",
-      "ticker": "GPMT",
-      "ratio": "1:10",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-10-06",
-      "name": "Paramount Skydance Corporation",
-      "ticker": "PSKY",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-10-06",
-      "name": "Leslies, Inc.",
-      "ticker": "LESL",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-10-09",
       "name": "WisdomTree",
       "ticker": "WT",
@@ -50,6 +29,13 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-10-14",
+      "name": "Skydance Corporation",
+      "ticker": "SKYD",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-10-23",
       "name": "Lufax Holding",
       "ticker": "LU",
@@ -64,8 +50,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-10-06",
-  "updated_at": "2026-10-06 11:55 UTC",
-  "total": 9,
-  "etfs_filtered": 4
+  "today": "2026-10-07",
+  "updated_at": "2026-10-07 12:41 UTC",
+  "total": 7,
+  "etfs_filtered": 2
 }
