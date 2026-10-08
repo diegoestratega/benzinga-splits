@@ -30,6 +30,48 @@
     },
     {
       "date_ex": "2026-10-14",
+      "name": "Adjusted Fomento Economico Mexicano, S.A.B. de C.V.",
+      "ticker": "FMX5",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-14",
+      "name": "Adjusted Fomento Economico Mexicano, S.A.B. de C.V.",
+      "ticker": "FMX4",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-14",
+      "name": "Adjusted Fomento Economico Mexicano, S.A.B. de C.V.",
+      "ticker": "FMX1",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-14",
+      "name": "Fomento Economico Mexicano, S.A.B. de C.V.",
+      "ticker": "FMX",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-14",
+      "name": "Adjusted Fomento Economico Mexicano, S.A.B. de C.V.",
+      "ticker": "FMX3",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-14",
+      "name": "Adjusted Fomento Economico Mexicano, S.A.B. de C.V.",
+      "ticker": "FMX2",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-14",
       "name": "Skydance Corporation",
       "ticker": "SKYD",
       "ratio": "",
@@ -50,8 +92,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-10-07",
-  "updated_at": "2026-10-07 12:41 UTC",
-  "total": 7,
+  "today": "2026-10-08",
+  "updated_at": "2026-10-08 11:28 UTC",
+  "total": 13,
   "etfs_filtered": 2
 }
