@@ -2,10 +2,10 @@
   "splits": [
     {
       "date_ex": "2026-10-09",
-      "name": "WisdomTree",
-      "ticker": "WT",
-      "ratio": "3:1",
-      "source": "benzinga"
+      "name": "Adjusted Neighborhood Intelligence, Inc.",
+      "ticker": "NXH1",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-10-09",
@@ -92,8 +92,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-10-08",
-  "updated_at": "2026-10-08 11:28 UTC",
+  "today": "2026-10-09",
+  "updated_at": "2026-10-09 12:26 UTC",
   "total": 13,
-  "etfs_filtered": 2
+  "etfs_filtered": 3
 }
