@@ -1,23 +1,9 @@
 {
   "splits": [
     {
-      "date_ex": "2026-10-09",
-      "name": "Adjusted Neighborhood Intelligence, Inc.",
-      "ticker": "NXH1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-10-09",
-      "name": "Toro Corporation",
-      "ticker": "TORO",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-10-09",
-      "name": "Adjusted Toro Corporation",
-      "ticker": "TORO1",
+      "date_ex": "2026-10-12",
+      "name": "Quince Therapeutics, Inc.",
+      "ticker": "QNCX1",
       "ratio": "",
       "source": "occ"
     },
@@ -27,6 +13,13 @@
       "ticker": "DAC",
       "ratio": "",
       "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-14",
+      "name": "SkinHealth Systems",
+      "ticker": "SKIN",
+      "ratio": "1:20",
+      "source": "benzinga"
     },
     {
       "date_ex": "2026-10-14",
@@ -90,10 +83,31 @@
       "ticker": "ELME",
       "ratio": "",
       "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-30",
+      "name": "Adjusted Apollo Commercial Real Estate Finance, Inc.",
+      "ticker": "ARI1",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-30",
+      "name": "Apollo Commercial Real Estate Finance, Inc.",
+      "ticker": "ARI",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-12-01",
+      "name": "FS KKR Capital Corporation",
+      "ticker": "FSK",
+      "ratio": "",
+      "source": "occ"
     }
   ],
-  "today": "2026-10-09",
-  "updated_at": "2026-10-09 12:26 UTC",
-  "total": 13,
-  "etfs_filtered": 3
+  "today": "2026-10-12",
+  "updated_at": "2026-10-12 12:25 UTC",
+  "total": 15,
+  "etfs_filtered": 1
 }
