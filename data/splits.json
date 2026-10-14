@@ -1,18 +1,18 @@
 {
   "splits": [
     {
-      "date_ex": "2026-10-13",
-      "name": "Danaos Corporation",
-      "ticker": "DAC",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-10-14",
       "name": "SkinHealth Systems",
       "ticker": "SKIN",
       "ratio": "1:20",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-10-14",
+      "name": "Skydance Corporation",
+      "ticker": "SKYD",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-10-14",
@@ -57,11 +57,11 @@
       "source": "occ"
     },
     {
-      "date_ex": "2026-10-14",
-      "name": "Skydance Corporation",
-      "ticker": "SKYD",
-      "ratio": "",
-      "source": "occ"
+      "date_ex": "2026-10-16",
+      "name": "Kandi Technologies Group",
+      "ticker": "KNDI",
+      "ratio": "1:10",
+      "source": "benzinga"
     },
     {
       "date_ex": "2026-10-23",
@@ -99,8 +99,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-10-13",
-  "updated_at": "2026-10-13 11:48 UTC",
+  "today": "2026-10-14",
+  "updated_at": "2026-10-14 12:26 UTC",
   "total": 14,
   "etfs_filtered": 1
 }
