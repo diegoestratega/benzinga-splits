@@ -1,58 +1,9 @@
 {
   "splits": [
     {
-      "date_ex": "2026-10-14",
-      "name": "SkinHealth Systems",
-      "ticker": "SKIN",
-      "ratio": "1:20",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-10-14",
-      "name": "Skydance Corporation",
-      "ticker": "SKYD",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-10-14",
-      "name": "Adjusted Fomento Economico Mexicano, S.A.B. de C.V.",
-      "ticker": "FMX5",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-10-14",
-      "name": "Adjusted Fomento Economico Mexicano, S.A.B. de C.V.",
-      "ticker": "FMX4",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-10-14",
-      "name": "Adjusted Fomento Economico Mexicano, S.A.B. de C.V.",
-      "ticker": "FMX1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-10-14",
-      "name": "Fomento Economico Mexicano, S.A.B. de C.V.",
-      "ticker": "FMX",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-10-14",
-      "name": "Adjusted Fomento Economico Mexicano, S.A.B. de C.V.",
-      "ticker": "FMX3",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-10-14",
-      "name": "Adjusted Fomento Economico Mexicano, S.A.B. de C.V.",
-      "ticker": "FMX2",
+      "date_ex": "2026-10-15",
+      "name": "Clear Channel Outdoor Holdings, Inc.",
+      "ticker": "CCO",
       "ratio": "",
       "source": "occ"
     },
@@ -79,6 +30,13 @@
     },
     {
       "date_ex": "2026-10-30",
+      "name": "WhiteHorse Finance, Inc.",
+      "ticker": "WHF",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-30",
       "name": "Adjusted Apollo Commercial Real Estate Finance, Inc.",
       "ticker": "ARI1",
       "ratio": "",
@@ -99,8 +57,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-10-14",
-  "updated_at": "2026-10-14 12:26 UTC",
-  "total": 14,
+  "today": "2026-10-15",
+  "updated_at": "2026-10-15 11:27 UTC",
+  "total": 8,
   "etfs_filtered": 1
 }
