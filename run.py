@@ -260,7 +260,7 @@ def fetch_occ_html():
         has_stealth = True
     except ImportError:
         has_stealth = False
-        print("  ⚠ playwright_stealth not installed — run: pip install playwright-stealth")
+        print("  ℹ playwright_stealth not in use — optional, not required")
 
     try:
         with sync_playwright() as p:
