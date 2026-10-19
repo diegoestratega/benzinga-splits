@@ -1,13 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-10-16",
-      "name": "Kandi Technologies Group",
-      "ticker": "KNDI",
-      "ratio": "1:10",
-      "source": "benzinga"
-    },
-    {
       "date_ex": "2026-10-23",
       "name": "Lufax Holding",
       "ticker": "LU",
@@ -20,6 +13,13 @@
       "ticker": "ELME",
       "ratio": "",
       "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-29",
+      "name": "Odyssey Marine Explr",
+      "ticker": "OMEX",
+      "ratio": "1:25",
+      "source": "benzinga"
     },
     {
       "date_ex": "2026-10-30",
@@ -43,6 +43,13 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-11-06",
+      "name": "SITE Centers Corporation",
+      "ticker": "SITC",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-12-01",
       "name": "FS KKR Capital Corporation",
       "ticker": "FSK",
@@ -50,8 +57,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-10-16",
-  "updated_at": "2026-10-16 12:26 UTC",
-  "total": 7,
+  "today": "2026-10-19",
+  "updated_at": "2026-10-19 11:51 UTC",
+  "total": 8,
   "etfs_filtered": 1
 }
