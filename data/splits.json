@@ -1,16 +1,9 @@
 {
   "splits": [
     {
-      "date_ex": "2026-10-23",
-      "name": "Lufax Holding",
-      "ticker": "LU",
-      "ratio": "1:10",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-10-23",
-      "name": "Elme Communities",
-      "ticker": "ELME",
+      "date_ex": "2026-10-26",
+      "name": "Westport Fuel Systems Inc",
+      "ticker": "WPRT",
       "ratio": "",
       "source": "occ"
     },
@@ -27,6 +20,20 @@
       "ticker": "ENLV",
       "ratio": "1:16",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-10-27",
+      "name": "Adjusted Enlivex Ltd.",
+      "ticker": "ENLV1",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-10-27",
+      "name": "Madison Square Garden Sports Corporation",
+      "ticker": "MSGS",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-10-29",
@@ -71,8 +78,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-10-23",
-  "updated_at": "2026-10-23 12:41 UTC",
-  "total": 10,
+  "today": "2026-10-26",
+  "updated_at": "2026-10-26 11:35 UTC",
+  "total": 11,
   "etfs_filtered": 7
 }
