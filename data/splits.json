@@ -1,13 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-10-26",
-      "name": "Westport Fuel Systems Inc",
-      "ticker": "WPRT",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-10-27",
       "name": "Banzai International",
       "ticker": "PARA",
@@ -23,15 +16,15 @@
     },
     {
       "date_ex": "2026-10-27",
-      "name": "Adjusted Enlivex Ltd.",
-      "ticker": "ENLV1",
+      "name": "Madison Square Garden Sports Corporation",
+      "ticker": "MSGS",
       "ratio": "",
       "source": "occ"
     },
     {
       "date_ex": "2026-10-27",
-      "name": "Madison Square Garden Sports Corporation",
-      "ticker": "MSGS",
+      "name": "Adjusted Enlivex Ltd.",
+      "ticker": "ENLV1",
       "ratio": "",
       "source": "occ"
     },
@@ -71,6 +64,27 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-11-09",
+      "name": "Adjusted Vistance Networks, Inc.",
+      "ticker": "VISN2",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-09",
+      "name": "Vistance Networks, Inc.",
+      "ticker": "VISN",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-09",
+      "name": "Adjusted Vistance Networks, Inc.",
+      "ticker": "VISN1",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-12-01",
       "name": "FS KKR Capital Corporation",
       "ticker": "FSK",
@@ -78,8 +92,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-10-26",
-  "updated_at": "2026-10-26 11:35 UTC",
-  "total": 11,
+  "today": "2026-10-27",
+  "updated_at": "2026-10-27 11:57 UTC",
+  "total": 13,
   "etfs_filtered": 7
 }
