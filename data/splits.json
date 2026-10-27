@@ -30,6 +30,13 @@
     },
     {
       "date_ex": "2026-10-29",
+      "name": "aTyr Pharma",
+      "ticker": "ATYR",
+      "ratio": "1:40",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-10-29",
       "name": "Odyssey Marine Explr",
       "ticker": "OMEX",
       "ratio": "1:25",
@@ -93,7 +100,7 @@
     }
   ],
   "today": "2026-10-27",
-  "updated_at": "2026-10-27 12:02 UTC",
-  "total": 13,
-  "etfs_filtered": 7
+  "updated_at": "2026-10-27 20:16 UTC",
+  "total": 14,
+  "etfs_filtered": 17
 }
