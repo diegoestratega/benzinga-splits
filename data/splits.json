@@ -1,34 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-10-27",
-      "name": "Banzai International",
-      "ticker": "PARA",
-      "ratio": "1:10",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-10-27",
-      "name": "Enlivex",
-      "ticker": "ENLV",
-      "ratio": "1:16",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-10-27",
-      "name": "Madison Square Garden Sports Corporation",
-      "ticker": "MSGS",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-10-27",
-      "name": "Adjusted Enlivex Ltd.",
-      "ticker": "ENLV1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-10-29",
       "name": "aTyr Pharma",
       "ticker": "ATYR",
@@ -92,6 +64,20 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-11-27",
+      "name": "Adjusted Toro Corporation",
+      "ticker": "TORO1",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-27",
+      "name": "Adjusted Toro Corporation",
+      "ticker": "TORO2",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-12-01",
       "name": "FS KKR Capital Corporation",
       "ticker": "FSK",
@@ -99,8 +85,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-10-27",
-  "updated_at": "2026-10-27 20:16 UTC",
-  "total": 14,
-  "etfs_filtered": 17
+  "today": "2026-10-28",
+  "updated_at": "2026-10-28 12:29 UTC",
+  "total": 12,
+  "etfs_filtered": 10
 }
