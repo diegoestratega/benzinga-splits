@@ -36,6 +36,13 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-11-05",
+      "name": "Jersey Mike's Subs Inc.",
+      "ticker": "JMKE",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-11-06",
       "name": "SITE Centers Corporation",
       "ticker": "SITC",
@@ -64,6 +71,20 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-11-20",
+      "name": "Park National Corporation",
+      "ticker": "PRK",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-23",
+      "name": "Slide Insurance Holdings, Inc.",
+      "ticker": "SLDE",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-11-27",
       "name": "Adjusted Toro Corporation",
       "ticker": "TORO1",
@@ -85,8 +106,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-10-28",
-  "updated_at": "2026-10-28 12:29 UTC",
-  "total": 12,
+  "today": "2026-10-29",
+  "updated_at": "2026-10-29 11:35 UTC",
+  "total": 15,
   "etfs_filtered": 10
 }
