@@ -1,18 +1,11 @@
 {
   "splits": [
     {
-      "date_ex": "2026-10-29",
-      "name": "aTyr Pharma",
-      "ticker": "ATYR",
-      "ratio": "1:40",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-10-29",
-      "name": "Odyssey Marine Explr",
-      "ticker": "OMEX",
-      "ratio": "1:25",
-      "source": "benzinga"
+      "date_ex": "2026-10-30",
+      "name": "Dynamix Corporation",
+      "ticker": "DYNC",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-10-30",
@@ -71,6 +64,20 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-11-16",
+      "name": "Embraer",
+      "ticker": "EMBJ",
+      "ratio": "4:1",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-11-20",
+      "name": "SanDisk",
+      "ticker": "SNDK",
+      "ratio": "8:1",
+      "source": "benzinga"
+    },
+    {
       "date_ex": "2026-11-20",
       "name": "Park National Corporation",
       "ticker": "PRK",
@@ -106,8 +113,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-10-29",
-  "updated_at": "2026-10-29 11:35 UTC",
-  "total": 15,
-  "etfs_filtered": 10
+  "today": "2026-10-30",
+  "updated_at": "2026-10-30 12:19 UTC",
+  "total": 16,
+  "etfs_filtered": 11
 }
