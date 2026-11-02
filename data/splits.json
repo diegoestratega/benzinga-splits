@@ -1,32 +1,25 @@
 {
   "splits": [
     {
-      "date_ex": "2026-10-30",
-      "name": "Dynamix Corporation",
-      "ticker": "DYNC",
+      "date_ex": "2026-11-02",
+      "name": "Cresud S.A.C.I.F. y A.",
+      "ticker": "CRESY",
       "ratio": "",
       "source": "occ"
     },
     {
-      "date_ex": "2026-10-30",
-      "name": "WhiteHorse Finance, Inc.",
-      "ticker": "WHF",
+      "date_ex": "2026-11-02",
+      "name": "MGP Ingredients, Inc.",
+      "ticker": "MGPI",
       "ratio": "",
       "source": "occ"
     },
     {
-      "date_ex": "2026-10-30",
-      "name": "Adjusted Apollo Commercial Real Estate Finance, Inc.",
-      "ticker": "ARI1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-10-30",
-      "name": "Apollo Commercial Real Estate Finance, Inc.",
-      "ticker": "ARI",
-      "ratio": "",
-      "source": "occ"
+      "date_ex": "2026-11-03",
+      "name": "Southern Copper",
+      "ticker": "SCCO",
+      "ratio": "1.011:1",
+      "source": "benzinga"
     },
     {
       "date_ex": "2026-11-05",
@@ -39,6 +32,20 @@
       "date_ex": "2026-11-06",
       "name": "SITE Centers Corporation",
       "ticker": "SITC",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-09",
+      "name": "Dorian LPG Ltd.",
+      "ticker": "LPG",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-09",
+      "name": "Warrior Met Coal Inc.",
+      "ticker": "HCC",
       "ratio": "",
       "source": "occ"
     },
@@ -113,8 +120,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-10-30",
-  "updated_at": "2026-10-30 12:19 UTC",
-  "total": 16,
-  "etfs_filtered": 11
+  "today": "2026-11-02",
+  "updated_at": "2026-11-02 12:50 UTC",
+  "total": 17,
+  "etfs_filtered": 9
 }
