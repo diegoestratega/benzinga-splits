@@ -1,25 +1,25 @@
 {
   "splits": [
     {
-      "date_ex": "2026-11-02",
-      "name": "Cresud S.A.C.I.F. y A.",
-      "ticker": "CRESY",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-02",
-      "name": "MGP Ingredients, Inc.",
-      "ticker": "MGPI",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-11-03",
       "name": "Southern Copper",
       "ticker": "SCCO",
       "ratio": "1.011:1",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-11-03",
+      "name": "Adjusted GameStop Corporation",
+      "ticker": "GME1",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-03",
+      "name": "Indivior Pharmaceuticals, Inc.",
+      "ticker": "INDV",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-11-05",
@@ -86,6 +86,13 @@
     },
     {
       "date_ex": "2026-11-20",
+      "name": "Adjusted Western Digital Corporation",
+      "ticker": "WDC1",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-20",
       "name": "Park National Corporation",
       "ticker": "PRK",
       "ratio": "",
@@ -120,8 +127,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-11-02",
-  "updated_at": "2026-11-02 12:50 UTC",
-  "total": 17,
+  "today": "2026-11-03",
+  "updated_at": "2026-11-03 12:55 UTC",
+  "total": 18,
   "etfs_filtered": 9
 }
