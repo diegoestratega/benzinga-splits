@@ -1,27 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-11-03",
-      "name": "Southern Copper",
-      "ticker": "SCCO",
-      "ratio": "1.011:1",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-11-03",
-      "name": "Adjusted GameStop Corporation",
-      "ticker": "GME1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-03",
-      "name": "Indivior Pharmaceuticals, Inc.",
-      "ticker": "INDV",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-11-05",
       "name": "Jersey Mike's Subs Inc.",
       "ticker": "JMKE",
@@ -121,14 +100,21 @@
     },
     {
       "date_ex": "2026-12-01",
+      "name": "ACNB Corporation",
+      "ticker": "ACNB",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-12-01",
       "name": "FS KKR Capital Corporation",
       "ticker": "FSK",
       "ratio": "",
       "source": "occ"
     }
   ],
-  "today": "2026-11-03",
-  "updated_at": "2026-11-03 12:55 UTC",
-  "total": 18,
-  "etfs_filtered": 9
+  "today": "2026-11-04",
+  "updated_at": "2026-11-04 13:24 UTC",
+  "total": 16,
+  "etfs_filtered": 15
 }
