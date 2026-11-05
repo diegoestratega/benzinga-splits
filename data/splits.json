@@ -2,6 +2,13 @@
   "splits": [
     {
       "date_ex": "2026-11-05",
+      "name": "Churchill Capital Corporation XI",
+      "ticker": "CCXI",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-05",
       "name": "Jersey Mike's Subs Inc.",
       "ticker": "JMKE",
       "ratio": "",
@@ -9,10 +16,24 @@
     },
     {
       "date_ex": "2026-11-06",
+      "name": "Jasper Therapeutics",
+      "ticker": "JSPR",
+      "ratio": "1:30",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-11-06",
       "name": "SITE Centers Corporation",
       "ticker": "SITC",
       "ratio": "",
       "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-09",
+      "name": "Accuray",
+      "ticker": "ARAY",
+      "ratio": "1:40",
+      "source": "benzinga"
     },
     {
       "date_ex": "2026-11-09",
@@ -55,6 +76,20 @@
       "ticker": "EMBJ",
       "ratio": "4:1",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-11-16",
+      "name": "American Financial Group Inc.",
+      "ticker": "AFG",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-16",
+      "name": "Global Industrial Company",
+      "ticker": "GIC",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-11-20",
@@ -113,8 +148,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-11-04",
-  "updated_at": "2026-11-04 13:24 UTC",
-  "total": 16,
+  "today": "2026-11-05",
+  "updated_at": "2026-11-05 13:17 UTC",
+  "total": 21,
   "etfs_filtered": 15
 }
