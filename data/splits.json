@@ -1,25 +1,18 @@
 {
   "splits": [
     {
-      "date_ex": "2026-11-06",
-      "name": "Jasper Therapeutics",
-      "ticker": "JSPR",
-      "ratio": "1:30",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-11-06",
-      "name": "SITE Centers Corporation",
-      "ticker": "SITC",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-11-09",
       "name": "Accuray",
       "ticker": "ARAY",
       "ratio": "1:40",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-11-09",
+      "name": "Roku, Inc.",
+      "ticker": "ROKU",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-11-09",
@@ -155,8 +148,8 @@
       "source": "benzinga"
     }
   ],
-  "today": "2026-11-06",
-  "updated_at": "2026-11-06 13:15 UTC",
-  "total": 22,
+  "today": "2026-11-09",
+  "updated_at": "2026-11-09 12:40 UTC",
+  "total": 21,
   "etfs_filtered": 18
 }
