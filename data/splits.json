@@ -1,51 +1,9 @@
 {
   "splits": [
     {
-      "date_ex": "2026-11-09",
-      "name": "Accuray",
-      "ticker": "ARAY",
-      "ratio": "1:40",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-11-09",
-      "name": "Roku, Inc.",
-      "ticker": "ROKU",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-09",
-      "name": "Dorian LPG Ltd.",
-      "ticker": "LPG",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-09",
-      "name": "Warrior Met Coal Inc.",
-      "ticker": "HCC",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-09",
-      "name": "Adjusted Vistance Networks, Inc.",
-      "ticker": "VISN2",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-09",
-      "name": "Vistance Networks, Inc.",
-      "ticker": "VISN",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-09",
-      "name": "Adjusted Vistance Networks, Inc.",
-      "ticker": "VISN1",
+      "date_ex": "2026-11-10",
+      "name": "Achieve Life Sciences, Inc.",
+      "ticker": "ACHV",
       "ratio": "",
       "source": "occ"
     },
@@ -134,6 +92,13 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-12-04",
+      "name": "Canaan",
+      "ticker": "CAN",
+      "ratio": "1:25",
+      "source": "benzinga"
+    },
+    {
       "date_ex": "2026-12-10",
       "name": "Snap-on",
       "ticker": "SNA",
@@ -148,8 +113,8 @@
       "source": "benzinga"
     }
   ],
-  "today": "2026-11-09",
-  "updated_at": "2026-11-09 12:40 UTC",
-  "total": 21,
+  "today": "2026-11-10",
+  "updated_at": "2026-11-10 12:37 UTC",
+  "total": 16,
   "etfs_filtered": 18
 }
