@@ -1,9 +1,16 @@
 {
   "splits": [
     {
-      "date_ex": "2026-11-10",
-      "name": "Achieve Life Sciences, Inc.",
-      "ticker": "ACHV",
+      "date_ex": "2026-11-11",
+      "name": "Karyopharm Therapeutics Inc.",
+      "ticker": "KPTI",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-13",
+      "name": "Enovix Corporation",
+      "ticker": "ENVX",
       "ratio": "",
       "source": "occ"
     },
@@ -13,6 +20,13 @@
       "ticker": "EMBJ",
       "ratio": "4:1",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-11-16",
+      "name": "Docebo Inc.",
+      "ticker": "DCBO",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-11-16",
@@ -79,6 +93,13 @@
     },
     {
       "date_ex": "2026-12-01",
+      "name": "Commerce Bancshares, Inc.",
+      "ticker": "CBSH",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-12-01",
       "name": "ACNB Corporation",
       "ticker": "ACNB",
       "ratio": "",
@@ -99,6 +120,20 @@
       "source": "benzinga"
     },
     {
+      "date_ex": "2026-12-04",
+      "name": "Universal Insurance Holdings Inc.",
+      "ticker": "UVE",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-12-07",
+      "name": "SiTime Corporation",
+      "ticker": "SITM",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-12-10",
       "name": "Snap-on",
       "ticker": "SNA",
@@ -113,8 +148,8 @@
       "source": "benzinga"
     }
   ],
-  "today": "2026-11-10",
-  "updated_at": "2026-11-10 12:37 UTC",
-  "total": 16,
-  "etfs_filtered": 18
+  "today": "2026-11-11",
+  "updated_at": "2026-11-11 13:18 UTC",
+  "total": 21,
+  "etfs_filtered": 20
 }
