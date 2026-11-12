@@ -1,11 +1,18 @@
 {
   "splits": [
     {
-      "date_ex": "2026-11-11",
-      "name": "Karyopharm Therapeutics Inc.",
-      "ticker": "KPTI",
-      "ratio": "",
-      "source": "occ"
+      "date_ex": "2026-11-13",
+      "name": "Cosmos Health",
+      "ticker": "COSM",
+      "ratio": "1:20",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-11-13",
+      "name": "PharmaCyte Biotech",
+      "ticker": "PMCB",
+      "ratio": "1:19",
+      "source": "benzinga"
     },
     {
       "date_ex": "2026-11-13",
@@ -72,8 +79,22 @@
     },
     {
       "date_ex": "2026-11-23",
+      "name": "IT Tech Packaging",
+      "ticker": "ITP",
+      "ratio": "1:40",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-11-23",
       "name": "Slide Insurance Holdings, Inc.",
       "ticker": "SLDE",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-24",
+      "name": "Costco Wholesale Corporation",
+      "ticker": "COST",
       "ratio": "",
       "source": "occ"
     },
@@ -141,6 +162,27 @@
       "source": "benzinga"
     },
     {
+      "date_ex": "2026-12-14",
+      "name": "Avista",
+      "ticker": "AVA",
+      "ratio": "1.05:1",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-12-18",
+      "name": "Navient Holdings",
+      "ticker": "NAVI",
+      "ratio": "1.016:1",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-12-18",
+      "name": "Main Street Capital Corporation",
+      "ticker": "MAIN",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
       "date_ex": "2026-12-31",
       "name": "Simon Property Group",
       "ticker": "SPG",
@@ -148,8 +190,8 @@
       "source": "benzinga"
     }
   ],
-  "today": "2026-11-11",
-  "updated_at": "2026-11-11 13:18 UTC",
-  "total": 21,
-  "etfs_filtered": 20
+  "today": "2026-11-12",
+  "updated_at": "2026-11-12 13:06 UTC",
+  "total": 27,
+  "etfs_filtered": 21
 }
