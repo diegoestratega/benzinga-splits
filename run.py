@@ -16,6 +16,8 @@ DATA_DIR  = os.path.join(REPO_DIR, "data")
 DATA_FILE = os.path.join(DATA_DIR, "splits.json")
 DEBUG_DIR = os.path.join(REPO_DIR, "debug")
 BZ_URL    = "https://www.benzinga.com/calendars/stock-splits"
+# Browser disguises tried in order before falling back to a real browser
+BZ_IMPERSONATE = ("chrome124", "chrome136", "firefox135")
 
 OCC_URL   = "https://infomemo.theocc.com/infomemo/search-memo"
 OCC_DAYS_BACK    = 60
@@ -57,13 +59,13 @@ ETF_QUOTE_TYPES = {"ETF", "MUTUALFUND"}
 _quote_type_cache = {}
 
 
-def fetch_page():
-    print(f"→ Fetching Benzinga splits page (curl_cffi Chrome124)...")
+def _fetch_page_curl(target):
+    print(f"→ Fetching Benzinga splits page (curl_cffi {target})...")
     try:
         r = curl_requests.get(
             BZ_URL,
             headers=HEADERS,
-            impersonate="chrome124",
+            impersonate=target,
             timeout=25,
         )
         print(f"  HTTP {r.status_code}  ({len(r.text):,} bytes)")
@@ -85,6 +87,73 @@ def fetch_page():
     except Exception as e:
         print(f"  ✗ Request failed: {e}")
         return None
+
+
+def fetch_page_browser():
+    """
+    Last resort when Cloudflare answers plain requests with its
+    "Just a moment..." check: only a real browser gets past that.
+    """
+    print("→ Fetching Benzinga splits page (visible browser)...")
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        print("  ✗ Playwright not installed — run: python -m pip install playwright")
+        return None
+
+    try:
+        with sync_playwright() as p:
+            browser = p.chromium.launch(
+                headless=False,
+                args=["--start-minimized", "--disable-blink-features=AutomationControlled"],
+            )
+            context = browser.new_context(user_agent=OCC_UA)
+            page = context.new_page()
+            page.goto(BZ_URL, timeout=45000, wait_until="domcontentloaded")
+
+            # The splits table only exists once the Cloudflare check has cleared
+            loaded = False
+            for _ in range(40):
+                try:
+                    loaded = page.locator("table tr").count() >= 3
+                except Exception:
+                    loaded = False
+                if loaded:
+                    break
+                page.wait_for_timeout(1000)
+
+            html_text = page.content()
+            browser.close()
+
+        print(f"  Browser page  ({len(html_text):,} bytes)")
+
+        if not loaded:
+            print("  ✗ Splits table never appeared (Cloudflare check not cleared?)")
+            save_debug("error_page.html", html_text)
+            return None
+
+        if "Something went wrong" in html_text or "UH-OH" in html_text:
+            print("  ✗ Got error page content")
+            save_debug("error_200.html", html_text)
+            return None
+
+        print("  ✓ Page loaded successfully")
+        save_debug("last_page.html", html_text)
+        return html_text
+
+    except Exception as e:
+        print(f"  ✗ Browser fetch failed: {e}")
+        return None
+
+
+def fetch_page():
+    for i, target in enumerate(BZ_IMPERSONATE):
+        if i:
+            time.sleep(2)
+        html_text = _fetch_page_curl(target)
+        if html_text is not None:
+            return html_text
+    return fetch_page_browser()
 
 
 def parse_next_data(html_text):
