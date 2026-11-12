@@ -17,7 +17,7 @@ DATA_FILE = os.path.join(DATA_DIR, "splits.json")
 DEBUG_DIR = os.path.join(REPO_DIR, "debug")
 BZ_URL    = "https://www.benzinga.com/calendars/stock-splits"
 # Browser disguises tried in order before falling back to a real browser
-BZ_IMPERSONATE = ("chrome124", "chrome136", "firefox135")
+BZ_IMPERSONATE = ("chrome136", "firefox135", "chrome124")
 
 OCC_URL   = "https://infomemo.theocc.com/infomemo/search-memo"
 OCC_DAYS_BACK    = 60
