@@ -1,74 +1,25 @@
 {
   "splits": [
     {
-      "date_ex": "2026-11-16",
-      "name": "Embraer",
-      "ticker": "EMBJ",
-      "ratio": "4:1",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-11-16",
-      "name": "Childrens Place, Inc. (The)",
-      "ticker": "PLCE",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-16",
-      "name": "Black Hills Corporation",
-      "ticker": "BKH",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-16",
-      "name": "NorthWestern Energy Group, Inc.",
-      "ticker": "NWE",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-16",
-      "name": "UWM Holdings Corporation",
-      "ticker": "UWMC1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-16",
-      "name": "Docebo Inc.",
-      "ticker": "DCBO",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-16",
-      "name": "Net Lease Office Properties",
-      "ticker": "NLOP",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-16",
-      "name": "American Financial Group Inc.",
-      "ticker": "AFG",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-16",
-      "name": "Global Industrial Company",
-      "ticker": "GIC",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-11-17",
       "name": "SelectQuote",
       "ticker": "SLQT",
       "ratio": "1:20",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-11-17",
+      "name": "Accendra Health, Inc.",
+      "ticker": "ACH",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-17",
+      "name": "VersaBank",
+      "ticker": "VBNK",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-11-20",
@@ -232,8 +183,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-11-16",
-  "updated_at": "2026-11-16 13:23 UTC",
-  "total": 33,
-  "etfs_filtered": 21
+  "today": "2026-11-17",
+  "updated_at": "2026-11-17 12:40 UTC",
+  "total": 26,
+  "etfs_filtered": 32
 }
