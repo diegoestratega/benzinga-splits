@@ -1,27 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-11-17",
-      "name": "SelectQuote",
-      "ticker": "SLQT",
-      "ratio": "1:20",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-11-17",
-      "name": "Accendra Health, Inc.",
-      "ticker": "ACH",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-17",
-      "name": "VersaBank",
-      "ticker": "VBNK",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-11-20",
       "name": "SanDisk",
       "ticker": "SNDK",
@@ -183,8 +162,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-11-17",
-  "updated_at": "2026-11-17 12:40 UTC",
-  "total": 26,
+  "today": "2026-11-18",
+  "updated_at": "2026-11-18 13:28 UTC",
+  "total": 23,
   "etfs_filtered": 32
 }
