@@ -127,6 +127,13 @@
       "source": "benzinga"
     },
     {
+      "date_ex": "2026-12-15",
+      "name": "SS&amp;C Technologies Hldgs",
+      "ticker": "SSNC",
+      "ratio": "1.03:1",
+      "source": "benzinga"
+    },
+    {
       "date_ex": "2026-12-18",
       "name": "Navient Holdings",
       "ticker": "NAVI",
@@ -162,8 +169,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-11-18",
-  "updated_at": "2026-11-18 13:28 UTC",
-  "total": 23,
+  "today": "2026-11-19",
+  "updated_at": "2026-11-19 13:50 UTC",
+  "total": 24,
   "etfs_filtered": 32
 }
