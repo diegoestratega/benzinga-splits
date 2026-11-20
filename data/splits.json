@@ -9,6 +9,13 @@
     },
     {
       "date_ex": "2026-11-20",
+      "name": "Mercer International Inc.",
+      "ticker": "MERC",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-20",
       "name": "Adjusted Western Digital Corporation",
       "ticker": "WDC1",
       "ratio": "",
@@ -20,6 +27,13 @@
       "ticker": "PRK",
       "ratio": "",
       "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-23",
+      "name": "Parabolic Technologies",
+      "ticker": "PARA",
+      "ratio": "1:100",
+      "source": "benzinga"
     },
     {
       "date_ex": "2026-11-23",
@@ -107,6 +121,13 @@
     },
     {
       "date_ex": "2026-12-07",
+      "name": "Innoviz Technologies",
+      "ticker": "INVZ",
+      "ratio": "1:20",
+      "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-12-07",
       "name": "SiTime Corporation",
       "ticker": "SITM",
       "ratio": "",
@@ -169,8 +190,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-11-19",
-  "updated_at": "2026-11-19 13:50 UTC",
-  "total": 24,
-  "etfs_filtered": 32
+  "today": "2026-11-20",
+  "updated_at": "2026-11-20 13:17 UTC",
+  "total": 27,
+  "etfs_filtered": 0
 }
