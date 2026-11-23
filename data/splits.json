@@ -1,34 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-11-20",
-      "name": "SanDisk",
-      "ticker": "SNDK",
-      "ratio": "8:1",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-11-20",
-      "name": "Mercer International Inc.",
-      "ticker": "MERC",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-20",
-      "name": "Adjusted Western Digital Corporation",
-      "ticker": "WDC1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-20",
-      "name": "Park National Corporation",
-      "ticker": "PRK",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-11-23",
       "name": "Parabolic Technologies",
       "ticker": "PARA",
@@ -41,6 +13,13 @@
       "ticker": "ITP",
       "ratio": "1:40",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-11-23",
+      "name": "Brookfield Infrastructure Corporation",
+      "ticker": "BIPC",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-11-23",
@@ -176,6 +155,13 @@
       "source": "benzinga"
     },
     {
+      "date_ex": "2027-01-04",
+      "name": "PPL",
+      "ticker": "PPL",
+      "ratio": "1.0285:1",
+      "source": "benzinga"
+    },
+    {
       "date_ex": "2027-01-05",
       "name": "Spire",
       "ticker": "SR",
@@ -190,8 +176,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-11-20",
-  "updated_at": "2026-11-20 13:17 UTC",
-  "total": 27,
+  "today": "2026-11-23",
+  "updated_at": "2026-11-23 13:39 UTC",
+  "total": 25,
   "etfs_filtered": 0
 }
