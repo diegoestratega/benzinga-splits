@@ -1,30 +1,16 @@
 {
   "splits": [
     {
-      "date_ex": "2026-11-23",
-      "name": "Parabolic Technologies",
-      "ticker": "PARA",
-      "ratio": "1:100",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-11-23",
-      "name": "IT Tech Packaging",
-      "ticker": "ITP",
-      "ratio": "1:40",
-      "source": "benzinga"
-    },
-    {
-      "date_ex": "2026-11-23",
-      "name": "Brookfield Infrastructure Corporation",
-      "ticker": "BIPC",
+      "date_ex": "2026-11-24",
+      "name": "Adjusted Opendoor Technologies Inc.",
+      "ticker": "OPEN1",
       "ratio": "",
       "source": "occ"
     },
     {
-      "date_ex": "2026-11-23",
-      "name": "Slide Insurance Holdings, Inc.",
-      "ticker": "SLDE",
+      "date_ex": "2026-11-24",
+      "name": "Brookfield Infrastructure Partners Inc.",
+      "ticker": "BIP1",
       "ratio": "",
       "source": "occ"
     },
@@ -93,6 +79,13 @@
     },
     {
       "date_ex": "2026-12-04",
+      "name": "John B. Sanfilippo & Son, Inc.",
+      "ticker": "JBSS",
+      "ratio": "",
+      "source": "occ"
+    },
+    {
+      "date_ex": "2026-12-04",
       "name": "Universal Insurance Holdings Inc.",
       "ticker": "UVE",
       "ratio": "",
@@ -113,11 +106,25 @@
       "source": "occ"
     },
     {
+      "date_ex": "2026-12-08",
+      "name": "Ready Capital",
+      "ticker": "RC",
+      "ratio": "1:10",
+      "source": "benzinga"
+    },
+    {
       "date_ex": "2026-12-10",
       "name": "Snap-on",
       "ticker": "SNA",
       "ratio": "1.0275:1",
       "source": "benzinga"
+    },
+    {
+      "date_ex": "2026-12-11",
+      "name": "Republic Bancorp, Inc.",
+      "ticker": "RBCAA",
+      "ratio": "",
+      "source": "occ"
     },
     {
       "date_ex": "2026-12-14",
@@ -176,8 +183,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-11-23",
-  "updated_at": "2026-11-23 13:39 UTC",
-  "total": 25,
+  "today": "2026-11-24",
+  "updated_at": "2026-11-24 13:45 UTC",
+  "total": 26,
   "etfs_filtered": 0
 }
