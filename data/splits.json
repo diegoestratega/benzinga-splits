@@ -1,23 +1,9 @@
 {
   "splits": [
     {
-      "date_ex": "2026-11-24",
-      "name": "Adjusted Opendoor Technologies Inc.",
-      "ticker": "OPEN1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-24",
-      "name": "Brookfield Infrastructure Partners Inc.",
-      "ticker": "BIP1",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
-      "date_ex": "2026-11-24",
-      "name": "Costco Wholesale Corporation",
-      "ticker": "COST",
+      "date_ex": "2026-11-25",
+      "name": "FingerMotion, Inc.",
+      "ticker": "FNGR",
       "ratio": "",
       "source": "occ"
     },
@@ -183,8 +169,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-11-24",
-  "updated_at": "2026-11-24 13:45 UTC",
-  "total": 26,
+  "today": "2026-11-25",
+  "updated_at": "2026-11-25 13:30 UTC",
+  "total": 24,
   "etfs_filtered": 0
 }
