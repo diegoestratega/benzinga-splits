@@ -1,13 +1,6 @@
 {
   "splits": [
     {
-      "date_ex": "2026-11-25",
-      "name": "FingerMotion, Inc.",
-      "ticker": "FNGR",
-      "ratio": "",
-      "source": "occ"
-    },
-    {
       "date_ex": "2026-11-27",
       "name": "Insteel Industries Inc.",
       "ticker": "IIIN",
@@ -27,6 +20,13 @@
       "ticker": "TORO2",
       "ratio": "",
       "source": "occ"
+    },
+    {
+      "date_ex": "2026-11-30",
+      "name": "Standard BioTools",
+      "ticker": "LAB",
+      "ratio": "1:35",
+      "source": "benzinga"
     },
     {
       "date_ex": "2026-11-30",
@@ -169,8 +169,8 @@
       "source": "occ"
     }
   ],
-  "today": "2026-11-25",
-  "updated_at": "2026-11-25 13:30 UTC",
+  "today": "2026-11-27",
+  "updated_at": "2026-11-27 13:05 UTC",
   "total": 24,
   "etfs_filtered": 0
 }
